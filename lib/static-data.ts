@@ -37,24 +37,24 @@ export interface CheatSheetItem {
 
 // Recipe functions
 export function getAllRecipes(): Recipe[] {
-  return recipesData as Recipe[];
+  return recipesData as unknown as Recipe[];
 }
 
 export function getRecipeBySlug(slug: string): Recipe | null {
-  return recipesData.find((r: Recipe) => r.slug === slug) || null;
+  return (recipesData as unknown as Recipe[]).find((r: Recipe) => r.slug === slug) || null;
 }
 
 export function getRecipesByFamily(familyName: string): Recipe[] {
-  return recipesData.filter((r: Recipe) => r.family === familyName);
+  return (recipesData as unknown as Recipe[]).filter((r: Recipe) => r.family === familyName);
 }
 
 // Family functions
 export function getAllFamilies(): Family[] {
-  return familiesData as Family[];
+  return familiesData as unknown as Family[];
 }
 
 export function getFamilyBySlug(slug: string): Family | null {
-  return familiesData.find((f: Family) => f.slug === slug) || null;
+  return (familiesData as unknown as Family[]).find((f: Family) => f.slug === slug) || null;
 }
 
 // Cheat sheet functions

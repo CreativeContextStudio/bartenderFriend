@@ -136,7 +136,7 @@ export default function LearningPlanPage() {
       {learningDays.length > 0 ? (
         <div className="space-y-4">
           {learningDays.map((day) => (
-            <Card key={day.id} className="border-brutal">
+            <Card key={day.day_number} className="border-brutal">
               <CardHeader className="border-b-4 border-brutal">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">

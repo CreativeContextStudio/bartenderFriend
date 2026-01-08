@@ -1,38 +1,31 @@
 import { getAllCheatSheetItems } from '@/lib/static-data';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Printer } from 'lucide-react';
 import { readMarkdownFile } from '@/lib/markdown';
 import { MarkdownContent } from '@/components/markdown-content';
+import { PrintButton } from '@/components/print-button';
 
 export default function CheatSheetPage() {
   const items = getAllCheatSheetItems();
   const cheatSheetContent = readMarkdownFile('bartender-cheat-sheet.md');
 
   return (
-    <div className="space-y-8">
-      <div className="flex items-center justify-between">
-        <div className="space-y-3">
-          <h1 className="text-5xl md:text-6xl font-black tracking-tight">Cheat Sheet</h1>
-          <p className="text-lg md:text-xl font-medium text-muted-foreground leading-relaxed">
+    <div className="space-y-6 sm:space-y-8">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
+        <div className="space-y-2 sm:space-y-3 flex-1">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">Cheat Sheet</h1>
+          <p className="text-base sm:text-lg md:text-xl font-medium text-muted-foreground leading-relaxed">
             Memorize these core drinks cold. Print this and keep in your pocket for the first week.
           </p>
         </div>
-        <Button
-          variant="outline"
-          onClick={() => window.print()}
-          className="hidden print:hidden border-brutal-sm font-bold"
-          size="lg"
-        >
-          <Printer className="mr-2 h-5 w-5" />
-          Print
-        </Button>
+        <div className="self-start sm:self-auto">
+          <PrintButton />
+        </div>
       </div>
 
       {cheatSheetContent && (
         <Card className="border-brutal">
           <CardHeader className="border-b-4 border-brutal">
-            <CardTitle className="text-3xl font-black">Quick Reference Cheat Sheet</CardTitle>
+            <CardTitle className="text-2xl sm:text-3xl font-black">Quick Reference Cheat Sheet</CardTitle>
           </CardHeader>
           <CardContent>
             <MarkdownContent content={cheatSheetContent} />
@@ -42,8 +35,8 @@ export default function CheatSheetPage() {
 
       <Card className="print:border-none print:shadow-none border-brutal">
         <CardHeader className="print:pb-2 border-b-4 border-brutal">
-          <CardTitle className="text-3xl font-black">Core Drinks - Must Know Cold</CardTitle>
-          <CardDescription className="print:hidden text-lg font-medium">
+          <CardTitle className="text-2xl sm:text-3xl font-black">Core Drinks - Must Know Cold</CardTitle>
+          <CardDescription className="print:hidden text-base sm:text-lg font-medium">
             {items.length} core drinks to memorize
           </CardDescription>
         </CardHeader>

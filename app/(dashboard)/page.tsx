@@ -19,15 +19,15 @@ export default function DashboardPage() {
     <div className="space-y-8">
 
       {/* Hero Section */}
-      <div className="space-y-3 border-brutal bg-primary/5 p-8 md:p-10 shadow-brutal-lg">
-        <h1 className="text-5xl md:text-6xl font-black tracking-tight">Welcome back</h1>
-        <p className="text-lg md:text-xl font-medium text-muted-foreground leading-relaxed">
+      <div className="space-y-3 border-brutal bg-primary/5 p-4 sm:p-6 md:p-8 lg:p-10 shadow-brutal-lg">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">Welcome back</h1>
+        <p className="text-base sm:text-lg md:text-xl font-medium text-muted-foreground leading-relaxed">
           Quick recall and confident execution. Let's get you ready for your next shift.
         </p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         <Card className="border-brutal bg-primary/10 shadow-brutal-primary">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4 border-b-4 border-brutal">
             <CardTitle className="text-base font-black">Streak</CardTitle>
@@ -73,16 +73,16 @@ export default function DashboardPage() {
               {studyRecipes.map((recipe) => (
                 <div 
                   key={recipe.id} 
-                  className="flex items-center justify-between border-brutal-sm p-4 bg-muted/30 hover:bg-muted/50 transition-colors"
+                  className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 border-brutal-sm p-4 sm:p-6 bg-muted/30 hover:bg-muted/50 transition-colors"
                 >
-                  <div>
-                    <div className="text-lg font-black mb-1">{recipe.name}</div>
-                    <div className="text-base font-medium text-muted-foreground">{recipe.family || 'Uncategorized'}</div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-base sm:text-lg font-black mb-1 truncate">{recipe.name}</div>
+                    <div className="text-sm sm:text-base font-medium text-muted-foreground truncate">{recipe.family || 'Uncategorized'}</div>
                   </div>
-                  <Link href={`/recipes/${recipe.slug}`}>
-                    <Button variant="outline" size="lg" className="border-brutal-sm font-bold">
+                  <Link href={`/recipes/${recipe.slug}`} className="w-full sm:w-auto">
+                    <Button variant="outline" size="lg" className="w-full sm:w-auto border-brutal-sm font-bold">
                       Review
-                      <ArrowRight className="ml-2 h-5 w-5" />
+                      <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" />
                     </Button>
                   </Link>
                 </div>
@@ -93,7 +93,7 @@ export default function DashboardPage() {
       )}
 
       {/* Quick Links */}
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         <Card>
           <CardHeader className="border-b-4 border-brutal">
             <CardTitle className="flex items-center gap-3 text-2xl font-black">

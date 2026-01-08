@@ -29,25 +29,25 @@ export default function RecipesPage() {
 
   return (
     <>
-      <div className="space-y-8">
-        <div className="space-y-3">
-          <h1 className="text-5xl font-black tracking-tight">Recipe Cards</h1>
-          <p className="text-lg font-medium text-muted-foreground leading-relaxed">
+      <div className="space-y-6 sm:space-y-8">
+        <div className="space-y-2 sm:space-y-3">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight">Recipe Cards</h1>
+          <p className="text-base sm:text-lg font-medium text-muted-foreground leading-relaxed">
             Browse all cocktail recipes. Click any card to see full details.
           </p>
         </div>
 
       <Tabs defaultValue="grid" className="w-full">
-        <div className="flex items-center justify-between mb-6">
-          <TabsList className="border-brutal-sm">
-            <TabsTrigger value="grid" className="text-base font-bold">Grid View</TabsTrigger>
-            <TabsTrigger value="list" className="text-base font-bold">List View</TabsTrigger>
-            <TabsTrigger value="family" className="text-base font-bold">By Family</TabsTrigger>
+        <div className="flex items-center justify-between mb-4 sm:mb-6 overflow-x-auto">
+          <TabsList className="border-brutal-sm inline-flex w-full sm:w-auto">
+            <TabsTrigger value="grid" className="text-sm sm:text-base font-bold flex-1 sm:flex-initial">Grid View</TabsTrigger>
+            <TabsTrigger value="list" className="text-sm sm:text-base font-bold flex-1 sm:flex-initial">List View</TabsTrigger>
+            <TabsTrigger value="family" className="text-sm sm:text-base font-bold flex-1 sm:flex-initial">By Family</TabsTrigger>
           </TabsList>
         </div>
 
         <TabsContent value="grid" className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 lg:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {recipes.length > 0 ? (
               recipes.map((recipe) => (
                 <RecipeCard 

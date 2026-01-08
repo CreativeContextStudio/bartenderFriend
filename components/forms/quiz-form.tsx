@@ -67,7 +67,7 @@ export function QuizForm({ quiz }: QuizFormProps) {
         if (Array.isArray(userAnswer)) {
           const correctSet = new Set(q.correct);
           const userSet = new Set(userAnswer);
-          if (correctSet.size === userSet.size && [...correctSet].every((x) => userSet.has(x))) {
+          if (correctSet.size === userSet.size && Array.from(correctSet).every((x) => userSet.has(x))) {
             correct++;
           }
         }

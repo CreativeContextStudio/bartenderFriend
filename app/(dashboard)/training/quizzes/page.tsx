@@ -19,7 +19,7 @@ function generateQuiz(type: string) {
       return {
         id: `q${index + 1}`,
         question: `What's the spec for a ${recipe.name}?`,
-        type: 'multiple_choice',
+        type: 'multiple_choice' as const,
         options: [correctAnswer, ...wrongAnswers.slice(0, 3)],
         correct: 0,
         explanation: `${recipe.name}: ${correctAnswer}. Method: ${recipe.method}, Glass: ${recipe.glassware}`,
@@ -37,7 +37,7 @@ function generateQuiz(type: string) {
       {
         id: 'q1',
         question: "What's the spec for a Margarita?",
-        type: 'multiple_choice',
+        type: 'multiple_choice' as const,
         options: [
           '2 oz tequila, 1 oz lime, ¾ oz triple sec',
           '2 oz tequila, ¾ oz lime, ½ oz triple sec',
@@ -50,7 +50,7 @@ function generateQuiz(type: string) {
       {
         id: 'q2',
         question: 'What does "up" mean?',
-        type: 'multiple_choice',
+        type: 'multiple_choice' as const,
         options: [
           'Spirit only, no ice',
           'Chilled and strained, no ice in the glass',
@@ -63,7 +63,7 @@ function generateQuiz(type: string) {
       {
         id: 'q3',
         question: 'Which drinks belong to the Sour family?',
-        type: 'multiple_choice',
+        type: 'multiple_choice' as const,
         options: [
           'Margarita, Daiquiri, Whiskey Sour',
           'Old Fashioned, Manhattan, Negroni',

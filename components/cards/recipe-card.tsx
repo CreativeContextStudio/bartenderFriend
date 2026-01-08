@@ -34,6 +34,26 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
     return animations[index % 3];
   };
 
+  const getFamilyColor = (family?: string): 'primary' | 'secondary' | 'accent' | 'success' | 'warning' => {
+    if (!family) return 'warning';
+    const familyLower = family.toLowerCase();
+    
+    // Sour → Secondary (Yellow)
+    if (familyLower === 'sour') return 'secondary';
+    
+    // Spirit-Forward / Stirred → Primary (Cyan)
+    if (familyLower === 'spirit-forward' || familyLower === 'stirred') return 'primary';
+    
+    // Highball → Success (Green)
+    if (familyLower === 'highball') return 'success';
+    
+    // Collins/Fizz → Accent (Pink)
+    if (familyLower.includes('collins') || familyLower.includes('fizz')) return 'accent';
+    
+    // Other/Uncategorized → Warning (Orange)
+    return 'warning';
+  };
+
   const getDifficultyBorder = (difficulty?: number) => {
     if (difficulty === 1) return 'border-l-8 border-l-success';
     if (difficulty === 2) return 'border-l-8 border-l-warning';
@@ -41,12 +61,40 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
     return '';
   };
 
+  const familyColor = getFamilyColor(recipe.family_name);
+  
+  // Map family colors to hover shadow classes
+  const getHoverShadow = (color: string) => {
+    switch (color) {
+      case 'primary': return 'hover:shadow-brutal-primary';
+      case 'secondary': return 'hover:shadow-brutal-secondary';
+      case 'accent': return 'hover:shadow-brutal-accent';
+      case 'success': return 'hover:shadow-brutal-success';
+      case 'warning': return 'hover:shadow-brutal-warning';
+      default: return 'hover:shadow-brutal-primary';
+    }
+  };
+
+  // Map family colors to hover border classes
+  const getHoverBorder = (color: string) => {
+    switch (color) {
+      case 'primary': return 'hover:border-primary';
+      case 'secondary': return 'hover:border-secondary';
+      case 'accent': return 'hover:border-accent';
+      case 'success': return 'hover:border-success';
+      case 'warning': return 'hover:border-warning';
+      default: return 'hover:border-primary';
+    }
+  };
+
   return (
     <Card
       className={cn(
         "cursor-pointer h-full",
         "transition-brutal",
-        "hover:shadow-brutal-primary hover:-translate-y-2 hover:border-primary",
+        getHoverShadow(familyColor),
+        getHoverBorder(familyColor),
+        "hover:-translate-y-2",
         "active:shadow-brutal-pressed",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
         getDifficultyBorder(recipe.difficulty)
@@ -66,6 +114,7 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
         <DrinkPlaceholder
           glassType={getGlassType(recipe.glassware) as any}
           animation={getAnimation(parseInt(recipe.id.slice(-1), 16) || 0)}
+          colorTheme={getFamilyColor(recipe.family_name)}
           className="h-full"
         />
       </div>
