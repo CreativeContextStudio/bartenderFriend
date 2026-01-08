@@ -1,0 +1,17 @@
+[
+  { "name": "Margarita", "spec_short": "2 oz tequila, 1 oz lime, ¾ oz triple sec, ¼ oz agave", "glass": "rocks", "garnish": "Lime wheel, salt rim", "order": 1 },
+  { "name": "Daiquiri", "spec_short": "2 oz light rum, 1 oz lime, ¾ oz simple", "glass": "coupe", "garnish": "Lime wheel", "order": 2 },
+  { "name": "Whiskey Sour", "spec_short": "2 oz bourbon, ¾ oz lemon, ¾ oz simple", "glass": "rocks", "garnish": "Cherry + orange slice", "order": 3 },
+  { "name": "Cosmopolitan", "spec_short": "1½ oz vodka, 1 oz Cointreau, ½ oz lime, ½ oz cranberry", "glass": "coupe", "garnish": "Lime wheel", "order": 4 },
+  { "name": "Old Fashioned", "spec_short": "2 oz bourbon/rye, ¼-½ oz simple, 2-3 dashes Angostura", "glass": "rocks", "garnish": "Orange peel", "order": 5 },
+  { "name": "Negroni", "spec_short": "1 oz gin, 1 oz sweet vermouth, 1 oz Campari", "glass": "rocks", "garnish": "Orange peel", "order": 6 },
+  { "name": "Manhattan", "spec_short": "2 oz rye/bourbon, 1 oz sweet vermouth, 2 dashes Angostura", "glass": "coupe", "garnish": "Cherry", "order": 7 },
+  { "name": "Martini (Gin)", "spec_short": "2½ oz gin, ½ oz dry vermouth", "glass": "coupe", "garnish": "Lemon twist or olive", "order": 8 },
+  { "name": "Martini (Vodka)", "spec_short": "2½ oz vodka, ½ oz dry vermouth", "glass": "coupe", "garnish": "Lemon twist or olive", "order": 9 },
+  { "name": "Gin & Tonic", "spec_short": "1½-2 oz gin, top tonic water", "glass": "collins", "garnish": "Lime wedge", "order": 10 },
+  { "name": "Vodka Soda", "spec_short": "1½-2 oz vodka, top soda water", "glass": "collins", "garnish": "Lime wedge", "order": 11 },
+  { "name": "Rum & Coke", "spec_short": "1½-2 oz rum, top Coke", "glass": "collins", "garnish": "Lime (optional)", "order": 12 },
+  { "name": "Moscow Mule", "spec_short": "2 oz vodka, ½ oz lime juice, top ginger beer", "glass": "rocks", "garnish": "Lime wheel", "order": 13 },
+  { "name": "Paloma", "spec_short": "2 oz tequila, ½ oz lime, top grapefruit soda", "glass": "rocks", "garnish": "Salt rim (optional), lime", "order": 14 },
+  { "name": "Tom Collins", "spec_short": "2 oz gin, ¾ oz lemon, ¾ oz simple, shake, strain, top soda", "glass": "collins", "garnish": "Lemon wheel + cherry", "order": 15 }
+]

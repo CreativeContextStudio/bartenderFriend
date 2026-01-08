@@ -1,0 +1,49 @@
+[
+  {
+    "id": "sour",
+    "name": "Sour",
+    "slug": "sour",
+    "description": "Citrus + spirit + sweetener. Shake hard, strain.",
+    "template_pattern": {
+      "base_spirit": "2 oz",
+      "citrus": "¾-1 oz",
+      "sweetener": "¾ oz",
+      "method": "shake"
+    }
+  },
+  {
+    "id": "spirit-forward",
+    "name": "Spirit-Forward",
+    "slug": "spirit-forward",
+    "description": "Stirred, boozy, silky. 20-30 second stir.",
+    "template_pattern": {
+      "base_spirit": "2 oz",
+      "modifier": "1 oz",
+      "method": "stir"
+    }
+  },
+  {
+    "id": "highball",
+    "name": "Highball",
+    "slug": "highball",
+    "description": "Build in glass, top with mixer.",
+    "template_pattern": {
+      "base_spirit": "1½-2 oz",
+      "mixer": "top",
+      "method": "build"
+    }
+  },
+  {
+    "id": "collins-fizz",
+    "name": "Collins/Fizz",
+    "slug": "collins-fizz",
+    "description": "Sour + soda in tall glass.",
+    "template_pattern": {
+      "base_spirit": "2 oz",
+      "citrus": "¾ oz",
+      "sweetener": "¾ oz",
+      "soda": "top",
+      "method": "shake-then-build"
+    }
+  }
+]
