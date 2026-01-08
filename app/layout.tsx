@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "bartenderFriend - Learn Bartending Fast",
+  title: "bartenderFriend - Bartending QuickGuide",
   description: "Quick recall and confident execution for new and returning bartenders",
   other: {
     "mobile-web-app-capable": "yes",
