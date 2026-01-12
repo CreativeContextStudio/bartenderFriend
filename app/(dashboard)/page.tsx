@@ -1,151 +1,135 @@
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { getAllRecipes } from '@/lib/static-data';
-import { ArrowRight, Coffee, BookOpen, Target, BarChart3 } from 'lucide-react';
-import { DashboardStreakCounter } from '@/components/dashboard-streak-counter';
+import { ArrowRight, Martini, BookOpen, User, Flame, ArrowUpRight, Award, Zap } from 'lucide-react';
 
 export default function DashboardPage() {
-  // Use static data
   const recipes = getAllRecipes();
-  const studyRecipes = recipes.slice(0, 5); // Show first 5 as "to study"
-  const totalDays = 10; // 10-day learning plan
-  const completedDays = 0; // Would come from localStorage/DB
-  const progressPercent = totalDays > 0 ? (completedDays / totalDays) * 100 : 0;
+  // Simulate "Trending" by picking some popular ones
+  const trendingRecipes = recipes.filter(r => ['espresso-martini', 'old-fashioned', 'margarita', 'paper-plane'].includes(r.id));
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-12 pb-12">
 
       {/* Hero Section */}
-      <div className="space-y-3 border-brutal bg-primary/5 p-4 sm:p-6 md:p-8 lg:p-10 shadow-brutal-lg">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">Welcome back</h1>
-        <p className="text-base sm:text-lg md:text-xl font-medium text-muted-foreground leading-relaxed">
-          Quick recall and confident execution. Let's get you ready for your next shift.
-        </p>
-      </div>
-
-      {/* Stats Grid */}
-      <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        <Card className="border-brutal bg-primary/10 shadow-brutal-primary">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4 border-b-4 border-brutal">
-            <CardTitle className="text-base font-black">Streak</CardTitle>
-            <BarChart3 className="h-6 w-6 text-primary" />
-          </CardHeader>
-          <CardContent className="pt-6">
-            <DashboardStreakCounter />
-          </CardContent>
-        </Card>
-        <Card className="border-brutal bg-secondary/10 shadow-brutal-secondary">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4 border-b-4 border-brutal">
-            <CardTitle className="text-base font-black">Learning Plan</CardTitle>
-            <Target className="h-6 w-6 text-secondary" />
-          </CardHeader>
-          <CardContent className="pt-6">
-            <div className="text-4xl font-black mb-3">{completedDays}/{totalDays}</div>
-            <Progress value={progressPercent} className="h-3 border-brutal-sm" />
-          </CardContent>
-        </Card>
-        <Card className="border-brutal bg-accent/10 shadow-brutal-accent">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4 border-b-4 border-brutal">
-            <CardTitle className="text-base font-black">Recipes to Study</CardTitle>
-            <Coffee className="h-6 w-6 text-accent" />
-          </CardHeader>
-          <CardContent className="pt-6">
-            <div className="text-4xl font-black mb-2">{studyRecipes.length}</div>
-            <p className="text-base font-medium text-muted-foreground">Not practiced in 7 days</p>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* What Should I Study Today */}
-      {studyRecipes.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle>What should I study today?</CardTitle>
-            <CardDescription>
-              Recipes you haven't practiced recently
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-3">
-              {studyRecipes.map((recipe) => (
-                <div 
-                  key={recipe.id} 
-                  className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 border-brutal-sm p-4 sm:p-6 bg-muted/30 hover:bg-muted/50 transition-colors"
-                >
-                  <div className="flex-1 min-w-0">
-                    <div className="text-base sm:text-lg font-black mb-1 truncate">{recipe.name}</div>
-                    <div className="text-sm sm:text-base font-medium text-muted-foreground truncate">{recipe.family || 'Uncategorized'}</div>
-                  </div>
-                  <Link href={`/recipes/${recipe.slug}`} className="w-full sm:w-auto">
-                    <Button variant="outline" size="lg" className="w-full sm:w-auto border-brutal-sm font-bold">
-                      Review
-                      <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true" />
-                    </Button>
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Quick Links */}
-      <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        <Card>
-          <CardHeader className="border-b-4 border-brutal">
-            <CardTitle className="flex items-center gap-3 text-2xl font-black">
-              <Coffee className="h-7 w-7 text-primary" />
-              Recipe Cards
-            </CardTitle>
-            <CardDescription className="text-base font-medium">Browse all cocktail recipes</CardDescription>
-          </CardHeader>
-          <CardContent className="pt-6">
+      <section className="relative overflow-hidden rounded-xl border-brutal bg-gradient-to-br from-primary/5 via-background to-secondary/5 p-8 sm:p-12 md:p-16 lg:p-24 shadow-brutal-xl">
+        <div className="relative z-10 max-w-4xl space-y-6">
+          <Badge variant="outline" className="border-brutal-sm px-4 py-1 text-sm font-bold uppercase tracking-wider bg-background/50 backdrop-blur-sm">
+            a bar companion
+          </Badge>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+              bartenderFriend
+            </span>
+          </h1>
+          <p className="max-w-2xl text-lg sm:text-xl md:text-2xl font-medium text-muted-foreground leading-relaxed">
+            Your pocket reference for classic recipes, modern techniques, and industry standards.
+            Build faster, smarter, and with confidence.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <Link href="/recipes">
-              <Button className="w-full border-brutal-sm font-bold" variant="outline" size="lg">
-                Explore Recipes
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="xl" className="w-full sm:w-auto text-lg border-brutal font-black bg-primary text-primary-foreground shadow-brutal hover:translate-y-[-2px] hover:shadow-brutal-lg transition-all">
+                Explore Cocktails
+                <ArrowUpRight className="ml-3 h-6 w-6" />
               </Button>
             </Link>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="border-b-4 border-brutal">
-            <CardTitle className="flex items-center gap-3 text-2xl font-black">
-              <Target className="h-7 w-7 text-primary" />
-              Training Mode
-            </CardTitle>
-            <CardDescription className="text-base font-medium">Daily tasks, quizzes, checklists</CardDescription>
-          </CardHeader>
-          <CardContent className="pt-6">
             <Link href="/training">
-              <Button className="w-full border-brutal-sm font-bold" variant="outline" size="lg">
+              <Button size="xl" variant="outline" className="w-full sm:w-auto text-lg border-brutal font-black bg-background hover:bg-muted/50 transition-all">
                 Start Training
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
             </Link>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="border-b-4 border-brutal">
-            <CardTitle className="flex items-center gap-3 text-2xl font-black">
-              <BookOpen className="h-7 w-7 text-primary" />
-              Cheat Sheet
-            </CardTitle>
-            <CardDescription className="text-base font-medium">Memorize these core drinks cold</CardDescription>
-          </CardHeader>
-          <CardContent className="pt-6">
-            <Link href="/cheat-sheet">
-              <Button className="w-full border-brutal-sm font-bold" variant="outline" size="lg">
-                View Cheat Sheet
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+          </div>
+        </div>
+
+        {/* Decorative Background Elements */}
+        <div className="absolute top-0 right-0 -m-16 h-64 w-64 rounded-full bg-primary/10 blur-3xl opacity-50" />
+        <div className="absolute bottom-0 right-20 -mb-20 h-96 w-96 rounded-full bg-secondary/10 blur-3xl opacity-50" />
+      </section>
+
+      {/* Feature Grid */}
+      <section className="grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-3">
+        <Link href="/recipes" className="group">
+          <Card className="h-full border-brutal bg-card hover:-translate-y-2 hover:shadow-brutal-lg transition-all duration-300">
+            <CardHeader>
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg border-2 border-brutal bg-primary/20 text-primary">
+                <Martini className="h-6 w-6" />
+              </div>
+              <CardTitle className="text-2xl font-black">Curated Recipes</CardTitle>
+              <CardDescription className="text-base font-medium leading-relaxed">
+                Access over 40+ top requested cocktails with detailed specs, histories, and common mistakes to avoid.
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        </Link>
+        <Link href="/standards/core-specs" className="group">
+          <Card className="h-full border-brutal bg-card hover:-translate-y-2 hover:shadow-brutal-lg transition-all duration-300">
+            <CardHeader>
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg border-2 border-brutal bg-secondary/20 text-secondary">
+                <Award className="h-6 w-6" />
+              </div>
+              <CardTitle className="text-2xl font-black">Pro Standards</CardTitle>
+              <CardDescription className="text-base font-medium leading-relaxed">
+                Learn the foundational ratios and techniques that separate the amateurs from the professionals.
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        </Link>
+        <Link href="/training" className="group">
+          <Card className="h-full border-brutal bg-card hover:-translate-y-2 hover:shadow-brutal-lg transition-all duration-300">
+            <CardHeader>
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg border-2 border-brutal bg-accent/20 text-accent">
+                <Zap className="h-6 w-6" />
+              </div>
+              <CardTitle className="text-2xl font-black">Speed & Efficiency</CardTitle>
+              <CardDescription className="text-base font-medium leading-relaxed">
+                Master the workflow. Tips and drills to help you build rounds faster without sacrificing quality.
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        </Link>
+      </section>
+
+      {/* Trending Now */}
+      <section className="space-y-6">
+        <div className="flex items-center justify-between">
+          <div className="space-y-1">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight">Trending Now</h2>
+            <p className="text-lg font-medium text-muted-foreground">Most popular drinks this month.</p>
+          </div>
+          <Link href="/recipes">
+            <Button variant="ghost" className="font-bold">
+              View All <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {trendingRecipes.map((recipe) => (
+            <Link key={recipe.id} href={`/recipes/${recipe.slug}`} className="group">
+              <Card className="h-full border-brutal bg-muted/20 hover:bg-background hover:border-primary hover:shadow-brutal-primary transition-all duration-300">
+                <CardHeader className="p-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <Badge variant="outline" className="border-brutal-sm font-bold bg-background">
+                      {recipe.family}
+                    </Badge>
+                    <Flame className="h-5 w-5 text-orange-500 fill-orange-500 animate-pulse" />
+                  </div>
+                  <CardTitle className="text-xl font-black mb-2 group-hover:text-primary transition-colors">
+                    {recipe.name}
+                  </CardTitle>
+                  <p className="text-sm font-medium text-muted-foreground line-clamp-2">
+                    {recipe.description}
+                  </p>
+                </CardHeader>
+              </Card>
             </Link>
-          </CardContent>
-        </Card>
-      </div>
+          ))}
+        </div>
+      </section>
+
     </div>
   );
 }

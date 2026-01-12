@@ -30,7 +30,10 @@
       "Forgetting salt rim if requested"
     ],
     "difficulty": 2,
-    "tags": ["classic", "tequila"]
+    "tags": [
+      "classic",
+      "tequila"
+    ]
   },
   {
     "id": "daiquiri",
@@ -52,13 +55,18 @@
       "Fine strain into coupe glass",
       "Garnish with lime wheel"
     ],
-    "make_it_faster_tips": ["Use fine strainer for clarity"],
+    "make_it_faster_tips": [
+      "Use fine strainer for clarity"
+    ],
     "common_mistakes": [
       "Not fine-straining (floating ice bits)",
       "Too much simple (overly sweet)"
     ],
     "difficulty": 2,
-    "tags": ["classic", "rum"]
+    "tags": [
+      "classic",
+      "rum"
+    ]
   },
   {
     "id": "whiskey-sour",
@@ -80,13 +88,18 @@
       "Strain into rocks glass over fresh ice",
       "Garnish with cherry and orange slice"
     ],
-    "make_it_faster_tips": ["Shake hard for proper dilution"],
+    "make_it_faster_tips": [
+      "Shake hard for proper dilution"
+    ],
     "common_mistakes": [
       "Under-shaking",
       "Wrong citrus (lime instead of lemon)"
     ],
     "difficulty": 2,
-    "tags": ["classic", "bourbon"]
+    "tags": [
+      "classic",
+      "bourbon"
+    ]
   },
   {
     "id": "cosmopolitan",
@@ -109,13 +122,18 @@
       "Fine strain into coupe glass",
       "Garnish with lime wheel"
     ],
-    "make_it_faster_tips": ["Use just enough cranberry for color"],
+    "make_it_faster_tips": [
+      "Use just enough cranberry for color"
+    ],
     "common_mistakes": [
       "Too much cranberry (overpowers drink)",
       "Not fine-straining"
     ],
     "difficulty": 3,
-    "tags": ["classic", "vodka"]
+    "tags": [
+      "classic",
+      "vodka"
+    ]
   },
   {
     "id": "old-fashioned",
@@ -147,7 +165,11 @@
       "Wrong glass (coupe instead of rocks)"
     ],
     "difficulty": 2,
-    "tags": ["classic", "bourbon", "rye"]
+    "tags": [
+      "classic",
+      "bourbon",
+      "rye"
+    ]
   },
   {
     "id": "negroni",
@@ -169,13 +191,18 @@
       "Strain into rocks glass over large ice cube",
       "Express orange peel and garnish"
     ],
-    "make_it_faster_tips": ["Equal parts = easy to remember"],
+    "make_it_faster_tips": [
+      "Equal parts = easy to remember"
+    ],
     "common_mistakes": [
       "Shaking instead of stirring",
       "Serving up instead of rocks"
     ],
     "difficulty": 2,
-    "tags": ["classic", "gin"]
+    "tags": [
+      "classic",
+      "gin"
+    ]
   },
   {
     "id": "manhattan",
@@ -197,13 +224,19 @@
       "Strain into coupe glass",
       "Garnish with cherry"
     ],
-    "make_it_faster_tips": ["Stir until silky and cold"],
+    "make_it_faster_tips": [
+      "Stir until silky and cold"
+    ],
     "common_mistakes": [
       "Not stirring long enough",
       "Wrong vermouth (dry instead of sweet)"
     ],
     "difficulty": 2,
-    "tags": ["classic", "rye", "bourbon"]
+    "tags": [
+      "classic",
+      "rye",
+      "bourbon"
+    ]
   },
   {
     "id": "martini",
@@ -233,7 +266,11 @@
       "Too much vermouth if requested \"dry\""
     ],
     "difficulty": 2,
-    "tags": ["classic", "gin", "vodka"]
+    "tags": [
+      "classic",
+      "gin",
+      "vodka"
+    ]
   },
   {
     "id": "gin-tonic",
@@ -263,7 +300,10 @@
       "Not enough ice"
     ],
     "difficulty": 1,
-    "tags": ["classic", "gin"]
+    "tags": [
+      "classic",
+      "gin"
+    ]
   },
   {
     "id": "vodka-soda",
@@ -284,10 +324,17 @@
       "Top with soda water",
       "Garnish with lime wedge"
     ],
-    "make_it_faster_tips": ["Quickest drink to make"],
-    "common_mistakes": ["Using tonic instead of soda"],
+    "make_it_faster_tips": [
+      "Quickest drink to make"
+    ],
+    "common_mistakes": [
+      "Using tonic instead of soda"
+    ],
     "difficulty": 1,
-    "tags": ["classic", "vodka"]
+    "tags": [
+      "classic",
+      "vodka"
+    ]
   },
   {
     "id": "rum-coke",
@@ -308,13 +355,18 @@
       "Top with cola",
       "Garnish with lime if desired"
     ],
-    "make_it_faster_tips": ["Build directly in glass"],
+    "make_it_faster_tips": [
+      "Build directly in glass"
+    ],
     "common_mistakes": [
       "Using wrong rum (dark vs light)",
       "Stirring too much (flattens cola)"
     ],
     "difficulty": 1,
-    "tags": ["classic", "rum"]
+    "tags": [
+      "classic",
+      "rum"
+    ]
   },
   {
     "id": "moscow-mule",
@@ -336,10 +388,17 @@
       "Top with ginger beer",
       "Garnish with lime wheel"
     ],
-    "make_it_faster_tips": ["Use quality ginger beer"],
-    "common_mistakes": ["Using ginger ale instead of ginger beer"],
+    "make_it_faster_tips": [
+      "Use quality ginger beer"
+    ],
+    "common_mistakes": [
+      "Using ginger ale instead of ginger beer"
+    ],
     "difficulty": 2,
-    "tags": ["classic", "vodka"]
+    "tags": [
+      "classic",
+      "vodka"
+    ]
   },
   {
     "id": "paloma",
@@ -362,10 +421,17 @@
       "Top with grapefruit soda",
       "Garnish with lime"
     ],
-    "make_it_faster_tips": ["Use Jarritos or Squirt"],
-    "common_mistakes": ["Using pink grapefruit juice instead of soda"],
+    "make_it_faster_tips": [
+      "Use Jarritos or Squirt"
+    ],
+    "common_mistakes": [
+      "Using pink grapefruit juice instead of soda"
+    ],
     "difficulty": 2,
-    "tags": ["classic", "tequila"]
+    "tags": [
+      "classic",
+      "tequila"
+    ]
   },
   {
     "id": "tom-collins",
@@ -398,6 +464,987 @@
       "Forgetting to top with soda"
     ],
     "difficulty": 2,
-    "tags": ["classic", "gin"]
+    "tags": [
+      "classic",
+      "gin"
+    ]
+  },
+  {
+    "id": "espresso-martini",
+    "name": "Espresso Martini",
+    "family": "Dessert/Digestif",
+    "slug": "espresso-martini",
+    "description": "The coffee cocktail taking bars by storm",
+    "spec": {
+      "vodka": "2 oz",
+      "coffee_liqueur": "½ oz",
+      "espresso": "1 oz",
+      "simple": "¼ oz"
+    },
+    "method": "shake",
+    "glassware": "coupe",
+    "garnish": "3 coffee beans",
+    "steps": [
+      "Brew fresh espresso and let it cool slightly",
+      "Combine all ingredients in shaker",
+      "Add ice and shake very hard",
+      "Strain into chilled coupe glass",
+      "Garnish with 3 coffee beans"
+    ],
+    "make_it_faster_tips": [
+      "Pre-batch the vodka and liqueur"
+    ],
+    "common_mistakes": [
+      "Using hot espresso (melts ice too fast)",
+      "Not shaking hard enough (no foam)"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "modern-classic",
+      "vodka",
+      "coffee"
+    ]
+  },
+  {
+    "id": "mojito",
+    "name": "Mojito",
+    "family": "Highball",
+    "slug": "mojito",
+    "description": "Cuban classic with mint and lime",
+    "spec": {
+      "white_rum": "2 oz",
+      "lime": "¾ oz",
+      "simple": "½ oz",
+      "mint": "6-8 leaves",
+      "soda": "top"
+    },
+    "method": "muddle",
+    "glassware": "collins",
+    "garnish": "Mint sprig, lime wheel",
+    "steps": [
+      "Muddle mint gently with simple syrup in glass",
+      "Add lime juice and rum",
+      "Fill with crushed ice",
+      "Top with soda water",
+      "Garnish with generous mint sprig"
+    ],
+    "make_it_faster_tips": [
+      "Clap mint instead of muddling for speed"
+    ],
+    "common_mistakes": [
+      "Over-muddling mint (bitter)",
+      "Using dark rum"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "classic",
+      "rum",
+      "refreshing"
+    ]
+  },
+  {
+    "id": "pina-colada",
+    "name": "Piña Colada",
+    "family": "Tiki/Tropical",
+    "slug": "pina-colada",
+    "description": "Tropical escape in a glass",
+    "spec": {
+      "rum": "2 oz",
+      "pineapple_juice": "3 oz",
+      "coconut_cream": "1 oz",
+      "lime": "½ oz"
+    },
+    "method": "shake",
+    "glassware": "hurricane",
+    "garnish": "Pineapple wedge, cherry",
+    "steps": [
+      "Combine all ingredients in shaker with ice",
+      "Shake vigorously",
+      "Strain into hurricane glass filled with pebble ice",
+      "Garnish with pineapple and cherry"
+    ],
+    "make_it_faster_tips": [
+      "Blend huge batches if serving many"
+    ],
+    "common_mistakes": [
+      "Using coconut water/milk instead of cream of coconut"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "classic",
+      "rum",
+      "tropical"
+    ]
+  },
+  {
+    "id": "lemon-drop",
+    "name": "Lemon Drop Martini",
+    "family": "Sour",
+    "slug": "lemon-drop",
+    "description": "Sweet and sour vodka classic",
+    "spec": {
+      "vodka": "2 oz",
+      "triple_sec": "½ oz",
+      "lemon": "1 oz",
+      "simple": "½ oz"
+    },
+    "method": "shake",
+    "glassware": "coupe",
+    "garnish": "Sugar rim, lemon twist",
+    "steps": [
+      "Rim half the glass with sugar",
+      "Combine ingredients in shaker",
+      "Add ice and shake hard",
+      "Strain into prepared glass",
+      "Garnish with lemon twist"
+    ],
+    "make_it_faster_tips": [
+      "Prep sugar rims in advance"
+    ],
+    "common_mistakes": [
+      "Too sweet",
+      "Forgetting the sugar rim"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "classic",
+      "vodka"
+    ]
+  },
+  {
+    "id": "vodka-gimlet",
+    "name": "Vodka Gimlet",
+    "family": "Sour",
+    "slug": "vodka-gimlet",
+    "description": "Crisp and citrusy",
+    "spec": {
+      "vodka": "2 oz",
+      "lime": "¾ oz",
+      "simple": "¾ oz"
+    },
+    "method": "shake",
+    "glassware": "coupe",
+    "garnish": "Lime wheel",
+    "steps": [
+      "Combine all ingredients in shaker",
+      "Shake with ice",
+      "Strain into chilled coupe",
+      "Garnish with lime wheel"
+    ],
+    "make_it_faster_tips": [
+      "Use cordial for traditional profile"
+    ],
+    "common_mistakes": [
+      "Using old lime juice"
+    ],
+    "difficulty": 1,
+    "tags": [
+      "classic",
+      "vodka"
+    ]
+  },
+  {
+    "id": "bloody-mary",
+    "name": "Bloody Mary",
+    "family": "Highball",
+    "slug": "bloody-mary",
+    "description": "The ultimate brunch staple",
+    "spec": {
+      "vodka": "2 oz",
+      "tomato_juice": "4 oz",
+      "lemon": "½ oz",
+      "worcestershire": "2 dashes",
+      "tabasco": "2 dashes",
+      "salt_pepper": "pinch"
+    },
+    "method": "roll",
+    "glassware": "collins",
+    "garnish": "Celery, olives, lemon wedge",
+    "steps": [
+      "Build ingredients in glass with ice",
+      "Roll (pour back and forth) to mix",
+      "Garnish extravagantly"
+    ],
+    "make_it_faster_tips": [
+      "Use a pre-made high quality mix"
+    ],
+    "common_mistakes": [
+      "Shaking (makes tomato juice foamy)",
+      "Too much ice dilution"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "classic",
+      "vodka",
+      "brunch"
+    ]
+  },
+  {
+    "id": "white-russian",
+    "name": "White Russian",
+    "family": "Dessert",
+    "slug": "white-russian",
+    "description": "Creamy and classic",
+    "spec": {
+      "vodka": "2 oz",
+      "coffee_liqueur": "1 oz",
+      "heavy_cream": "1 oz"
+    },
+    "method": "build",
+    "glassware": "rocks",
+    "garnish": "None",
+    "steps": [
+      "Fill rocks glass with ice",
+      "Add vodka and coffee liqueur",
+      "Float cream on top",
+      "Stir gently if desired"
+    ],
+    "make_it_faster_tips": [
+      "Build directly in glass"
+    ],
+    "common_mistakes": [
+      "Using milk instead of cream (too thin)"
+    ],
+    "difficulty": 1,
+    "tags": [
+      "classic",
+      "vodka",
+      "dessert"
+    ]
+  },
+  {
+    "id": "black-russian",
+    "name": "Black Russian",
+    "family": "Dessert",
+    "slug": "black-russian",
+    "description": "Simple and strong",
+    "spec": {
+      "vodka": "2 oz",
+      "coffee_liqueur": "1 oz"
+    },
+    "method": "build",
+    "glassware": "rocks",
+    "garnish": "Cherry (optional)",
+    "steps": [
+      "Fill rocks glass with ice",
+      "Add vodka and coffee liqueur",
+      "Stir gently"
+    ],
+    "make_it_faster_tips": [
+      "Simplest 2-ingredient drink"
+    ],
+    "common_mistakes": [
+      "Using cheap coffee liqueur"
+    ],
+    "difficulty": 1,
+    "tags": [
+      "classic",
+      "vodka"
+    ]
+  },
+  {
+    "id": "cape-codder",
+    "name": "Cape Codder",
+    "family": "Highball",
+    "slug": "cape-codder",
+    "description": "Vodka cranberry",
+    "spec": {
+      "vodka": "2 oz",
+      "cranberry_juice": "top",
+      "lime": "wedge"
+    },
+    "method": "build",
+    "glassware": "collins",
+    "garnish": "Lime wedge",
+    "steps": [
+      "Fill glass with ice",
+      "Add vodka",
+      "Top with cranberry juice",
+      "Squeeze and drop lime wedge"
+    ],
+    "make_it_faster_tips": [
+      "Build in glass"
+    ],
+    "common_mistakes": [
+      "Too much vodka relative to juice"
+    ],
+    "difficulty": 1,
+    "tags": [
+      "classic",
+      "vodka"
+    ]
+  },
+  {
+    "id": "screwdriver",
+    "name": "Screwdriver",
+    "family": "Highball",
+    "slug": "screwdriver",
+    "description": "Vodka and orange juice",
+    "spec": {
+      "vodka": "2 oz",
+      "orange_juice": "top"
+    },
+    "method": "build",
+    "glassware": "collins",
+    "garnish": "Orange slice",
+    "steps": [
+      "Fill glass with ice",
+      "Add vodka",
+      "Top with fresh orange juice"
+    ],
+    "make_it_faster_tips": [
+      "Build in glass"
+    ],
+    "common_mistakes": [
+      "Using stale bottled OJ"
+    ],
+    "difficulty": 1,
+    "tags": [
+      "classic",
+      "vodka"
+    ]
+  },
+  {
+    "id": "dark-n-stormy",
+    "name": "Dark 'n' Stormy",
+    "family": "Highball",
+    "slug": "dark-n-stormy",
+    "description": "Spicy and robust with ginger",
+    "spec": {
+      "dark_rum": "2 oz",
+      "lime": "½ oz",
+      "ginger_beer": "top"
+    },
+    "method": "build",
+    "glassware": "highball",
+    "garnish": "Lime wedge",
+    "steps": [
+      "Fill glass with ice",
+      "Add lime juice and ginger beer",
+      "Float dark rum on top",
+      "Garnish with lime"
+    ],
+    "make_it_faster_tips": [
+      "No need to stir if layered"
+    ],
+    "common_mistakes": [
+      "Using light rum",
+      "Mixing it all up (lose the layer effect)"
+    ],
+    "difficulty": 1,
+    "tags": [
+      "classic",
+      "rum"
+    ]
+  },
+  {
+    "id": "rum-punch",
+    "name": "Rum Punch",
+    "family": "Punch",
+    "slug": "rum-punch",
+    "description": "Tropical party favorite",
+    "spec": {
+      "rum": "2 oz",
+      "orange_juice": "1 oz",
+      "pineapple_juice": "1 oz",
+      "lime": "½ oz",
+      "grenadine": "½ oz"
+    },
+    "method": "shake",
+    "glassware": "hurricane",
+    "garnish": "Orange slice, cherry",
+    "steps": [
+      "Combine all ingredients in shaker",
+      "Shake with ice",
+      "Strain into ice-filled glass",
+      "Garnish"
+    ],
+    "make_it_faster_tips": [
+      "Batch it for parties"
+    ],
+    "common_mistakes": [
+      "Too sweet (adjust grenadine)"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "classic",
+      "rum",
+      "tropical"
+    ]
+  },
+  {
+    "id": "mai-tai",
+    "name": "Mai Tai",
+    "family": "Tiki",
+    "slug": "mai-tai",
+    "description": "The quintessential Tiki classic",
+    "spec": {
+      "rum_blend": "2 oz",
+      "lime": "¾ oz",
+      "orange_curacao": "½ oz",
+      "orgeat": "½ oz",
+      "rich_simple": "¼ oz"
+    },
+    "method": "shake",
+    "glassware": "rocks",
+    "garnish": "Mint sprig, spent lime shell",
+    "steps": [
+      "Combine ingredients in shaker with crushed ice",
+      "Shake lightly",
+      "Dump entire contents into rocks glass",
+      "Top with more crushed ice",
+      "Garnish with mint and lime shell (island)"
+    ],
+    "make_it_faster_tips": [
+      "Use a quality pre-blend of rums"
+    ],
+    "common_mistakes": [
+      "Adding pineapple/OJ (makes it a Royal Hawaiian, not Mai Tai)"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "classic",
+      "rum",
+      "tiki"
+    ]
+  },
+  {
+    "id": "hurricane",
+    "name": "Hurricane",
+    "family": "Tiki",
+    "slug": "hurricane",
+    "description": "New Orleans fruity classic",
+    "spec": {
+      "dark_rum": "2 oz",
+      "light_rum": "2 oz",
+      "passion_fruit_syrup": "1 oz",
+      "lemon": "1 oz"
+    },
+    "method": "shake",
+    "glassware": "hurricane",
+    "garnish": "Orange and cherry",
+    "steps": [
+      "Combine ingredients in shaker",
+      "Shake with ice",
+      "Strain into hurricane glass over crushed ice",
+      "Garnish"
+    ],
+    "make_it_faster_tips": [
+      "Batching is essential for volume"
+    ],
+    "common_mistakes": [
+      "Using a mix instead of real passion fruit syrup"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "classic",
+      "rum",
+      "tiki"
+    ]
+  },
+  {
+    "id": "painkiller",
+    "name": "Painkiller",
+    "family": "Tiki",
+    "slug": "painkiller",
+    "description": "Rich and fruity Tiki staple",
+    "spec": {
+      "pusser_rum": "2 oz",
+      "pineapple_juice": "4 oz",
+      "orange_juice": "1 oz",
+      "coconut_cream": "1 oz"
+    },
+    "method": "shake",
+    "glassware": "snifter",
+    "garnish": "Fresh nutmeg, pineapple",
+    "steps": [
+      "Combine all ingredients in shaker",
+      "Shake vigorously with ice",
+      "Strain into glass with fresh crushed ice",
+      "Grate fresh nutmeg on top"
+    ],
+    "make_it_faster_tips": [
+      "Pre-mix juices and coconut"
+    ],
+    "common_mistakes": [
+      "Skipping the nutmeg",
+      "Not using Pusser's Rum (traditional)"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "classic",
+      "rum",
+      "tiki"
+    ]
+  },
+  {
+    "id": "rum-runner",
+    "name": "Rum Runner",
+    "family": "Tiki",
+    "slug": "rum-runner",
+    "description": "Berries and banana tiki drink",
+    "spec": {
+      "light_rum": "1 oz",
+      "dark_rum": "1 oz",
+      "banana_liqueur": "½ oz",
+      "blackberry_liqueur": "½ oz",
+      "orange_juice": "1 oz",
+      "pineapple_juice": "1 oz",
+      "grenadine": "splash"
+    },
+    "method": "shake",
+    "glassware": "hurricane",
+    "garnish": "Tropical fruit",
+    "steps": [
+      "Combine all ingredients in shaker",
+      "Shake with ice",
+      "Strain into glass filled with ice"
+    ],
+    "make_it_faster_tips": [
+      "Use a measuring cup for equal parts"
+    ],
+    "common_mistakes": [
+      "Too many flavors, muddling distinct notes"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "classic",
+      "rum",
+      "tropical"
+    ]
+  },
+  {
+    "id": "aviation",
+    "name": "Aviation",
+    "family": "Sour",
+    "slug": "aviation",
+    "description": "Floral, sky-blue classic",
+    "spec": {
+      "gin": "2 oz",
+      "lemon": "¾ oz",
+      "maraschino": "½ oz",
+      "creme_de_violette": "¼ oz"
+    },
+    "method": "shake",
+    "glassware": "coupe",
+    "garnish": "Cherry",
+    "steps": [
+      "Combine ingredients in shaker",
+      "Shake with ice",
+      "Fine strain into coupe",
+      "Garnish with brandied cherry"
+    ],
+    "make_it_faster_tips": [
+      "Don't overpour violette"
+    ],
+    "common_mistakes": [
+      "Too much violette (tastes like soap)",
+      "Forgetting garnish"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "classic",
+      "gin"
+    ]
+  },
+  {
+    "id": "southside",
+    "name": "Southside",
+    "family": "Sour",
+    "slug": "southside",
+    "description": "Gin mojito, essentially",
+    "spec": {
+      "gin": "2 oz",
+      "lime": "¾ oz",
+      "simple": "¾ oz",
+      "mint": "6-8 leaves"
+    },
+    "method": "shake",
+    "glassware": "coupe",
+    "garnish": "Mint leaf",
+    "steps": [
+      "Combine ingredients in shaker",
+      "Add mint",
+      "Shake hard with ice",
+      "Fine strain into coupe",
+      "Garnish with mint leaf"
+    ],
+    "make_it_faster_tips": [
+      "Slap mint before shaking"
+    ],
+    "common_mistakes": [
+      "Not fine straining (chopped mint in teeth)"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "classic",
+      "gin",
+      "refreshing"
+    ]
+  },
+  {
+    "id": "bees-knees",
+    "name": "Bee's Knees",
+    "family": "Sour",
+    "slug": "bees-knees",
+    "description": "Gin and honey sour",
+    "spec": {
+      "gin": "2 oz",
+      "lemon": "¾ oz",
+      "honey_syrup": "¾ oz"
+    },
+    "method": "shake",
+    "glassware": "coupe",
+    "garnish": "Lemon twist",
+    "steps": [
+      "Combine ingredients in shaker",
+      "Shake with ice",
+      "Strain into coupe",
+      "Garnish"
+    ],
+    "make_it_faster_tips": [
+      "Dissolve honey in warm water 3:1 for syrup"
+    ],
+    "common_mistakes": [
+      "Using raw honey (hard to dissolve in shaker)"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "classic",
+      "gin"
+    ]
+  },
+  {
+    "id": "pegu-club",
+    "name": "Pegu Club",
+    "family": "Sour",
+    "slug": "pegu-club",
+    "description": "Complex gin sour with bitters",
+    "spec": {
+      "gin": "2 oz",
+      "orange_curacao": "¾ oz",
+      "lime": "¾ oz",
+      "angostura_bitters": "1 dash",
+      "orange_bitters": "1 dash"
+    },
+    "method": "shake",
+    "glassware": "coupe",
+    "garnish": "Lime wheel",
+    "steps": [
+      "Combine all ingredients in shaker",
+      "Shake with ice",
+      "Strain into coupe",
+      "Garnish"
+    ],
+    "make_it_faster_tips": [
+      "Dash bitters into tin first"
+    ],
+    "common_mistakes": [
+      "Skipping the bitters (essential for balance)"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "classic",
+      "gin"
+    ]
+  },
+  {
+    "id": "french-75",
+    "name": "French 75",
+    "family": "Sparkling",
+    "slug": "french-75",
+    "description": "Champagne elegance meets gin",
+    "spec": {
+      "gin": "1 oz",
+      "lemon": "½ oz",
+      "simple": "½ oz",
+      "champagne": "top"
+    },
+    "method": "shake",
+    "glassware": "flute",
+    "garnish": "Lemon twist",
+    "steps": [
+      "Combine gin, lemon, simple in shaker",
+      "Shake with ice",
+      "Strain into flute",
+      "Top with chilled champagne",
+      "Garnish"
+    ],
+    "make_it_faster_tips": [
+      "Ensure champagne is ice cold"
+    ],
+    "common_mistakes": [
+      "Adding champagne to shaker"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "classic",
+      "gin",
+      "sparkling"
+    ]
+  },
+  {
+    "id": "sazerac",
+    "name": "Sazerac",
+    "family": "Spirit-Forward",
+    "slug": "sazerac",
+    "description": "The New Orleans spirit",
+    "spec": {
+      "rye": "2 oz",
+      "simple": "¼ oz",
+      "peychauds_bitters": "3 dashes",
+      "absinthe": "rinse"
+    },
+    "method": "stir",
+    "glassware": "rocks",
+    "garnish": "Lemon peel",
+    "steps": [
+      "Rinse chilled rocks glass with absinthe, discard excess",
+      "Combine rye, simple, bitters in mixing glass",
+      "Stir with ice",
+      "Strain into prepared glass (no ice)",
+      "Express lemon peel and garnish"
+    ],
+    "make_it_faster_tips": [
+      "Use an atomizer for absinthe"
+    ],
+    "common_mistakes": [
+      "Serving with ice (traditional is neat)",
+      "Using wrong bitters"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "classic",
+      "rye"
+    ]
+  },
+  {
+    "id": "boulevardier",
+    "name": "Boulevardier",
+    "family": "Spirit-Forward",
+    "slug": "boulevardier",
+    "description": "Whiskey Negroni",
+    "spec": {
+      "bourbon_or_rye": "1½ oz",
+      "campari": "1 oz",
+      "sweet_vermouth": "1 oz"
+    },
+    "method": "stir",
+    "glassware": "rocks",
+    "garnish": "Orange peel",
+    "steps": [
+      "Combine ingredients in mixing glass",
+      "Stir with ice",
+      "Strain into rocks glass over large ice",
+      "Garnish"
+    ],
+    "make_it_faster_tips": [
+      "Batch in advance"
+    ],
+    "common_mistakes": [
+      "Shaking"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "classic",
+      "whiskey"
+    ]
+  },
+  {
+    "id": "mint-julep",
+    "name": "Mint Julep",
+    "family": "Spirit-Forward",
+    "slug": "mint-julep",
+    "description": "Derby Day favorite",
+    "spec": {
+      "bourbon": "2½ oz",
+      "simple": "½ oz",
+      "mint": "8-10 leaves"
+    },
+    "method": "build",
+    "glassware": "julep cup",
+    "garnish": "Large mint sprig",
+    "steps": [
+      "Muddle mint lightly with simple in cup",
+      "Add bourbon",
+      "Fill with crushed ice",
+      "Stir until cup frosts",
+      "Top with more ice and mint garnish"
+    ],
+    "make_it_faster_tips": [
+      "Use crushed ice from machine"
+    ],
+    "common_mistakes": [
+      "Over-muddling mint",
+      "Using cubes instead of crushed ice"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "classic",
+      "bourbon"
+    ]
+  },
+  {
+    "id": "rob-roy",
+    "name": "Rob Roy",
+    "family": "Spirit-Forward",
+    "slug": "rob-roy",
+    "description": "Scotch Manhattan",
+    "spec": {
+      "scotch": "2 oz",
+      "sweet_vermouth": "1 oz",
+      "angostura_bitters": "2 dashes"
+    },
+    "method": "stir",
+    "glassware": "coupe",
+    "garnish": "Cherry",
+    "steps": [
+      "Combine ingredients in mixing glass",
+      "Stir with ice",
+      "Strain into coupe",
+      "Garnish"
+    ],
+    "make_it_faster_tips": [
+      "Stir well"
+    ],
+    "common_mistakes": [
+      "Using expensive single malt (blended is fine)"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "classic",
+      "scotch"
+    ]
+  },
+  {
+    "id": "irish-coffee",
+    "name": "Irish Coffee",
+    "family": "Hot",
+    "slug": "irish-coffee",
+    "description": "Warm and comforting",
+    "spec": {
+      "irish_whiskey": "1½ oz",
+      "hot_coffee": "4 oz",
+      "brown_sugar_syrup": "½ oz",
+      "heavy_cream": "float"
+    },
+    "method": "build",
+    "glassware": "irish coffee mug",
+    "garnish": "Nutmeg (optional)",
+    "steps": [
+      "Warm the mug",
+      "Add whiskey, syrup, coffee",
+      "Stir",
+      "Float lightly whipped cream on top"
+    ],
+    "make_it_faster_tips": [
+      "Pre-whip the cream"
+    ],
+    "common_mistakes": [
+      "Using pressurized whipped cream (Reddi-wip)",
+      "Mixing the cream in"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "classic",
+      "whiskey",
+      "hot"
+    ]
+  },
+  {
+    "id": "paper-plane",
+    "name": "Paper Plane",
+    "family": "Sour",
+    "slug": "paper-plane",
+    "description": "Modern classic with bitter-sweet balance",
+    "spec": {
+      "bourbon": "¾ oz",
+      "aperol": "¾ oz",
+      "amaro_nonino": "¾ oz",
+      "lemon": "¾ oz"
+    },
+    "method": "shake",
+    "glassware": "coupe",
+    "garnish": "Small paper plane (optional)",
+    "steps": [
+      "Combine all equal parts in shaker",
+      "Shake with ice",
+      "Strain into coupe"
+    ],
+    "make_it_faster_tips": [
+      "Equal parts make it easy to batch"
+    ],
+    "common_mistakes": [
+      "Using wrong Amaro"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "modern-classic",
+      "bourbon"
+    ]
+  },
+  {
+    "id": "mezcal-margarita",
+    "name": "Mezcal Margarita",
+    "family": "Sour",
+    "slug": "mezcal-margarita",
+    "description": "Smoky twist on the classic",
+    "spec": {
+      "mezcal": "2 oz",
+      "lime": "1 oz",
+      "agave": "½ oz",
+      "triple_sec": "½ oz"
+    },
+    "method": "shake",
+    "glassware": "rocks",
+    "garnish": "Sal de Gusano rim",
+    "steps": [
+      "Rim glass",
+      "Combine ingredients in shaker",
+      "Shake with ice",
+      "Strain into rocks glass over fresh ice"
+    ],
+    "make_it_faster_tips": [
+      "Sub simple for agave if in rush"
+    ],
+    "common_mistakes": [
+      "Overpowering smoke with too much mezcal"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "modern-classic",
+      "mezcal"
+    ]
+  },
+  {
+    "id": "gold-rush",
+    "name": "Gold Rush",
+    "family": "Sour",
+    "slug": "gold-rush",
+    "description": "Bourbon and honey sweetness",
+    "spec": {
+      "bourbon": "2 oz",
+      "lemon": "¾ oz",
+      "honey_syrup": "¾ oz"
+    },
+    "method": "shake",
+    "glassware": "rocks",
+    "garnish": "Lemon wheel",
+    "steps": [
+      "Combine ingredients in shaker",
+      "Shake with ice",
+      "Strain into rocks glass over large ice"
+    ],
+    "make_it_faster_tips": [
+      "Have honey syrup prepped"
+    ],
+    "common_mistakes": [
+      "Not shaking enough to dissolve nose"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "modern-classic",
+      "bourbon"
+    ]
   }
 ]

@@ -37,19 +37,19 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
   const getFamilyColor = (family?: string): 'primary' | 'secondary' | 'accent' | 'success' | 'warning' => {
     if (!family) return 'warning';
     const familyLower = family.toLowerCase();
-    
+
     // Sour → Secondary (Yellow)
     if (familyLower === 'sour') return 'secondary';
-    
+
     // Spirit-Forward / Stirred → Primary (Cyan)
     if (familyLower === 'spirit-forward' || familyLower === 'stirred') return 'primary';
-    
+
     // Highball → Success (Green)
     if (familyLower === 'highball') return 'success';
-    
+
     // Collins/Fizz → Accent (Pink)
     if (familyLower.includes('collins') || familyLower.includes('fizz')) return 'accent';
-    
+
     // Other/Uncategorized → Warning (Orange)
     return 'warning';
   };
@@ -62,7 +62,7 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
   };
 
   const familyColor = getFamilyColor(recipe.family_name);
-  
+
   // Map family colors to hover shadow classes
   const getHoverShadow = (color: string) => {
     switch (color) {
@@ -120,12 +120,12 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
       </div>
       <CardHeader className="p-6">
         <div className="flex items-start justify-between gap-3 mb-3">
-          <CardTitle className="text-2xl font-black line-clamp-1 leading-tight">
+          <CardTitle className="text-xl md:text-2xl font-black leading-tight">
             {recipe.name}
           </CardTitle>
           {recipe.family_name && (
-            <Badge 
-              variant="secondary" 
+            <Badge
+              variant="secondary"
               className="shrink-0 border-brutal-sm text-sm px-3 py-1.5 font-bold"
             >
               {recipe.family_name}
@@ -141,14 +141,14 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
       <CardContent className="p-6 pt-0">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Badge 
-              variant="outline" 
+            <Badge
+              variant="outline"
               className="text-sm px-3 py-1.5 font-bold border-brutal-sm"
             >
               {recipe.method}
             </Badge>
-            <Badge 
-              variant="outline" 
+            <Badge
+              variant="outline"
               className="text-sm px-3 py-1.5 font-bold border-brutal-sm"
             >
               {recipe.glassware}
