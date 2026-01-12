@@ -90,11 +90,9 @@ const checklists = {
   },
 };
 import { ChecklistForm } from '@/components/forms/checklist-form';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Card, CardContent } from '@/components/ui/card';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { CheckCircle2 } from 'lucide-react';
 
 export default function ChecklistsPage({
   searchParams,
@@ -102,99 +100,50 @@ export default function ChecklistsPage({
   searchParams: { type?: string };
 }) {
   const checklistType = searchParams.type || 'day-one';
-  const checklist = checklists[checklistType as keyof typeof checklists] || null;
-  const allChecklists = Object.values(checklists);
+  const checklist = checklists[checklistType as keyof typeof checklists] || checklists['day-one'];
 
   return (
-    <div className="space-y-8">
-      <div className="space-y-3">
-        <h1 className="text-5xl md:text-6xl font-black tracking-tight">Practical Checklists</h1>
-        <p className="text-lg md:text-xl font-medium text-muted-foreground leading-relaxed">
-          Interactive checklists for real-world scenarios. Check off items as you complete them.
+    <div className="space-y-12 pb-16">
+      <div className="space-y-4 max-w-4xl">
+        <h1 className="font-display text-5xl md:text-7xl font-black tracking-tight text-black">
+          Practical Checklists
+        </h1>
+        <p className="font-sans text-xl md:text-2xl font-bold text-gray-700 leading-relaxed border-l-4 border-[#ff006e] pl-6">
+          Interactive checklists for real-world scenarios. <br />
+          Check off items as you complete them.
         </p>
       </div>
 
-      {checklist ? (
-        <ChecklistForm checklist={checklist} />
-          ) : (
-            <Tabs defaultValue={checklistType} className="w-full">
-              <TabsList className="grid w-full grid-cols-4 border-brutal-sm">
-                <TabsTrigger value="day-one" className="text-base font-bold">
-                  <Link href="/training/checklists?type=day-one">Day One</Link>
-                </TabsTrigger>
-                <TabsTrigger value="opening" className="text-base font-bold">
-                  <Link href="/training/checklists?type=opening">Opening</Link>
-                </TabsTrigger>
-                <TabsTrigger value="closing" className="text-base font-bold">
-                  <Link href="/training/checklists?type=closing">Closing</Link>
-                </TabsTrigger>
-                <TabsTrigger value="station" className="text-base font-bold">
-                  <Link href="/training/checklists?type=station">Station</Link>
-                </TabsTrigger>
-              </TabsList>
+      <div className="space-y-8">
+        <Tabs defaultValue={checklistType} value={checklistType} className="w-full space-y-8">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 h-auto p-2 bg-gray-100 border-2 border-black gap-2">
+            <TabsTrigger value="day-one" className="text-lg font-black data-[state=active]:bg-[#ff006e] data-[state=active]:text-white data-[state=active]:border-2 data-[state=active]:border-black h-12" asChild>
+              <Link href="/training/checklists?type=day-one">Day One</Link>
+            </TabsTrigger>
+            <TabsTrigger value="opening" className="text-lg font-black data-[state=active]:bg-[#3a86ff] data-[state=active]:text-white data-[state=active]:border-2 data-[state=active]:border-black h-12" asChild>
+              <Link href="/training/checklists?type=opening">Opening</Link>
+            </TabsTrigger>
+            <TabsTrigger value="closing" className="text-lg font-black data-[state=active]:bg-[#000000] data-[state=active]:text-white data-[state=active]:border-2 data-[state=active]:border-black h-12" asChild>
+              <Link href="/training/checklists?type=closing">Closing</Link>
+            </TabsTrigger>
+            <TabsTrigger value="station" className="text-lg font-black data-[state=active]:bg-[#ffd60a] data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-black h-12" asChild>
+              <Link href="/training/checklists?type=station">Station</Link>
+            </TabsTrigger>
+          </TabsList>
 
-              {allChecklists.length > 0 ? (
-                allChecklists.map((chk) => (
-                  <TabsContent key={chk.id} value={chk.type}>
-                    <ChecklistForm checklist={chk} />
-                  </TabsContent>
-                ))
-              ) : (
-                <Card className="border-brutal">
-                  <CardContent className="py-12 text-center text-muted-foreground">
-                    <p className="text-lg font-medium">No checklists found.</p>
-                  </CardContent>
-                </Card>
-              )}
-            </Tabs>
-          )}
-
-      <Card className="border-brutal">
-        <CardHeader className="border-b-4 border-brutal">
-          <CardTitle className="text-3xl font-black">All Checklists</CardTitle>
-          <CardDescription className="text-lg font-medium">
-            Access different checklists for different scenarios
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="grid md:grid-cols-2 gap-4 pt-6">
-          <Link href="/training/checklists?type=day-one">
-            <Button variant="outline" className="w-full justify-start h-auto py-5 border-brutal-sm font-bold hover:scale-[1.02] transition-all duration-200">
-              <CheckCircle2 className="mr-3 h-6 w-6" />
-              <div className="text-left">
-                <div className="text-base font-black">Day One On The Job</div>
-                <div className="text-sm font-medium text-muted-foreground">First shift checklist</div>
-              </div>
-            </Button>
-          </Link>
-          <Link href="/training/checklists?type=opening">
-            <Button variant="outline" className="w-full justify-start h-auto py-5 border-brutal-sm font-bold hover:scale-[1.02] transition-all duration-200">
-              <CheckCircle2 className="mr-3 h-6 w-6" />
-              <div className="text-left">
-                <div className="text-base font-black">Opening Checklist</div>
-                <div className="text-sm font-medium text-muted-foreground">Mise en place</div>
-              </div>
-            </Button>
-          </Link>
-          <Link href="/training/checklists?type=closing">
-            <Button variant="outline" className="w-full justify-start h-auto py-5 border-brutal-sm font-bold hover:scale-[1.02] transition-all duration-200">
-              <CheckCircle2 className="mr-3 h-6 w-6" />
-              <div className="text-left">
-                <div className="text-base font-black">Closing Checklist</div>
-                <div className="text-sm font-medium text-muted-foreground">End of shift duties</div>
-              </div>
-            </Button>
-          </Link>
-          <Link href="/training/checklists?type=station">
-            <Button variant="outline" className="w-full justify-start h-auto py-5 border-brutal-sm font-bold hover:scale-[1.02] transition-all duration-200">
-              <CheckCircle2 className="mr-3 h-6 w-6" />
-              <div className="text-left">
-                <div className="text-base font-black">Station Setup</div>
-                <div className="text-sm font-medium text-muted-foreground">Tool organization</div>
-              </div>
-            </Button>
-          </Link>
-        </CardContent>
-      </Card>
+          <div className="mt-8">
+            {checklist ? (
+              <ChecklistForm key={checklist.id} checklist={checklist} />
+            ) : (
+              <Card className="neo-card p-12 text-center">
+                <CardContent>
+                  <p className="text-xl font-bold text-gray-500">Checklist not found.</p>
+                </CardContent>
+              </Card>
+            )}
+          </div>
+        </Tabs>
+      </div>
     </div>
   );
 }

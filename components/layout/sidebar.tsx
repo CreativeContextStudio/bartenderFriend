@@ -3,13 +3,12 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { 
-  Home, 
-  BookOpen, 
-  Coffee, 
-  Ruler, 
-  FileText, 
-  Target, 
+import {
+  Home,
+  BookOpen,
+  Coffee,
+  Ruler,
+  Target,
   BarChart3,
   ListChecks,
   LayoutDashboard,
@@ -91,14 +90,14 @@ export function Sidebar() {
           if (isAccordionItem(item)) {
             const isActive = pathname === item.href || (item.children && item.children.some((child) => pathname === child.href));
             return (
-              <AccordionItem key={item.name} value={item.name} className="border-brutal-sm bg-background">
+              <AccordionItem key={item.name} value={item.name} className="border-2 border-border bg-card shadow-neo-sm">
                 <AccordionTrigger className={cn(
-                  'px-3 py-3 text-sm sm:text-base font-black hover:no-underline',
-                  isActive && 'bg-primary/10 text-primary'
+                  'px-3 py-3 text-sm sm:text-base font-black hover:no-underline transition-colors',
+                  isActive && 'bg-[#ffd60a] text-black'
                 )}>
                   <div className="flex items-center gap-2 sm:gap-3 flex-1">
                     <item.icon className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
-                    <span className="text-left font-['Red_Hat_Display',sans-serif]">{item.name}</span>
+                    <span className="text-left font-display">{item.name}</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="pb-2 pt-1 px-2 sm:px-4">
@@ -108,10 +107,10 @@ export function Sidebar() {
                         href={item.href}
                         onClick={() => setIsOpen(false)}
                         className={cn(
-                          'flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-2.5 text-sm sm:text-base font-bold transition-brutal border-brutal-sm rounded-sm mb-2',
+                          'flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-2.5 text-sm sm:text-base font-bold transition-all border-2 border-transparent rounded-sm mb-2',
                           pathname === item.href
-                            ? 'bg-primary text-primary-foreground border-primary shadow-brutal-sm'
-                            : 'bg-background text-muted-foreground hover:bg-accent hover:text-accent-foreground hover:border-primary hover:shadow-brutal-sm'
+                            ? 'bg-foreground text-background hover:bg-foreground/90'
+                            : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                         )}
                       >
                         <item.icon className="h-4 w-4 shrink-0" />
@@ -126,10 +125,10 @@ export function Sidebar() {
                           href={child.href}
                           onClick={() => setIsOpen(false)}
                           className={cn(
-                            'flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-2.5 text-sm sm:text-base font-bold transition-brutal border-brutal-sm rounded-sm',
+                            'flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-2.5 text-sm sm:text-base font-bold transition-all border-2 rounded-sm',
                             isChildActive
-                              ? 'bg-primary text-primary-foreground border-primary shadow-brutal-sm'
-                              : 'bg-background text-muted-foreground hover:bg-accent hover:text-accent-foreground hover:border-primary hover:shadow-brutal-sm'
+                              ? 'bg-foreground text-background border-border'
+                              : 'text-muted-foreground border-transparent hover:border-border hover:bg-background'
                           )}
                         >
                           <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 shrink-0" />
@@ -142,7 +141,7 @@ export function Sidebar() {
               </AccordionItem>
             );
           }
-          
+
           // Regular link items
           if (!item.href) return null;
           const isActive = pathname === item.href;
@@ -152,14 +151,14 @@ export function Sidebar() {
               href={item.href}
               onClick={() => setIsOpen(false)}
               className={cn(
-                'flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base font-bold transition-brutal border-brutal-sm rounded-sm block',
+                'flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base font-bold transition-all border-2 border-border rounded-sm block shadow-neo-sm hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-md',
                 isActive
-                  ? 'bg-primary text-primary-foreground border-primary shadow-brutal-sm'
-                  : 'bg-background text-muted-foreground hover:bg-accent hover:text-accent-foreground hover:border-primary hover:shadow-brutal-sm'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'bg-card text-foreground hover:bg-muted'
               )}
             >
               <item.icon className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
-              <span className="font-['Red_Hat_Display',sans-serif]">{item.name}</span>
+              <span className="font-display">{item.name}</span>
             </Link>
           );
         })}
@@ -176,7 +175,7 @@ export function Sidebar() {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4 left-4 z-50 p-2 rounded-md border-brutal-sm bg-background shadow-brutal-sm md:hidden transition-brutal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+        className="fixed top-4 left-4 z-50 p-2 rounded-md border-2 border-border bg-card shadow-neo-md md:hidden transition-transform active:translate-y-1 active:shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border"
         aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
         aria-expanded={isOpen}
         aria-controls="sidebar-navigation"
@@ -191,7 +190,7 @@ export function Sidebar() {
       {/* Mobile Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          className="fixed inset-0 bg-background/50 z-40 md:hidden backdrop-blur-sm"
           onClick={() => setIsOpen(false)}
         />
       )}
@@ -200,7 +199,7 @@ export function Sidebar() {
       <aside
         id="sidebar-navigation"
         className={cn(
-          'fixed inset-y-0 left-0 z-40 flex flex-col border-r-4 border-brutal bg-background transition-transform duration-300 ease-in-out',
+          'fixed inset-y-0 left-0 z-40 flex flex-col border-r-4 border-border bg-background transition-transform duration-300 ease-in-out',
           'w-64 sm:w-72',
           // Mobile: slide in/out
           'md:translate-x-0 md:static md:z-auto',
@@ -210,14 +209,14 @@ export function Sidebar() {
         aria-label="Main navigation"
       >
         {/* Header */}
-        <div className="flex h-16 sm:h-20 items-center border-b-4 border-brutal px-4 sm:px-6 bg-primary/10 shadow-brutal-primary shrink-0">
-          <Link 
-            href="/" 
+        <div className="flex h-16 sm:h-20 items-center justify-center border-b-4 border-border px-4 sm:px-6 bg-secondary">
+          <Link
+            href="/"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-2 sm:gap-3 font-black text-lg sm:text-xl transition-brutal hover:-translate-x-1 flex-1"
+            className="flex items-center gap-2 sm:gap-3 font-black text-xl sm:text-2xl transition-transform hover:scale-105"
           >
-            <LayoutDashboard className="h-6 w-6 sm:h-7 sm:w-7 text-primary shrink-0" />
-            <span className="font-['Red_Hat_Display',sans-serif] truncate">bartenderFriend</span>
+            <LayoutDashboard className="h-7 w-7 sm:h-8 sm:w-8 text-black" />
+            <span className="font-display tracking-tight text-black">bartender<span className="italic">Friend</span></span>
           </Link>
         </div>
 

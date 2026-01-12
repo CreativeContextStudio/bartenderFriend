@@ -4,11 +4,11 @@
     "name": "Margarita",
     "family": "Sour",
     "slug": "margarita",
-    "description": "Classic tequila sour with triple sec",
+    "description": "Classic tequila sour with Orange Liqueur",
     "spec": {
       "tequila": "2 oz",
       "lime": "1 oz",
-      "triple_sec": "¾ oz",
+      "orange_liqueur": "¾ oz",
       "agave": "¼ oz"
     },
     "method": "shake",
@@ -102,6 +102,44 @@
     ]
   },
   {
+    "id": "whiskey-sour-egg-white",
+    "name": "Whiskey Sour (with Egg White)",
+    "family": "Sour",
+    "slug": "whiskey-sour-egg-white",
+    "description": "Classic bourbon sour with egg white for a silken texture and frothy head.",
+    "spec": {
+      "bourbon": "2 oz",
+      "lemon": "¾ oz",
+      "simple": "¾ oz",
+      "egg_white": "1"
+    },
+    "method": "dry shake",
+    "glassware": "coupe",
+    "garnish": "Angostura bitters drops",
+    "steps": [
+      "Combine all ingredients in shaker (no ice)",
+      "Dry shake hard for 10-15 seconds to emulsify egg white",
+      "Add ice and wet shake until chilled",
+      "Double strain into a chilled coupe",
+      "Garnish with 3-5 drops of bitters on the foam"
+    ],
+    "make_it_faster_tips": [
+      "Dry shake vigorously",
+      "Double strain for a smoother head"
+    ],
+    "common_mistakes": [
+      "Not shaking long enough (flat foam)",
+      "Getting shell in the drink",
+      "Not double straining (bits of egg/ice shards in head)"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "classic",
+      "bourbon",
+      "egg-white"
+    ]
+  },
+  {
     "id": "cosmopolitan",
     "name": "Cosmopolitan",
     "family": "Sour",
@@ -109,7 +147,7 @@
     "description": "Vodka-based pink sour",
     "spec": {
       "vodka": "1½ oz",
-      "cointreau": "1 oz",
+      "orange_liqueur": "1 oz",
       "lime": "½-¾ oz",
       "cranberry": "½-1 oz"
     },
@@ -584,7 +622,7 @@
     "description": "Sweet and sour vodka classic",
     "spec": {
       "vodka": "2 oz",
-      "triple_sec": "½ oz",
+      "orange_liqueur": "½ oz",
       "lemon": "1 oz",
       "simple": "½ oz"
     },
@@ -881,7 +919,7 @@
     "spec": {
       "rum_blend": "2 oz",
       "lime": "¾ oz",
-      "orange_curacao": "½ oz",
+      "orange_liqueur": "½ oz",
       "orgeat": "½ oz",
       "rich_simple": "¼ oz"
     },
@@ -1122,7 +1160,7 @@
     "description": "Complex gin sour with bitters",
     "spec": {
       "gin": "2 oz",
-      "orange_curacao": "¾ oz",
+      "orange_liqueur": "¾ oz",
       "lime": "¾ oz",
       "angostura_bitters": "1 dash",
       "orange_bitters": "1 dash"
@@ -1393,7 +1431,7 @@
       "mezcal": "2 oz",
       "lime": "1 oz",
       "agave": "½ oz",
-      "triple_sec": "½ oz"
+      "orange_liqueur": "½ oz"
     },
     "method": "shake",
     "glassware": "rocks",
@@ -1439,7 +1477,7 @@
       "Have honey syrup prepped"
     ],
     "common_mistakes": [
-      "Not shaking enough to dissolve nose"
+      "Not shaking enough to dissolve honey"
     ],
     "difficulty": 2,
     "tags": [
@@ -1447,4 +1485,109 @@
       "bourbon"
     ]
   }
+,
+{
+    "id": "sangria",
+    "name": "Sangria",
+    "family": "Wine/Punch",
+    "slug": "sangria",
+    "description": "Wine-based punch with fruit and spirits.",
+    "spec": {
+        "red_wine": "4 oz",
+        "brandy": "½ oz",
+        "orange_liqueur": "½ oz",
+        "orange_juice": "1 oz",
+        "simple": "¼ oz",
+        "soda": "top"
+    },
+    "method": "build",
+    "glassware": "wine glass",
+    "garnish": "Sliced fruit (orange, apple, berries)",
+    "steps": [
+        "Combine spirits, wine, and juice in a glass or pitcher",
+        "Add ice and stir gently",
+        "Top with soda water",
+        "Garnish heavily with fresh fruit"
+    ],
+    "make_it_faster_tips": [
+        "Batch the base without soda for quick service"
+    ],
+    "common_mistakes": [
+        "Not using enough fruit",
+        "Over-diluting with too much soda"
+    ],
+    "difficulty": 2,
+    "tags": [
+        "wine",
+        "punch",
+        "refreshing"
+    ]
+},
+{
+    "id": "tinto-de-verano",
+    "name": "Tinto de Verano",
+    "family": "Highball",
+    "slug": "tinto-de-verano",
+    "description": "The quintessential Spanish summer drink. Refreshing and low ABV.",
+    "spec": {
+        "red_wine": "4 oz",
+        "lemon_soda": "4 oz"
+    },
+    "method": "build",
+    "glassware": "rocks or wine glass",
+    "garnish": "Lemon wheel",
+    "steps": [
+        "Fill glass with ice",
+        "Add red wine",
+        "Top with lemon soda (Sprite or Fanta Lemon)",
+        "Garnish with a lemon wheel"
+    ],
+    "make_it_faster_tips": [
+        "Build directly in the glass"
+    ],
+    "common_mistakes": [
+        "Using expensive wine (it's meant to be simple)",
+        "Not enough ice"
+    ],
+    "difficulty": 1,
+    "tags": [
+        "low-abv",
+        "refreshing",
+        "spanish"
+    ]
+},
+{
+    "id": "caipiroska",
+    "name": "Caipiroska",
+    "family": "Sour",
+    "slug": "caipiroska",
+    "description": "The vodka cousin of the Caipirinha. Clean and lime-heavy.",
+    "spec": {
+        "vodka": "2 oz",
+        "lime": "½ (cut into wedges)",
+        "sugar": "2 tsp"
+    },
+    "method": "muddle",
+    "glassware": "rocks",
+    "garnish": "Lime wedges",
+    "steps": [
+        "Muddle lime wedges and sugar in rocks glass",
+        "Add vodka",
+        "Fill with crushed ice and stir well",
+        "Serve as is"
+    ],
+    "make_it_faster_tips": [
+        "Use simple syrup instead of sugar for easier mixing"
+    ],
+    "common_mistakes": [
+        "Under-muddling the lime",
+        "Not using enough ice"
+    ],
+    "difficulty": 2,
+    "tags": [
+        "vodka",
+        "muddled",
+        "refreshing"
+    ]
+}
 ]

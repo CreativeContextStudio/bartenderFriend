@@ -34,70 +34,40 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
     return animations[index % 3];
   };
 
-  const getFamilyColor = (family?: string): 'primary' | 'secondary' | 'accent' | 'success' | 'warning' => {
-    if (!family) return 'warning';
+  // Family color mapping matching cheat sheet
+  const getFamilyColors = (family?: string): { bg: string; text: string; border: string } => {
+    if (!family) return { bg: 'bg-muted', text: 'text-muted-foreground', border: 'border-border' };
+
     const familyLower = family.toLowerCase();
 
-    // Sour → Secondary (Yellow)
-    if (familyLower === 'sour') return 'secondary';
-
-    // Spirit-Forward / Stirred → Primary (Cyan)
-    if (familyLower === 'spirit-forward' || familyLower === 'stirred') return 'primary';
-
-    // Highball → Success (Green)
-    if (familyLower === 'highball') return 'success';
-
-    // Collins/Fizz → Accent (Pink)
-    if (familyLower.includes('collins') || familyLower.includes('fizz')) return 'accent';
-
-    // Other/Uncategorized → Warning (Orange)
-    return 'warning';
-  };
-
-  const getDifficultyBorder = (difficulty?: number) => {
-    if (difficulty === 1) return 'border-l-8 border-l-success';
-    if (difficulty === 2) return 'border-l-8 border-l-warning';
-    if (difficulty === 3) return 'border-l-8 border-l-destructive';
-    return '';
-  };
-
-  const familyColor = getFamilyColor(recipe.family_name);
-
-  // Map family colors to hover shadow classes
-  const getHoverShadow = (color: string) => {
-    switch (color) {
-      case 'primary': return 'hover:shadow-brutal-primary';
-      case 'secondary': return 'hover:shadow-brutal-secondary';
-      case 'accent': return 'hover:shadow-brutal-accent';
-      case 'success': return 'hover:shadow-brutal-success';
-      case 'warning': return 'hover:shadow-brutal-warning';
-      default: return 'hover:shadow-brutal-primary';
+    if (familyLower === 'sour') {
+      return { bg: 'bg-[#70e000]', text: 'text-black', border: 'border-[#70e000]' };
     }
+
+    if (familyLower === 'spirit forward' || familyLower === 'spirit-forward' || familyLower === 'stirred') {
+      return { bg: 'bg-[#ff006e]', text: 'text-white', border: 'border-[#ff006e]' };
+    }
+
+    if (familyLower === 'highball') {
+      return { bg: 'bg-[#ffd60a]', text: 'text-black', border: 'border-[#ffd60a]' };
+    }
+
+    if (familyLower.includes('collins') || familyLower.includes('fizz')) {
+      return { bg: 'bg-[#3a86ff]', text: 'text-white', border: 'border-[#3a86ff]' };
+    }
+
+    return { bg: 'bg-muted', text: 'text-muted-foreground', border: 'border-border' };
   };
 
-  // Map family colors to hover border classes
-  const getHoverBorder = (color: string) => {
-    switch (color) {
-      case 'primary': return 'hover:border-primary';
-      case 'secondary': return 'hover:border-secondary';
-      case 'accent': return 'hover:border-accent';
-      case 'success': return 'hover:border-success';
-      case 'warning': return 'hover:border-warning';
-      default: return 'hover:border-primary';
-    }
-  };
+  const familyColors = getFamilyColors(recipe.family_name);
 
   return (
     <Card
       className={cn(
-        "cursor-pointer h-full",
-        "transition-brutal",
-        getHoverShadow(familyColor),
-        getHoverBorder(familyColor),
-        "hover:-translate-y-2",
-        "active:shadow-brutal-pressed",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
-        getDifficultyBorder(recipe.difficulty)
+        "cursor-pointer h-full group neo-card bg-card",
+        "transition-all duration-200",
+        "hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg",
+        `border-l-4 ${familyColors.border}`
       )}
       onClick={onClick}
       role="button"
@@ -110,57 +80,62 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
       }}
       aria-label={`View ${recipe.name} recipe`}
     >
-      <div className="aspect-video overflow-hidden border-b-4 border-brutal">
+      <div className="aspect-[4/3] overflow-hidden bg-muted/30 relative border-b-2 border-border">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
         <DrinkPlaceholder
           glassType={getGlassType(recipe.glassware) as any}
           animation={getAnimation(parseInt(recipe.id.slice(-1), 16) || 0)}
-          colorTheme={getFamilyColor(recipe.family_name)}
-          className="h-full"
+          className="h-full transform group-hover:scale-105 transition-transform duration-500"
         />
       </div>
-      <CardHeader className="p-6">
-        <div className="flex items-start justify-between gap-3 mb-3">
-          <CardTitle className="text-xl md:text-2xl font-black leading-tight">
+      <CardHeader className="p-5 text-foreground">
+        <div className="flex items-start justify-between gap-3 mb-2">
+          <CardTitle className="text-xl md:text-2xl font-black font-display uppercase tracking-tight text-foreground">
             {recipe.name}
           </CardTitle>
           {recipe.family_name && (
             <Badge
-              variant="secondary"
-              className="shrink-0 border-brutal-sm text-sm px-3 py-1.5 font-bold"
+              className={cn(
+                "neo-badge shrink-0 text-sm px-3 py-1.5 font-bold",
+                familyColors.bg,
+                familyColors.text
+              )}
             >
               {recipe.family_name}
             </Badge>
           )}
         </div>
         {recipe.description && (
-          <p className="text-base font-medium text-muted-foreground line-clamp-2 leading-relaxed">
+          <p className="text-sm font-medium text-muted-foreground line-clamp-2 leading-relaxed">
             {recipe.description}
           </p>
         )}
       </CardHeader>
-      <CardContent className="p-6 pt-0">
-        <div className="flex items-center justify-between">
+      <CardContent className="p-5 pt-0">
+        <div className="flex items-center justify-between pt-4 border-t-2 border-dashed border-border mt-2">
           <div className="flex items-center gap-2">
-            <Badge
-              variant="outline"
-              className="text-sm px-3 py-1.5 font-bold border-brutal-sm"
-            >
+            <Badge variant="outline" className="text-xs font-bold uppercase tracking-wider border-2 border-border bg-card">
               {recipe.method}
             </Badge>
-            <Badge
-              variant="outline"
-              className="text-sm px-3 py-1.5 font-bold border-brutal-sm"
-            >
+            <Badge variant="outline" className="text-xs font-bold uppercase tracking-wider border-2 border-border bg-card">
               {recipe.glassware}
             </Badge>
           </div>
           {recipe.difficulty && (
-            <div className="text-base font-black text-muted-foreground">
-              {'★'.repeat(recipe.difficulty)}{'☆'.repeat(5 - recipe.difficulty)}
+            <div className="flex gap-1" aria-label={`Difficulty level ${recipe.difficulty} out of 5`}>
+              {Array.from({ length: 5 }).map((_, i) => (
+                <div
+                  key={i}
+                  className={cn(
+                    "h-2 w-2 rounded-full border-2 border-border",
+                    i < (recipe.difficulty || 0) ? familyColors.bg : "bg-muted"
+                  )}
+                />
+              ))}
             </div>
           )}
         </div>
       </CardContent>
-    </Card>
+    </Card >
   );
 }

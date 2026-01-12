@@ -1,293 +1,302 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { readMarkdownFile } from '@/lib/markdown';
-import { MarkdownContent } from '@/components/markdown-content';
+import { Button } from '@/components/ui/button';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
+import Link from 'next/link';
 
 export default function BasicRecipesPage() {
-  const basicKnowledgeContent = readMarkdownFile('basicKnowledge.md');
-  
   return (
-    <div className="space-y-8">
-      <div className="space-y-3">
-        <h1 className="text-5xl md:text-6xl font-black tracking-tight">Basic Recipe Knowledge</h1>
-        <p className="text-lg md:text-xl font-medium text-muted-foreground leading-relaxed">
-          Learn the patterns, not just individual recipes. Think templates.
+    <div className="space-y-12 pb-16">
+      <div className="space-y-4 max-w-4xl">
+        <h1 className="font-display text-5xl md:text-7xl font-black tracking-tight text-foreground">
+          Basic Recipe Knowledge
+        </h1>
+        <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-primary pl-6">
+          Stop memorizing 100 recipes. <br />
+          Memorize the <span className="text-primary underline decoration-4 underline-offset-4">templates</span>.
         </p>
       </div>
 
-      {basicKnowledgeContent && (
-        <Card className="border-brutal">
-          <CardHeader className="border-b-4 border-brutal">
-            <CardTitle className="text-3xl font-black">Basic Recipe Knowledge</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <MarkdownContent content={basicKnowledgeContent} />
-          </CardContent>
-        </Card>
-      )}
-
-      <Card className="border-brutal">
-        <CardHeader className="border-b-4 border-brutal">
-          <CardTitle className="text-3xl font-black">What "Basic Recipe Knowledge" Means</CardTitle>
-          <CardDescription className="text-lg font-medium">
-            In a new, hip bar/restaurant, "basic recipe knowledge" typically includes:
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h3 className="text-xl font-black mb-3">Core Families of Drinks</h3>
-            <ul className="list-disc list-inside space-y-2 text-base font-medium text-muted-foreground leading-relaxed">
-              <li><strong className="font-black">Sours:</strong> Margarita, Daiquiri, Whiskey Sour, Cosmopolitan</li>
-              <li><strong className="font-black">Spirit-forward:</strong> Old Fashioned, Manhattan, Negroni, Martini</li>
-              <li><strong className="font-black">Highballs:</strong> Gin & Tonic, Rum & Coke, Vodka Soda, Paloma, Moscow Mule</li>
-              <li><strong className="font-black">Collins/Fizz:</strong> Tom Collins, Vodka Collins</li>
-            </ul>
+      <section className="grid gap-x-12 gap-y-48 md:grid-cols-2 lg:grid-cols-2">
+        {/* The Sour */}
+        <div className="space-y-6">
+          <div className="flex items-center gap-4">
+            <span className="neo-badge bg-[#70e000] text-black text-lg px-4 py-2">Template 01</span>
+            <h2 className="font-display text-4xl font-black text-foreground">The Sour</h2>
           </div>
-          <div>
-            <h3 className="text-xl font-black mb-3">Standard Specs</h3>
-            <ul className="list-disc list-inside space-y-2 text-base font-medium text-muted-foreground leading-relaxed">
-              <li>Typical builds: 2 oz base spirit, ¾-1 oz citrus, ½-¾ oz sweetener</li>
-              <li>When to shake vs stir</li>
-              <li>When to serve up vs rocks vs long/Collins</li>
-              <li>Common garnishes (lime wedge vs wheel, orange peel, cherry)</li>
-            </ul>
-          </div>
-          <p className="text-muted-foreground">
-            If you can walk in and comfortably make ~20-30 classics from memory and understand the patterns, 
-            you'll read as "has basic recipe knowledge" and everything else you can learn on the job.
-          </p>
-        </CardContent>
-      </Card>
-
-      <Accordion type="single" collapsible className="w-full space-y-4">
-        <AccordionItem value="sour-template">
-          <AccordionTrigger className="text-xl">Sour Template (Shaken, Citrusy, Crowd-Pleasers)</AccordionTrigger>
-          <AccordionContent className="space-y-4 pt-4">
-            <div className="space-y-2">
-              <h4 className="font-semibold">Generic Sour Template</h4>
-              <ul className="list-disc list-inside space-y-1 text-muted-foreground ml-4">
-                <li>2 oz base spirit</li>
-                <li>¾ oz fresh lemon or lime</li>
-                <li>¾ oz simple syrup (1:1) or equivalent sweetener</li>
-                <li>Shake hard with ice, strain</li>
-                <li>Glass: Coupe (up) or rocks (on ice)</li>
-                <li>Garnish: Citrus wheel/wedge or peel</li>
-              </ul>
-            </div>
-            <div className="space-y-2">
-              <h4 className="font-semibold">Examples</h4>
-              <div className="space-y-3 pl-4">
-                <div className="rounded-md border p-3">
-                  <div className="font-medium mb-1">Margarita</div>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>2 oz tequila (blanco)</li>
-                    <li>1 oz lime</li>
-                    <li>¾ oz triple sec (or Cointreau)</li>
-                    <li>¼ oz agave or simple (optional)</li>
-                    <li>Shake, strain over fresh ice in rocks glass (or up); salt rim optional</li>
-                    <li>Garnish: Lime wheel</li>
-                  </ul>
+          <Card className="neo-card bg-card h-full relative overflow-hidden">
+            <CardHeader className="border-b-4 border-border pb-4">
+              <CardTitle className="text-xl font-black uppercase tracking-widest text-muted-foreground">The Formula</CardTitle>
+              <div className="flex flex-col gap-2 mt-2 font-mono text-lg font-bold text-foreground">
+                <div className="flex justify-between border-b border-dashed border-border pb-1">
+                  <span>Base Spirit</span>
+                  <span>2 oz</span>
                 </div>
-                <div className="rounded-md border p-3">
-                  <div className="font-medium mb-1">Daiquiri</div>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>2 oz light rum</li>
-                    <li>1 oz lime</li>
-                    <li>¾ oz simple syrup</li>
-                    <li>Shake, strain into coupe (no ice)</li>
-                    <li>Garnish: Lime wheel</li>
-                  </ul>
+                <div className="flex justify-between border-b border-dashed border-border pb-1">
+                  <span>Citrus (Sour)</span>
+                  <span>3/4 oz</span>
                 </div>
-                <div className="rounded-md border p-3">
-                  <div className="font-medium mb-1">Whiskey Sour (no egg white version)</div>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>2 oz bourbon</li>
-                    <li>¾ oz lemon</li>
-                    <li>¾ oz simple syrup</li>
-                    <li>Shake, strain into rocks glass over ice (or up)</li>
-                    <li>Garnish: Cherry + orange slice or lemon peel</li>
-                  </ul>
+                <div className="flex justify-between">
+                  <span>Sugar (Sweet)</span>
+                  <span>3/4 oz</span>
                 </div>
               </div>
-            </div>
-            <p className="text-sm text-muted-foreground italic">
-              Memorize the <strong>sour template</strong> and you can reconstruct tons of menu drinks on the fly.
-            </p>
-          </AccordionContent>
-        </AccordionItem>
-
-        <AccordionItem value="spirit-forward">
-          <AccordionTrigger className="text-xl">Spirit-Forward Template (Stirred, Boozy, Silky)</AccordionTrigger>
-          <AccordionContent className="space-y-4 pt-4">
-            <div className="space-y-2">
-              <h4 className="font-semibold">Generic "Boozy, Stirred" Template</h4>
-              <ul className="list-disc list-inside space-y-1 text-muted-foreground ml-4">
-                <li>2 oz base spirit</li>
-                <li>1 oz modifier(s)</li>
-                <li>Stir with ice 20-30 seconds</li>
-                <li>Strain into coupe or rocks (depending on style)</li>
-                <li>Garnish with peel or cherry</li>
-              </ul>
-            </div>
-            <div className="space-y-2">
-              <h4 className="font-semibold">Examples</h4>
-              <div className="space-y-3 pl-4">
-                <div className="rounded-md border p-3">
-                  <div className="font-medium mb-1">Old Fashioned (modern spec)</div>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>2 oz bourbon or rye</li>
-                    <li>¼-½ oz simple syrup or 1 sugar cube</li>
-                    <li>2-3 dashes Angostura bitters</li>
-                    <li>Stir with ice, serve over large cube in rocks glass</li>
-                    <li>Garnish: Orange peel, cherry optional</li>
-                  </ul>
-                </div>
-                <div className="rounded-md border p-3">
-                  <div className="font-medium mb-1">Manhattan</div>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>2 oz rye or bourbon</li>
-                    <li>1 oz sweet vermouth</li>
-                    <li>2 dashes Angostura</li>
-                    <li>Stir, strain into coupe</li>
-                    <li>Garnish: Cherry</li>
-                  </ul>
-                </div>
-                <div className="rounded-md border p-3">
-                  <div className="font-medium mb-1">Negroni</div>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>1 oz gin</li>
-                    <li>1 oz sweet vermouth</li>
-                    <li>1 oz Campari</li>
-                    <li>Stir, rocks glass over large ice</li>
-                    <li>Garnish: Orange peel</li>
-                  </ul>
-                </div>
-                <div className="rounded-md border p-3">
-                  <div className="font-medium mb-1">Martini (house styles vary)</div>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>"Dry" classic: 2½ oz gin or vodka, ½ oz dry vermouth</li>
-                    <li>Stir (or shake if requested), strain into martini glass</li>
-                    <li>Garnish: Lemon twist or olives (dirty martini = add olive brine)</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <p className="text-sm text-muted-foreground italic">
-              If you know these, you can handle 90% of "classic but boozy" orders.
-            </p>
-          </AccordionContent>
-        </AccordionItem>
-
-        <AccordionItem value="highball">
-          <AccordionTrigger className="text-xl">Highballs and Simple Builds (Speed + Volume)</AccordionTrigger>
-          <AccordionContent className="space-y-4 pt-4">
-            <div className="space-y-2">
-              <h4 className="font-semibold">Core Pattern</h4>
-              <ul className="list-disc list-inside space-y-1 text-muted-foreground ml-4">
-                <li>1½-2 oz spirit</li>
-                <li>Build in tall glass over ice</li>
-                <li>Top with mixer, quick garnish, no fuss</li>
-              </ul>
-            </div>
-            <div className="space-y-2">
-              <h4 className="font-semibold">Examples</h4>
-              <div className="space-y-3 pl-4">
-                <div className="rounded-md border p-3">
-                  <div className="font-medium mb-1">Gin & Tonic</div>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>1½-2 oz gin, top tonic in Collins glass</li>
-                    <li>Lime wedge</li>
-                  </ul>
-                </div>
-                <div className="rounded-md border p-3">
-                  <div className="font-medium mb-1">Vodka Soda</div>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>1½-2 oz vodka, top soda</li>
-                    <li>Lime wedge</li>
-                  </ul>
-                </div>
-                <div className="rounded-md border p-3">
-                  <div className="font-medium mb-1">Rum & Coke</div>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>1½-2 oz rum, top cola</li>
-                    <li>Lime optional</li>
-                  </ul>
-                </div>
-                <div className="rounded-md border p-3">
-                  <div className="font-medium mb-1">Paloma</div>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>2 oz tequila, ~½ oz lime, top grapefruit soda (Jarritos/Squirt)</li>
-                    <li>Salt rim optional, lime</li>
-                  </ul>
-                </div>
-                <div className="rounded-md border p-3">
-                  <div className="font-medium mb-1">Moscow Mule</div>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>2 oz vodka, ½ oz lime, top ginger beer</li>
-                    <li>Copper mug/rocks, lime garnish</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <p className="text-sm text-muted-foreground italic">
-              If you can free-pour these and keep moving, you'll feel back in rhythm fast.
-            </p>
-          </AccordionContent>
-        </AccordionItem>
-
-        <AccordionItem value="shake-vs-stir">
-          <AccordionTrigger className="text-xl">When to Shake vs Stir (Rule of Thumb)</AccordionTrigger>
-          <AccordionContent className="space-y-4 pt-4">
-            <div className="space-y-3">
-              <div className="rounded-md border p-4 bg-primary/5">
-                <h4 className="font-semibold mb-2 flex items-center gap-2">
-                  <Badge variant="secondary">SHAKE</Badge>
+            </CardHeader>
+            <CardContent className="pt-6 space-y-6">
+              <div>
+                <h4 className="font-black text-lg mb-2 flex items-center gap-2 text-foreground">
+                  <span className="w-4 h-4 rounded-full bg-[#70e000] border-2 border-border"></span>
+                  How to Build
                 </h4>
-                <p className="text-sm text-muted-foreground">
-                  Anything with citrus, juice, egg white, dairy, or cloudy ingredients. You shake drinks with citrus, 
-                  juice, egg whites, or anything that needs aeration or mixing thoroughly.
-                </p>
+                <p className="font-medium text-muted-foreground">Shake hard with ice. Strain. That's it.</p>
               </div>
-              <div className="rounded-md border p-4 bg-secondary/10">
-                <h4 className="font-semibold mb-2 flex items-center gap-2">
-                  <Badge variant="outline">STIR</Badge>
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  Clear-only drinks: spirits + liqueurs + vermouth. Stir clear drinks—spirits plus liqueurs or vermouth. 
-                  Shake = chilled and mixed; stir = silky and diluted just right.
-                </p>
+              <div>
+                <h4 className="font-black text-lg mb-2 text-foreground">Unlocks:</h4>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#70e000] hover:text-black">Margarita</Badge>
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#70e000] hover:text-black">Daiquiri</Badge>
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#70e000] hover:text-black">Whiskey Sour</Badge>
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#70e000] hover:text-black">Gimlet</Badge>
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#70e000] hover:text-black">Bee's Knees</Badge>
+                </div>
               </div>
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+            </CardContent>
+          </Card>
+        </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Glassware Basics</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-2">
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="rounded-md border p-3">
-              <div className="font-medium mb-1">Rocks</div>
-              <p className="text-sm text-muted-foreground">Short, wide glass. Old Fashioned glass. For drinks served over ice.</p>
-            </div>
-            <div className="rounded-md border p-3">
-              <div className="font-medium mb-1">Coupe</div>
-              <p className="text-sm text-muted-foreground">Wide, shallow glass with stem. Used for cocktails served "up."</p>
-            </div>
-            <div className="rounded-md border p-3">
-              <div className="font-medium mb-1">Collins</div>
-              <p className="text-sm text-muted-foreground">Tall, narrow glass. For highballs and long drinks with mixer.</p>
-            </div>
-            <div className="rounded-md border p-3">
-              <div className="font-medium mb-1">Martini Glass</div>
-              <p className="text-sm text-muted-foreground">V-shaped glass with stem. Used for martinis and other stirred drinks served up.</p>
-            </div>
+        {/* Spirit Forward */}
+        <div className="space-y-6">
+          <div className="flex items-center gap-4">
+            <span className="neo-badge bg-[#ff006e] text-white text-lg px-4 py-2">Template 02</span>
+            <h2 className="font-display text-4xl font-black">Spirit Forward</h2>
           </div>
-        </CardContent>
-      </Card>
+          <Card className="neo-card bg-white h-full relative overflow-hidden">
+            <CardHeader className="border-b-4 border-black pb-4">
+              <CardTitle className="text-xl font-black uppercase tracking-widest text-gray-500">The Formula</CardTitle>
+              <div className="flex flex-col gap-2 mt-2 font-mono text-lg font-bold">
+                <div className="flex justify-between border-b border-dashed border-gray-300 pb-1">
+                  <span>Base Spirit</span>
+                  <span>2 oz</span>
+                </div>
+                <div className="flex justify-between border-b border-dashed border-gray-300 pb-1">
+                  <span>Vermouth/Amaro</span>
+                  <span>1 oz</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Bitters</span>
+                  <span>2 dashes</span>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="pt-6 space-y-6">
+              <div>
+                <h4 className="font-black text-lg mb-2 flex items-center gap-2">
+                  <span className="w-4 h-4 rounded-full bg-[#ff006e] border-2 border-black"></span>
+                  How to Build
+                </h4>
+                <p className="font-medium text-gray-700">Stir with ice (30s). Strain. Silky texture.</p>
+              </div>
+              <div>
+                <h4 className="font-black text-lg mb-2">Unlocks:</h4>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ff006e] hover:text-white">Manhattan</Badge>
+                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ff006e] hover:text-white">Martini</Badge>
+                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ff006e] hover:text-white">Negroni</Badge>
+                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ff006e] hover:text-white">Boulevardier</Badge>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* The Highball */}
+        <div className="space-y-6">
+          <div className="flex items-center gap-4">
+            <span className="neo-badge bg-[#ffd60a] text-lg px-4 py-2">Template 03</span>
+            <h2 className="font-display text-4xl font-black">The Highball</h2>
+          </div>
+          <Card className="neo-card bg-white h-full relative overflow-hidden">
+            <CardHeader className="border-b-4 border-black pb-4">
+              <CardTitle className="text-xl font-black uppercase tracking-widest text-gray-500">The Formula</CardTitle>
+              <div className="flex flex-col gap-2 mt-2 font-mono text-lg font-bold">
+                <div className="flex justify-between border-b border-dashed border-gray-300 pb-1">
+                  <span>Base Spirit</span>
+                  <span>1.5 - 2 oz</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Carbonation</span>
+                  <span>To Top</span>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="pt-6 space-y-6">
+              <div>
+                <h4 className="font-black text-lg mb-2 flex items-center gap-2">
+                  <span className="w-4 h-4 rounded-full bg-[#ffd60a] border-2 border-black"></span>
+                  How to Build
+                </h4>
+                <p className="font-medium text-gray-700">Build in glass. Add ice. Top with soda. No shaking.</p>
+              </div>
+              <div>
+                <h4 className="font-black text-lg mb-2">Unlocks:</h4>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ffd60a]">Gin & Tonic</Badge>
+                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ffd60a]">Vodka Soda</Badge>
+                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ffd60a]">Mule</Badge>
+                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ffd60a]">Paloma</Badge>
+                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ffd60a]">Scotch & Soda</Badge>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* The Collins */}
+        <div className="space-y-6">
+          <div className="flex items-center gap-4">
+            <span className="neo-badge bg-[#3a86ff] text-white text-lg px-4 py-2">Template 04</span>
+            <h2 className="font-display text-4xl font-black">The Collins</h2>
+          </div>
+          <Card className="neo-card bg-white h-full relative overflow-hidden">
+            <CardHeader className="border-b-4 border-black pb-4">
+              <CardTitle className="text-xl font-black uppercase tracking-widest text-gray-500">The Formula</CardTitle>
+              <div className="flex flex-col gap-2 mt-2 font-mono text-lg font-bold">
+                <div className="flex justify-between border-b border-dashed border-gray-300 pb-1">
+                  <span>Base Spirit</span>
+                  <span>2 oz</span>
+                </div>
+                <div className="flex justify-between border-b border-dashed border-gray-300 pb-1">
+                  <span>Citrus</span>
+                  <span>3/4 oz</span>
+                </div>
+                <div className="flex justify-between border-b border-dashed border-gray-300 pb-1">
+                  <span>Sugar</span>
+                  <span>3/4 oz</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Soda Water</span>
+                  <span>To Top</span>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="pt-6 space-y-6">
+              <div>
+                <h4 className="font-black text-lg mb-2 flex items-center gap-2">
+                  <span className="w-4 h-4 rounded-full bg-[#3a86ff] border-2 border-black"></span>
+                  How to Build
+                </h4>
+                <p className="font-medium text-gray-700">Short shake. Strain over fresh ice. Top with soda.</p>
+              </div>
+              <div>
+                <h4 className="font-black text-lg mb-2">Unlocks:</h4>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#3a86ff] hover:text-white">Tom Collins</Badge>
+                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#3a86ff] hover:text-white">French 75</Badge>
+                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#3a86ff] hover:text-white">Mojito</Badge>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <section className="space-y-6 mt-64 border-t-4 border-black pt-12">
+        <h2 className="font-display text-4xl font-black">Glassware 101</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            {
+              name: 'Rocks',
+              color: '#70e000',
+              description: 'Also known as an Old Fashioned glass. Used for drinks built in the glass or served on the rocks.',
+              examples: ['Old Fashioned', 'Negroni', 'Margarita (rocks)', 'Whiskey Sour (rocks)'],
+              capacity: '8-10 oz'
+            },
+            {
+              name: 'Coupe',
+              color: '#ff006e',
+              description: 'A stemmed glass with a broad, shallow bowl. Used for cocktails served "up" (chilled, no ice).',
+              examples: ['Daiquiri', 'Gimlet', 'Manhattan', 'Martini', 'Sidecar'],
+              capacity: '5-7 oz'
+            },
+            {
+              name: 'Collins',
+              color: '#ffd60a',
+              description: 'A tall, cylindrical glass. Used for long drinks topped with soda or juice, served with plenty of ice.',
+              examples: ['Tom Collins', 'Mojito', 'Paloma', 'Long Island Iced Tea'],
+              capacity: '10-14 oz'
+            }
+          ].map((glass) => (
+            <Sheet key={glass.name}>
+              <SheetTrigger asChild>
+                <div className="neo-card p-4 hover:shadow-neo-lg transition-all text-center group cursor-pointer hover:-translate-y-1">
+                  <div
+                    className="h-16 w-16 mx-auto bg-gray-200 rounded-full mb-3 border-2 border-black transition-colors"
+                    style={{ backgroundColor: glass.color }}
+                  ></div>
+                  <h4 className="font-black text-lg">{glass.name}</h4>
+                  <p className="text-sm font-medium text-gray-500 mt-1">Click for details</p>
+                </div>
+              </SheetTrigger>
+              <SheetContent side="right" className="border-l-4 border-black p-0 sm:max-w-md">
+                <div className="h-full bg-[#fffef5] flex flex-col">
+                  <SheetHeader className="p-6 border-b-4 border-black bg-white">
+                    <div
+                      className="w-20 h-20 rounded-full border-4 border-black mb-4 mx-auto"
+                      style={{ backgroundColor: glass.color }}
+                    />
+                    <SheetTitle className="text-4xl font-black text-center font-display uppercase tracking-tight">{glass.name}</SheetTitle>
+                    <SheetDescription className="text-center text-lg font-medium text-gray-600">
+                      Standard Issue Glassware
+                    </SheetDescription>
+                  </SheetHeader>
+
+                  <div className="p-6 space-y-8 flex-1 overflow-y-auto">
+                    <div className="space-y-3">
+                      <h3 className="font-black text-xl uppercase tracking-wide border-b-2 border-dashed border-gray-300 pb-2">Description</h3>
+                      <p className="text-lg leading-relaxed font-medium text-gray-800">
+                        {glass.description}
+                      </p>
+                    </div>
+
+                    <div className="space-y-3">
+                      <h3 className="font-black text-xl uppercase tracking-wide border-b-2 border-dashed border-gray-300 pb-2">Common Serves</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {glass.examples.map(ex => (
+                          <Badge key={ex} className="neo-badge bg-white text-black border-2 border-black">
+                            {ex}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="space-y-3">
+                      <h3 className="font-black text-xl uppercase tracking-wide border-b-2 border-dashed border-gray-300 pb-2">Specs</h3>
+                      <div className="flex justify-between items-center bg-white p-4 border-2 border-black shadow-neo-sm">
+                        <span className="font-bold text-gray-600">Typical Capacity</span>
+                        <span className="font-black text-xl">{glass.capacity}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-6 border-t-4 border-black bg-white">
+                    <Button className="w-full neo-btn bg-black text-white hover:bg-gray-800" asChild>
+                      <SheetClose>Close Guide</SheetClose>
+                    </Button>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,17 +1,19 @@
 'use client';
 
 import { useEffect } from 'react';
+import Link from 'next/link';
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { Badge } from '@/components/ui/badge';
 import { DrinkPlaceholder } from '@/components/ui/placeholders/drink-placeholder';
-import { X } from 'lucide-react';
+import { X, Maximize2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface RecipeSlidePanelProps {
   recipe: {
     id: string;
     name: string;
+    slug: string;
     description?: string;
     family?: string;
     spec: Record<string, string>;
@@ -56,8 +58,8 @@ export function RecipeSlidePanel({ recipe, open, onOpenChange }: RecipeSlidePane
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent 
-        side="right" 
+      <SheetContent
+        side="right"
         className={cn(
           "w-full sm:w-[500px] lg:w-[600px] border-brutal p-0 overflow-y-auto",
           "bg-background"
@@ -79,6 +81,23 @@ export function RecipeSlidePanel({ recipe, open, onOpenChange }: RecipeSlidePane
           <X className="h-7 w-7 md:h-6 md:w-6 font-black" />
         </SheetPrimitive.Close>
 
+        {/* Full View Button */}
+        <Link
+          href={`/recipes/${recipe.slug}`}
+          className={cn(
+            "absolute right-24 top-6 z-10",
+            "w-14 h-14 border-4 border-brutal bg-primary text-primary-foreground",
+            "flex items-center justify-center",
+            "hover:bg-primary/90 transition-all duration-200 hover:scale-105 active:scale-95",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+            "rounded-none",
+            "md:w-12 md:h-12 md:right-20 md:top-4"
+          )}
+          aria-label="View full recipe page"
+        >
+          <Maximize2 className="h-7 w-7 md:h-6 md:w-6" />
+        </Link>
+
         <div className="p-8 space-y-8">
           <SheetHeader className="space-y-4 border-brutal-sm pb-6">
             <div className="flex items-start justify-between gap-4">
@@ -87,8 +106,8 @@ export function RecipeSlidePanel({ recipe, open, onOpenChange }: RecipeSlidePane
                   {recipe.name}
                 </SheetTitle>
                 {recipe.family && (
-                  <Badge 
-                    variant="secondary" 
+                  <Badge
+                    variant="secondary"
                     className="mt-2 border-brutal-sm text-base px-4 py-2 font-bold"
                   >
                     {recipe.family}
@@ -117,8 +136,8 @@ export function RecipeSlidePanel({ recipe, open, onOpenChange }: RecipeSlidePane
             <h3 className="text-2xl font-black mb-4">Spec</h3>
             <div className="space-y-3 font-mono">
               {Object.entries(spec).map(([key, value]) => (
-                <div 
-                  key={key} 
+                <div
+                  key={key}
                   className="flex justify-between items-center border-brutal-sm p-3 bg-background"
                 >
                   <span className="text-base font-bold capitalize text-muted-foreground">
@@ -134,8 +153,8 @@ export function RecipeSlidePanel({ recipe, open, onOpenChange }: RecipeSlidePane
           <div className="grid grid-cols-2 gap-4">
             <div className="border-brutal-sm p-4 bg-background">
               <h4 className="text-sm font-bold mb-2 text-muted-foreground">Method</h4>
-              <Badge 
-                variant="outline" 
+              <Badge
+                variant="outline"
                 className="text-base px-4 py-2 font-bold border-brutal-sm"
               >
                 {recipe.method}
@@ -143,8 +162,8 @@ export function RecipeSlidePanel({ recipe, open, onOpenChange }: RecipeSlidePane
             </div>
             <div className="border-brutal-sm p-4 bg-background">
               <h4 className="text-sm font-bold mb-2 text-muted-foreground">Glassware</h4>
-              <Badge 
-                variant="outline" 
+              <Badge
+                variant="outline"
                 className="text-base px-4 py-2 font-bold border-brutal-sm"
               >
                 {recipe.glassware}
@@ -166,8 +185,8 @@ export function RecipeSlidePanel({ recipe, open, onOpenChange }: RecipeSlidePane
               <h3 className="text-2xl font-black mb-4">Steps</h3>
               <ol className="space-y-3 list-decimal list-inside">
                 {steps.map((step, index) => (
-                  <li 
-                    key={index} 
+                  <li
+                    key={index}
                     className="text-base font-medium leading-relaxed pl-2"
                   >
                     {step}
@@ -183,8 +202,8 @@ export function RecipeSlidePanel({ recipe, open, onOpenChange }: RecipeSlidePane
               <h3 className="text-2xl font-black mb-4">Make It Faster</h3>
               <ul className="space-y-2 list-disc list-inside">
                 {makeItFasterTips.map((tip, index) => (
-                  <li 
-                    key={index} 
+                  <li
+                    key={index}
                     className="text-base font-medium leading-relaxed pl-2"
                   >
                     {tip}
@@ -200,8 +219,8 @@ export function RecipeSlidePanel({ recipe, open, onOpenChange }: RecipeSlidePane
               <h3 className="text-2xl font-black mb-4 text-destructive">Common Mistakes</h3>
               <ul className="space-y-2 list-disc list-inside">
                 {commonMistakes.map((mistake, index) => (
-                  <li 
-                    key={index} 
+                  <li
+                    key={index}
                     className="text-base font-medium leading-relaxed pl-2"
                   >
                     {mistake}

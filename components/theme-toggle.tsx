@@ -15,7 +15,7 @@ export function ThemeToggle() {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-    
+
     setTheme(initialTheme);
     if (initialTheme === 'dark') {
       document.documentElement.classList.add('dark');
@@ -28,7 +28,7 @@ export function ThemeToggle() {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
-    
+
     if (newTheme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
@@ -42,7 +42,7 @@ export function ThemeToggle() {
       <Button
         variant="outline"
         size="icon"
-        className="border-brutal-sm"
+        className=""
         aria-label="Toggle theme"
         disabled
       >
@@ -57,7 +57,7 @@ export function ThemeToggle() {
       size="icon"
       onClick={toggleTheme}
       className={cn(
-        'border-brutal-sm transition-brutal',
+        'transition-all duration-200',
         'focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2'
       )}
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}

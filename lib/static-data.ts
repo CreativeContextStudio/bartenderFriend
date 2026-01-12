@@ -29,9 +29,12 @@ export interface Family {
 
 export interface CheatSheetItem {
   name: string;
+  family: string;
+  slug: string;
   spec_short: string;
   glass: string;
   garnish: string;
+  notes?: string;
   order: number;
 }
 

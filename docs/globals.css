@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* ============================================================================
    Neobrutalism Design System
@@ -40,7 +38,6 @@
    ============================================================================ */
 
 @layer base {
-
   /* Ensure CSS variables are available globally */
   :root {
     --color-neo-bg: #fffef5;
@@ -60,45 +57,6 @@
     --shadow-neo-md: 4px 4px 0px rgba(0, 0, 0, 1);
     --shadow-neo-lg: 6px 6px 0px rgba(0, 0, 0, 1);
     --shadow-neo-xl: 8px 8px 0px rgba(0, 0, 0, 1);
-  }
-
-  .dark {
-    --color-neo-bg: #0a0a0a;
-    --color-neo-card: #1a1a1a;
-    --color-neo-pending: #ffd60a;
-    --color-neo-progress: #00b4d8;
-    --color-neo-done: #70e000;
-    --color-neo-accent: #ff006e;
-    --color-neo-danger: #ff5400;
-    --color-neo-border: #ffffff;
-    --color-neo-text: #ffffff;
-    --color-neo-text-secondary: #a0a0a0;
-    --shadow-neo-sm: 2px 2px 0px rgba(255, 255, 255, 1);
-    --shadow-neo-md: 4px 4px 0px rgba(255, 255, 255, 1);
-    --shadow-neo-lg: 6px 6px 0px rgba(255, 255, 255, 1);
-    --shadow-neo-xl: 8px 8px 0px rgba(255, 255, 255, 1);
-
-    /* Tailwind dark mode overrides for better contrast */
-    --background: 0 0% 4%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 330 100% 50%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 48 100% 52%;
-    --secondary-foreground: 0 0% 0%;
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 70%;
-    --accent: 207 100% 42%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 16 100% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 100%;
-    --input: 0 0% 20%;
-    --ring: 330 100% 50%;
-    --done: 95 100% 44%;
   }
 
   body {
@@ -122,7 +80,6 @@
    ============================================================================ */
 
 @layer components {
-
   /* Cards */
   .neo-card {
     background: var(--color-neo-card);
@@ -337,7 +294,6 @@
     opacity: 0;
     transform: scale(0.9);
   }
-
   to {
     opacity: 1;
     transform: scale(1);
@@ -349,7 +305,6 @@
     opacity: 0;
     transform: translateX(-20px);
   }
-
   to {
     opacity: 1;
     transform: translateX(0);
@@ -357,12 +312,9 @@
 }
 
 @keyframes neoPulse {
-
-  0%,
-  100% {
+  0%, 100% {
     box-shadow: 6px 6px 0px rgba(0, 180, 216, 0.3);
   }
-
   50% {
     box-shadow: 6px 6px 0px rgba(0, 180, 216, 0.8);
   }
@@ -372,11 +324,9 @@
   0% {
     transform: scale(0.8);
   }
-
   60% {
     transform: scale(1.15);
   }
-
   100% {
     transform: scale(1);
   }
@@ -388,7 +338,6 @@
     transform: translateY(-4px);
     filter: blur(2px);
   }
-
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -400,7 +349,6 @@
   0% {
     background-position: 200% center;
   }
-
   100% {
     background-position: -200% center;
   }
@@ -432,12 +380,14 @@
   }
 
   .animate-shimmer {
-    background: linear-gradient(90deg,
-        var(--color-neo-text) 0%,
-        var(--color-neo-text) 40%,
-        var(--color-neo-progress) 50%,
-        var(--color-neo-text) 60%,
-        var(--color-neo-text) 100%);
+    background: linear-gradient(
+      90deg,
+      var(--color-neo-text) 0%,
+      var(--color-neo-text) 40%,
+      var(--color-neo-progress) 50%,
+      var(--color-neo-text) 60%,
+      var(--color-neo-text) 100%
+    );
     background-size: 200% 100%;
     background-clip: text;
     -webkit-background-clip: text;

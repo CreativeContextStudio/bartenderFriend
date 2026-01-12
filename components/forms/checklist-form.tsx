@@ -60,12 +60,12 @@ export function ChecklistForm({ checklist }: ChecklistFormProps) {
   const progressPercent = totalCount > 0 ? (completedCount / totalCount) * 100 : 0;
 
   return (
-    <Card className="border-brutal">
-      <CardHeader className="border-b-4 border-brutal">
+    <Card className="neo-card bg-white">
+      <CardHeader className="border-b-4 border-black bg-gray-50/50">
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle className="text-3xl font-black">{checklist.name}</CardTitle>
-            <CardDescription className="mt-2 text-lg font-medium">
+            <CardTitle className="text-3xl font-black font-display uppercase tracking-tight">{checklist.name}</CardTitle>
+            <CardDescription className="mt-2 text-lg font-medium text-gray-600">
               {completedCount} of {totalCount} completed
             </CardDescription>
           </div>
@@ -75,14 +75,15 @@ export function ChecklistForm({ checklist }: ChecklistFormProps) {
           </div>
         </div>
         <div className="mt-6">
-          <Progress value={progressPercent} className="h-3 border-brutal-sm" />
+          <Progress value={progressPercent} className="h-4 border-2 border-black bg-white" indicatorClassName="bg-[#70e000] border-r-2 border-black" />
         </div>
       </CardHeader>
-      <CardContent className="space-y-3 pt-6">
+      <CardContent className="space-y-4 pt-6">
         {items.map((item) => (
           <div
             key={item.id}
-            className="flex items-start gap-4 border-brutal-sm p-4 bg-muted/30 hover:bg-muted/50 transition-all duration-200 cursor-pointer hover:border-primary"
+            className={`flex items-start gap-4 border-2 border-black p-4 transition-all duration-200 cursor-pointer shadow-neo-sm hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-md ${item.completed ? 'bg-gray-100' : 'bg-white'
+              }`}
             onClick={() => toggleItem(item.id)}
             role="button"
             tabIndex={0}
@@ -95,15 +96,14 @@ export function ChecklistForm({ checklist }: ChecklistFormProps) {
             aria-label={`${item.completed ? 'Uncheck' : 'Check'} ${item.task}`}
           >
             {item.completed ? (
-              <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-1" />
+              <CheckCircle2 className="h-8 w-8 text-[#70e000] shrink-0 mt-0 fill-black" />
             ) : (
-              <Circle className="h-6 w-6 text-muted-foreground shrink-0 mt-1" />
+              <Circle className="h-8 w-8 text-gray-300 shrink-0 mt-0" />
             )}
-            <div className="flex-1">
+            <div className="flex-1 pt-1">
               <div
-                className={`text-base leading-relaxed ${
-                  item.completed ? 'line-through text-muted-foreground' : 'font-medium'
-                }`}
+                className={`text-lg font-bold leading-relaxed ${item.completed ? 'line-through text-gray-400' : 'text-black'
+                  }`}
               >
                 {item.task}
               </div>
