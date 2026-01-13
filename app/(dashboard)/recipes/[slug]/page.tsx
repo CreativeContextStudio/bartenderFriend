@@ -167,14 +167,14 @@ export default function RecipeDetailPage({
           {makeItFasterTips.length > 0 && (
             <div className="neo-card bg-done p-8 border-border">
               <h3 className="text-2xl font-black uppercase tracking-tight text-black mb-4 flex items-center gap-2">
-                <Clock className="h-6 w-6" />
+                <Clock className="h-6 w-6 dark:text-white" />
                 Bar Speed Hacks
               </h3>
               <ul className="space-y-3">
                 {makeItFasterTips.map((tip, index) => (
                   <li key={index} className="flex gap-3 items-start">
-                    <div className="mt-1.5 w-2 h-2 rounded-full bg-black shrink-0" />
-                    <p className="text-lg font-black leading-tight text-black">
+                    <div className="mt-1.5 w-2 h-2 rounded-full bg-black dark:bg-white shrink-0" />
+                    <p className="text-lg font-black leading-tight text-black dark:text-white">
                       {tip}
                     </p>
                   </li>

@@ -93,7 +93,7 @@ export function Sidebar() {
               <AccordionItem key={item.name} value={item.name} className="border-2 border-border bg-card shadow-neo-sm">
                 <AccordionTrigger className={cn(
                   'px-3 py-3 text-sm sm:text-base font-black hover:no-underline transition-colors',
-                  isActive && 'bg-[#ffd60a] text-black'
+                  isActive && 'bg-neo-pending text-neo-pending-text'
                 )}>
                   <div className="flex items-center gap-2 sm:gap-3 flex-1">
                     <item.icon className="h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
@@ -215,8 +215,8 @@ export function Sidebar() {
             onClick={() => setIsOpen(false)}
             className="flex items-center gap-2 sm:gap-3 font-black text-xl sm:text-2xl transition-transform hover:scale-105"
           >
-            <LayoutDashboard className="h-7 w-7 sm:h-8 sm:w-8 text-black" />
-            <span className="font-display tracking-tight text-black">bartender<span className="italic">Friend</span></span>
+            <LayoutDashboard className="h-7 w-7 sm:h-8 sm:w-8 text-foreground dark:text-background" />
+            <span className="font-display tracking-tight text-foreground dark:text-background">bartender<span className="italic">Friend</span></span>
           </Link>
         </div>
 

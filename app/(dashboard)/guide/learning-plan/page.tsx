@@ -80,10 +80,10 @@ export default function LearningPlanPage() {
   return (
     <div className="space-y-12 pb-16">
       <div className="space-y-4 max-w-4xl">
-        <h1 className="font-display text-5xl md:text-7xl font-black tracking-tight text-black">
+        <h1 className="font-display text-5xl md:text-7xl font-black tracking-tight text-foreground">
           7-Day Learning Plan
         </h1>
-        <p className="font-sans text-xl md:text-2xl font-bold text-gray-700 leading-relaxed border-l-4 border-[#00b4d8] pl-6">
+        <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-[#00b4d8] pl-6">
           Minimal time. Maximum confidence. <br />
           45-60 minutes per day.
         </p>
@@ -93,35 +93,35 @@ export default function LearningPlanPage() {
         {learningPlanDays.map((day) => (
           <div key={day.day_number} className="relative pl-8 md:pl-0">
             {/* Timeline Line (Desktop) */}
-            <div className="hidden md:block absolute left-[27px] top-0 bottom-0 w-1 bg-black"></div>
+            <div className="hidden md:block absolute left-[27px] top-0 bottom-0 w-1 bg-border"></div>
 
             <div className="md:flex gap-8 items-start relative z-10">
               {/* Day Badge */}
               <div className="flex-shrink-0 mb-4 md:mb-0">
-                <div className="w-14 h-14 bg-black text-[#ffd60a] rounded-full flex items-center justify-center border-4 border-white shadow-neo-sm font-black text-xl">
+                <div className="w-14 h-14 bg-foreground text-[#ffd60a] rounded-full flex items-center justify-center border-4 border-background shadow-neo-sm font-black text-xl">
                   {day.day_number}
                 </div>
               </div>
 
               {/* Content Card */}
-              <Card className="neo-card flex-1 bg-white hover:translate-x-2 transition-transform duration-200">
-                <CardHeader className="border-b-4 border-black pb-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <Card className="neo-card flex-1 bg-card hover:translate-x-2 transition-transform duration-200">
+                <CardHeader className="border-b-4 border-border pb-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
-                    <CardTitle className="text-3xl font-black uppercase">{day.title}</CardTitle>
-                    <p className="text-lg font-bold text-gray-500">{day.description}</p>
+                    <CardTitle className="text-3xl font-black uppercase text-foreground">{day.title}</CardTitle>
+                    <p className="text-lg font-bold text-muted-foreground">{day.description}</p>
                   </div>
                   <Badge className="neo-badge bg-[#00b4d8] text-white self-start md:self-center">45 min</Badge>
                 </CardHeader>
                 <CardContent className="pt-6">
                   <div className="space-y-3">
                     {day.tasks.map((task, idx) => (
-                      <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 border-2 border-black/10 rounded font-medium">
+                      <div key={idx} className="flex items-start gap-3 p-3 bg-secondary border-2 border-border/30 rounded font-medium">
                         {task.type === 'study' ? (
                           <Zap className="w-5 h-5 text-[#ff006e] shrink-0 mt-0.5" />
                         ) : (
                           <CheckCircle2 className="w-5 h-5 text-[#70e000] shrink-0 mt-0.5" />
                         )}
-                        <span className="text-gray-800">{task.content}</span>
+                        <span className="text-foreground">{task.content}</span>
                       </div>
                     ))}
                   </div>

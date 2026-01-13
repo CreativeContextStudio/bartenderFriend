@@ -32,6 +32,8 @@ export function QuizForm({ quiz }: QuizFormProps) {
   const [answers, setAnswers] = useState<Record<string, number | number[]>>({});
   const [showResults, setShowResults] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [hasAttemptedSubmit, setHasAttemptedSubmit] = useState(false);
   const { toast } = useToast();
 
   const question = quiz.questions[currentQuestion];
@@ -45,6 +47,15 @@ export function QuizForm({ quiz }: QuizFormProps) {
     } else {
       // Multiple select logic would go here
       setAnswers({ ...answers, [question.id]: parseInt(value) });
+    }
+
+    // Clear error when user selects an answer
+    if (errors[question.id]) {
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[question.id];
+        return newErrors;
+      });
     }
   };
 
@@ -80,10 +91,42 @@ export function QuizForm({ quiz }: QuizFormProps) {
     return Math.round((correct / quiz.questions.length) * 100);
   };
 
+  const validateCurrentQuestion = () => {
+    // Check if current question has been answered
+    if (answers[question.id] === undefined) {
+      setErrors({
+        ...errors,
+        [question.id]: 'Please select an answer before proceeding.'
+      });
+      setHasAttemptedSubmit(true);
+
+      // Focus the error message for accessibility
+      setTimeout(() => {
+        const errorElement = document.getElementById(`question-${currentQuestion}-error`);
+        if (errorElement) {
+          errorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          // Announce error to screen readers
+          errorElement.focus();
+        }
+      }, 100);
+
+      return false;
+    }
+    return true;
+  };
+
+  const handleCheckAnswer = () => {
+    if (!validateCurrentQuestion()) {
+      return;
+    }
+    setSubmitted(true);
+  };
+
   const handleNext = () => {
     if (currentQuestion < quiz.questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
       setSubmitted(false);
+      setHasAttemptedSubmit(false);
     } else {
       handleSubmit();
     }
@@ -136,6 +179,8 @@ export function QuizForm({ quiz }: QuizFormProps) {
             onValueChange={handleAnswer}
             disabled={submitted}
             className="space-y-3"
+            aria-invalid={!!errors[question.id]}
+            aria-describedby={errors[question.id] ? `question-${currentQuestion}-error` : undefined}
           >
             {question.options.map((option, index) => {
               const isSelected = answers[question.id] === index;
@@ -173,6 +218,24 @@ export function QuizForm({ quiz }: QuizFormProps) {
               );
             })}
           </RadioGroup>
+
+          {/* Error message */}
+          {errors[question.id] && (
+            <div
+              id={`question-${currentQuestion}-error`}
+              className="mt-4 p-4 border-2 border-destructive bg-destructive/10 rounded-lg"
+              role="alert"
+              aria-live="polite"
+              tabIndex={-1}
+            >
+              <div className="flex items-start gap-3">
+                <XCircle className="h-5 w-5 text-destructive shrink-0 mt-0.5" aria-hidden="true" />
+                <p className="text-sm font-bold text-destructive">
+                  {errors[question.id]}
+                </p>
+              </div>
+            </div>
+          )}
         </div>
 
         {submitted && question.explanation && (
@@ -196,8 +259,7 @@ export function QuizForm({ quiz }: QuizFormProps) {
             </Button>
           )}
           <Button
-            onClick={submitted ? handleNext : () => setSubmitted(true)}
-            disabled={answers[question.id] === undefined}
+            onClick={submitted ? handleNext : handleCheckAnswer}
             className="border-brutal-sm font-bold"
             size="lg"
           >

@@ -76,17 +76,17 @@ export default function BasicRecipesPage() {
         <div className="space-y-6">
           <div className="flex items-center gap-4">
             <span className="neo-badge bg-[#ff006e] text-white text-lg px-4 py-2">Template 02</span>
-            <h2 className="font-display text-4xl font-black">Spirit Forward</h2>
+            <h2 className="font-display text-4xl font-black text-foreground">Spirit Forward</h2>
           </div>
-          <Card className="neo-card bg-white h-full relative overflow-hidden">
-            <CardHeader className="border-b-4 border-black pb-4">
-              <CardTitle className="text-xl font-black uppercase tracking-widest text-gray-500">The Formula</CardTitle>
-              <div className="flex flex-col gap-2 mt-2 font-mono text-lg font-bold">
-                <div className="flex justify-between border-b border-dashed border-gray-300 pb-1">
+          <Card className="neo-card bg-card h-full relative overflow-hidden">
+            <CardHeader className="border-b-4 border-border pb-4">
+              <CardTitle className="text-xl font-black uppercase tracking-widest text-muted-foreground">The Formula</CardTitle>
+              <div className="flex flex-col gap-2 mt-2 font-mono text-lg font-bold text-foreground">
+                <div className="flex justify-between border-b border-dashed border-border pb-1">
                   <span>Base Spirit</span>
                   <span>2 oz</span>
                 </div>
-                <div className="flex justify-between border-b border-dashed border-gray-300 pb-1">
+                <div className="flex justify-between border-b border-dashed border-border pb-1">
                   <span>Vermouth/Amaro</span>
                   <span>1 oz</span>
                 </div>
@@ -98,19 +98,19 @@ export default function BasicRecipesPage() {
             </CardHeader>
             <CardContent className="pt-6 space-y-6">
               <div>
-                <h4 className="font-black text-lg mb-2 flex items-center gap-2">
-                  <span className="w-4 h-4 rounded-full bg-[#ff006e] border-2 border-black"></span>
+                <h4 className="font-black text-lg mb-2 flex items-center gap-2 text-foreground">
+                  <span className="w-4 h-4 rounded-full bg-[#ff006e] border-2 border-border"></span>
                   How to Build
                 </h4>
-                <p className="font-medium text-gray-700">Stir with ice (30s). Strain. Silky texture.</p>
+                <p className="font-medium text-muted-foreground">Stir with ice (30s). Strain. Silky texture.</p>
               </div>
               <div>
-                <h4 className="font-black text-lg mb-2">Unlocks:</h4>
+                <h4 className="font-black text-lg mb-2 text-foreground">Unlocks:</h4>
                 <div className="flex flex-wrap gap-2">
-                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ff006e] hover:text-white">Manhattan</Badge>
-                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ff006e] hover:text-white">Martini</Badge>
-                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ff006e] hover:text-white">Negroni</Badge>
-                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ff006e] hover:text-white">Boulevardier</Badge>
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#ff006e] hover:text-white">Manhattan</Badge>
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#ff006e] hover:text-white">Martini</Badge>
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#ff006e] hover:text-white">Negroni</Badge>
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#ff006e] hover:text-white">Boulevardier</Badge>
                 </div>
               </div>
             </CardContent>
@@ -121,13 +121,13 @@ export default function BasicRecipesPage() {
         <div className="space-y-6">
           <div className="flex items-center gap-4">
             <span className="neo-badge bg-[#ffd60a] text-lg px-4 py-2">Template 03</span>
-            <h2 className="font-display text-4xl font-black">The Highball</h2>
+            <h2 className="font-display text-4xl font-black text-foreground">The Highball</h2>
           </div>
-          <Card className="neo-card bg-white h-full relative overflow-hidden">
-            <CardHeader className="border-b-4 border-black pb-4">
-              <CardTitle className="text-xl font-black uppercase tracking-widest text-gray-500">The Formula</CardTitle>
-              <div className="flex flex-col gap-2 mt-2 font-mono text-lg font-bold">
-                <div className="flex justify-between border-b border-dashed border-gray-300 pb-1">
+          <Card className="neo-card bg-card h-full relative overflow-hidden">
+            <CardHeader className="border-b-4 border-border pb-4">
+              <CardTitle className="text-xl font-black uppercase tracking-widest text-muted-foreground">The Formula</CardTitle>
+              <div className="flex flex-col gap-2 mt-2 font-mono text-lg font-bold text-foreground">
+                <div className="flex justify-between border-b border-dashed border-border pb-1">
                   <span>Base Spirit</span>
                   <span>1.5 - 2 oz</span>
                 </div>
@@ -139,20 +139,20 @@ export default function BasicRecipesPage() {
             </CardHeader>
             <CardContent className="pt-6 space-y-6">
               <div>
-                <h4 className="font-black text-lg mb-2 flex items-center gap-2">
-                  <span className="w-4 h-4 rounded-full bg-[#ffd60a] border-2 border-black"></span>
+                <h4 className="font-black text-lg mb-2 flex items-center gap-2 text-foreground">
+                  <span className="w-4 h-4 rounded-full bg-[#ffd60a] border-2 border-border"></span>
                   How to Build
                 </h4>
-                <p className="font-medium text-gray-700">Build in glass. Add ice. Top with soda. No shaking.</p>
+                <p className="font-medium text-muted-foreground">Build in glass. Add ice. Top with soda. No shaking.</p>
               </div>
               <div>
-                <h4 className="font-black text-lg mb-2">Unlocks:</h4>
+                <h4 className="font-black text-lg mb-2 text-foreground">Unlocks:</h4>
                 <div className="flex flex-wrap gap-2">
-                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ffd60a]">Gin & Tonic</Badge>
-                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ffd60a]">Vodka Soda</Badge>
-                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ffd60a]">Mule</Badge>
-                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ffd60a]">Paloma</Badge>
-                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#ffd60a]">Scotch & Soda</Badge>
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#ffd60a]">Gin & Tonic</Badge>
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#ffd60a]">Vodka Soda</Badge>
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#ffd60a]">Mule</Badge>
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#ffd60a]">Paloma</Badge>
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#ffd60a]">Scotch & Soda</Badge>
                 </div>
               </div>
             </CardContent>
@@ -163,21 +163,21 @@ export default function BasicRecipesPage() {
         <div className="space-y-6">
           <div className="flex items-center gap-4">
             <span className="neo-badge bg-[#3a86ff] text-white text-lg px-4 py-2">Template 04</span>
-            <h2 className="font-display text-4xl font-black">The Collins</h2>
+            <h2 className="font-display text-4xl font-black text-foreground">The Collins</h2>
           </div>
-          <Card className="neo-card bg-white h-full relative overflow-hidden">
-            <CardHeader className="border-b-4 border-black pb-4">
-              <CardTitle className="text-xl font-black uppercase tracking-widest text-gray-500">The Formula</CardTitle>
-              <div className="flex flex-col gap-2 mt-2 font-mono text-lg font-bold">
-                <div className="flex justify-between border-b border-dashed border-gray-300 pb-1">
+          <Card className="neo-card bg-card h-full relative overflow-hidden">
+            <CardHeader className="border-b-4 border-border pb-4">
+              <CardTitle className="text-xl font-black uppercase tracking-widest text-muted-foreground">The Formula</CardTitle>
+              <div className="flex flex-col gap-2 mt-2 font-mono text-lg font-bold text-foreground">
+                <div className="flex justify-between border-b border-dashed border-border pb-1">
                   <span>Base Spirit</span>
                   <span>2 oz</span>
                 </div>
-                <div className="flex justify-between border-b border-dashed border-gray-300 pb-1">
+                <div className="flex justify-between border-b border-dashed border-border pb-1">
                   <span>Citrus</span>
                   <span>3/4 oz</span>
                 </div>
-                <div className="flex justify-between border-b border-dashed border-gray-300 pb-1">
+                <div className="flex justify-between border-b border-dashed border-border pb-1">
                   <span>Sugar</span>
                   <span>3/4 oz</span>
                 </div>
@@ -189,18 +189,18 @@ export default function BasicRecipesPage() {
             </CardHeader>
             <CardContent className="pt-6 space-y-6">
               <div>
-                <h4 className="font-black text-lg mb-2 flex items-center gap-2">
-                  <span className="w-4 h-4 rounded-full bg-[#3a86ff] border-2 border-black"></span>
+                <h4 className="font-black text-lg mb-2 flex items-center gap-2 text-foreground">
+                  <span className="w-4 h-4 rounded-full bg-[#3a86ff] border-2 border-border"></span>
                   How to Build
                 </h4>
-                <p className="font-medium text-gray-700">Short shake. Strain over fresh ice. Top with soda.</p>
+                <p className="font-medium text-muted-foreground">Short shake. Strain over fresh ice. Top with soda.</p>
               </div>
               <div>
-                <h4 className="font-black text-lg mb-2">Unlocks:</h4>
+                <h4 className="font-black text-lg mb-2 text-foreground">Unlocks:</h4>
                 <div className="flex flex-wrap gap-2">
-                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#3a86ff] hover:text-white">Tom Collins</Badge>
-                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#3a86ff] hover:text-white">French 75</Badge>
-                  <Badge className="neo-badge bg-[#f0f0f0] text-black hover:bg-[#3a86ff] hover:text-white">Mojito</Badge>
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#3a86ff] hover:text-white">Tom Collins</Badge>
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#3a86ff] hover:text-white">French 75</Badge>
+                  <Badge className="neo-badge bg-muted text-foreground hover:bg-[#3a86ff] hover:text-white">Mojito</Badge>
                 </div>
               </div>
             </CardContent>
@@ -208,8 +208,8 @@ export default function BasicRecipesPage() {
         </div>
       </section>
 
-      <section className="space-y-6 mt-64 border-t-4 border-black pt-12">
-        <h2 className="font-display text-4xl font-black">Glassware 101</h2>
+      <section className="space-y-6 mt-64 border-t-4 border-border pt-12">
+        <h2 className="font-display text-4xl font-black text-foreground">Glassware 101</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             {
@@ -238,39 +238,39 @@ export default function BasicRecipesPage() {
               <SheetTrigger asChild>
                 <div className="neo-card p-4 hover:shadow-neo-lg transition-all text-center group cursor-pointer hover:-translate-y-1">
                   <div
-                    className="h-16 w-16 mx-auto bg-gray-200 rounded-full mb-3 border-2 border-black transition-colors"
+                    className="h-16 w-16 mx-auto bg-secondary rounded-full mb-3 border-2 border-border transition-colors"
                     style={{ backgroundColor: glass.color }}
                   ></div>
-                  <h4 className="font-black text-lg">{glass.name}</h4>
-                  <p className="text-sm font-medium text-gray-500 mt-1">Click for details</p>
+                  <h4 className="font-black text-lg text-foreground">{glass.name}</h4>
+                  <p className="text-sm font-medium text-muted-foreground mt-1">Click for details</p>
                 </div>
               </SheetTrigger>
-              <SheetContent side="right" className="border-l-4 border-black p-0 sm:max-w-md">
-                <div className="h-full bg-[#fffef5] flex flex-col">
-                  <SheetHeader className="p-6 border-b-4 border-black bg-white">
+              <SheetContent side="right" className="border-l-4 border-border p-0 sm:max-w-md">
+                <div className="h-full bg-background flex flex-col">
+                  <SheetHeader className="p-6 border-b-4 border-border bg-card">
                     <div
-                      className="w-20 h-20 rounded-full border-4 border-black mb-4 mx-auto"
+                      className="w-20 h-20 rounded-full border-4 border-border mb-4 mx-auto"
                       style={{ backgroundColor: glass.color }}
                     />
-                    <SheetTitle className="text-4xl font-black text-center font-display uppercase tracking-tight">{glass.name}</SheetTitle>
-                    <SheetDescription className="text-center text-lg font-medium text-gray-600">
+                    <SheetTitle className="text-4xl font-black text-center font-display uppercase tracking-tight text-foreground">{glass.name}</SheetTitle>
+                    <SheetDescription className="text-center text-lg font-medium text-muted-foreground">
                       Standard Issue Glassware
                     </SheetDescription>
                   </SheetHeader>
 
                   <div className="p-6 space-y-8 flex-1 overflow-y-auto">
                     <div className="space-y-3">
-                      <h3 className="font-black text-xl uppercase tracking-wide border-b-2 border-dashed border-gray-300 pb-2">Description</h3>
-                      <p className="text-lg leading-relaxed font-medium text-gray-800">
+                      <h3 className="font-black text-xl uppercase tracking-wide border-b-2 border-dashed border-border pb-2 text-foreground">Description</h3>
+                      <p className="text-lg leading-relaxed font-medium text-muted-foreground">
                         {glass.description}
                       </p>
                     </div>
 
                     <div className="space-y-3">
-                      <h3 className="font-black text-xl uppercase tracking-wide border-b-2 border-dashed border-gray-300 pb-2">Common Serves</h3>
+                      <h3 className="font-black text-xl uppercase tracking-wide border-b-2 border-dashed border-border pb-2 text-foreground">Common Serves</h3>
                       <div className="flex flex-wrap gap-2">
                         {glass.examples.map(ex => (
-                          <Badge key={ex} className="neo-badge bg-white text-black border-2 border-black">
+                          <Badge key={ex} className="neo-badge bg-card text-foreground border-2 border-border">
                             {ex}
                           </Badge>
                         ))}
@@ -278,16 +278,16 @@ export default function BasicRecipesPage() {
                     </div>
 
                     <div className="space-y-3">
-                      <h3 className="font-black text-xl uppercase tracking-wide border-b-2 border-dashed border-gray-300 pb-2">Specs</h3>
-                      <div className="flex justify-between items-center bg-white p-4 border-2 border-black shadow-neo-sm">
-                        <span className="font-bold text-gray-600">Typical Capacity</span>
-                        <span className="font-black text-xl">{glass.capacity}</span>
+                      <h3 className="font-black text-xl uppercase tracking-wide border-b-2 border-dashed border-border pb-2 text-foreground">Specs</h3>
+                      <div className="flex justify-between items-center bg-card p-4 border-2 border-border shadow-neo-sm">
+                        <span className="font-bold text-muted-foreground">Typical Capacity</span>
+                        <span className="font-black text-xl text-foreground">{glass.capacity}</span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-6 border-t-4 border-black bg-white">
-                    <Button className="w-full neo-btn bg-black text-white hover:bg-gray-800" asChild>
+                  <div className="p-6 border-t-4 border-border bg-card">
+                    <Button className="w-full neo-btn bg-foreground text-background hover:bg-foreground/90" asChild>
                       <SheetClose>Close Guide</SheetClose>
                     </Button>
                   </div>

@@ -80,9 +80,9 @@ export function Topbar() {
             ))}
             <CommandItem
               onSelect={() => runCommand(() => router.push('/recipes'))}
-              className="flex items-center gap-2 px-4 py-3 cursor-pointer border-t border-gray-100 mt-1"
+              className="flex items-center gap-2 px-4 py-3 cursor-pointer border-t border-border mt-1"
             >
-              <span className="font-bold text-blue-600">View all recipes →</span>
+              <span className="font-bold text-neo-interactive hover:underline">View all recipes →</span>
             </CommandItem>
           </CommandGroup>
           <CommandGroup heading="Guides">

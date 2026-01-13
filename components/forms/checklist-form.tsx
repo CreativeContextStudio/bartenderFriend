@@ -60,55 +60,58 @@ export function ChecklistForm({ checklist }: ChecklistFormProps) {
   const progressPercent = totalCount > 0 ? (completedCount / totalCount) * 100 : 0;
 
   return (
-    <Card className="neo-card bg-white">
-      <CardHeader className="border-b-4 border-black bg-gray-50/50">
+    <Card className="neo-card bg-card border-2 border-border shadow-neo transition-all">
+      <CardHeader className="border-b-4 border-border bg-muted/50">
         <div className="flex items-center justify-between">
           <div>
-            <CardTitle className="text-3xl font-black font-display uppercase tracking-tight">{checklist.name}</CardTitle>
-            <CardDescription className="mt-2 text-lg font-medium text-gray-600">
+            <CardTitle className="text-3xl font-black font-display uppercase tracking-tight text-foreground">{checklist.name}</CardTitle>
+            <CardDescription className="mt-2 text-lg font-medium text-muted-foreground">
               {completedCount} of {totalCount} completed
             </CardDescription>
           </div>
           <div className="text-right">
-            <div className="text-4xl font-black">{Math.round(progressPercent)}%</div>
+            <div className="text-4xl font-black text-foreground">{Math.round(progressPercent)}%</div>
             <div className="text-base font-bold text-muted-foreground">Complete</div>
           </div>
         </div>
         <div className="mt-6">
-          <Progress value={progressPercent} className="h-4 border-2 border-black bg-white" indicatorClassName="bg-[#70e000] border-r-2 border-black" />
+          <Progress
+            value={progressPercent}
+            className="h-4 border-2 border-border bg-muted"
+            indicatorClassName="bg-neo-action border-r-2 border-border"
+            aria-label={`Checklist progress: ${Math.round(progressPercent)}% complete`}
+            aria-valuenow={progressPercent}
+            aria-valuemin={0}
+            aria-valuemax={100}
+          />
         </div>
       </CardHeader>
       <CardContent className="space-y-4 pt-6">
         {items.map((item) => (
-          <div
+          <button
             key={item.id}
-            className={`flex items-start gap-4 border-2 border-black p-4 transition-all duration-200 cursor-pointer shadow-neo-sm hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-md ${item.completed ? 'bg-gray-100' : 'bg-white'
-              }`}
             onClick={() => toggleItem(item.id)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleItem(item.id);
-              }
-            }}
-            aria-label={`${item.completed ? 'Uncheck' : 'Check'} ${item.task}`}
+            className={`w-full flex items-start gap-4 p-4 text-left transition-all duration-200 border-2 border-border rounded-lg shadow-neo-sm hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-md focus-visible:ring-2 focus-visible:ring-neo-focus focus-visible:outline-none ${
+              item.completed ? 'bg-muted line-through opacity-70' : 'bg-card'
+            }`}
+            aria-pressed={item.completed}
+            aria-label={`${item.completed ? 'Completed' : 'Incomplete'}: ${item.task}`}
           >
             {item.completed ? (
-              <CheckCircle2 className="h-8 w-8 text-[#70e000] shrink-0 mt-0 fill-black" />
+              <CheckCircle2 className="h-8 w-8 text-neo-action shrink-0 mt-0" aria-hidden="true" />
             ) : (
-              <Circle className="h-8 w-8 text-gray-300 shrink-0 mt-0" />
+              <Circle className="h-8 w-8 text-muted-foreground shrink-0 mt-0" aria-hidden="true" />
             )}
             <div className="flex-1 pt-1">
               <div
-                className={`text-lg font-bold leading-relaxed ${item.completed ? 'line-through text-gray-400' : 'text-black'
-                  }`}
+                className={`text-lg font-bold leading-relaxed ${
+                  item.completed ? 'text-muted-foreground' : 'text-foreground'
+                }`}
               >
                 {item.task}
               </div>
             </div>
-          </div>
+          </button>
         ))}
       </CardContent>
     </Card>

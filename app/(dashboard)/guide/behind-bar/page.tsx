@@ -8,10 +8,10 @@ export default function BehindBarPage() {
   return (
     <div className="space-y-12 pb-16">
       <div className="space-y-4 max-w-4xl">
-        <h1 className="font-display text-5xl md:text-7xl font-black tracking-tight text-black">
+        <h1 className="font-display text-5xl md:text-7xl font-black tracking-tight text-foreground">
           Back Behind the Bar
         </h1>
-        <p className="font-sans text-xl md:text-2xl font-bold text-gray-700 leading-relaxed border-l-4 border-[#ffd60a] pl-6">
+        <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-[#ffd60a] pl-6">
           The bar is a stage. <br />
           Your setup determines your performance.
         </p>
@@ -39,13 +39,13 @@ export default function BehindBarPage() {
       <section className="grid gap-8 md:grid-cols-2">
         {/* Station Setup */}
         <Card className="neo-card h-full">
-          <CardHeader className="border-b-4 border-black bg-[#f0f0f0]">
-            <CardTitle className="bg-black text-white inline-block px-4 py-1 text-2xl font-black rotate-1">
+          <CardHeader className="border-b-4 border-border bg-secondary">
+            <CardTitle className="bg-foreground text-background inline-block px-4 py-1 text-2xl font-black rotate-1">
               Station Setup
             </CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
-            <ul className="space-y-4 font-bold text-lg text-gray-800">
+            <ul className="space-y-4 font-bold text-lg text-foreground">
               <li className="flex items-start gap-3">
                 <CheckSquare className="w-6 h-6 text-[#70e000] shrink-0 mt-0.5" />
                 <span>Ice Bin Full (Fresh ice only)</span>
@@ -68,24 +68,24 @@ export default function BehindBarPage() {
 
         {/* Speed Tactics */}
         <Card className="neo-card h-full">
-          <CardHeader className="border-b-4 border-black bg-[#f0f0f0]">
+          <CardHeader className="border-b-4 border-border bg-secondary">
             <CardTitle className="bg-[#ff006e] text-white inline-block px-4 py-1 text-2xl font-black -rotate-1">
               Speed Tactics
             </CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
             <div className="space-y-6">
-              <div className="border-l-4 border-black pl-4">
-                <h4 className="font-black text-xl uppercase mb-1">Batching</h4>
-                <p className="font-bold text-gray-600">Making 3 Margaritas? Build them all in the tins at once. Shake 2 tins at a time.</p>
+              <div className="border-l-4 border-border pl-4">
+                <h4 className="font-black text-xl uppercase mb-1 text-foreground">Batching</h4>
+                <p className="font-bold text-muted-foreground">Making 3 Margaritas? Build them all in the tins at once. Shake 2 tins at a time.</p>
               </div>
-              <div className="border-l-4 border-black pl-4">
-                <h4 className="font-black text-xl uppercase mb-1">Order of Operations</h4>
-                <p className="font-bold text-gray-600">1. Build Rocks  →  2. Shake Sours  →  3. Stir Martinis  →  4. Highballs.</p>
+              <div className="border-l-4 border-border pl-4">
+                <h4 className="font-black text-xl uppercase mb-1 text-foreground">Order of Operations</h4>
+                <p className="font-bold text-muted-foreground">1. Build Rocks  →  2. Shake Sours  →  3. Stir Martinis  →  4. Highballs.</p>
               </div>
-              <div className="border-l-4 border-black pl-4">
-                <h4 className="font-black text-xl uppercase mb-1">Two Hands</h4>
-                <p className="font-bold text-gray-600">Never have an empty hand. Grab two bottles at once. Pour simultaneously.</p>
+              <div className="border-l-4 border-border pl-4">
+                <h4 className="font-black text-xl uppercase mb-1 text-foreground">Two Hands</h4>
+                <p className="font-bold text-muted-foreground">Never have an empty hand. Grab two bottles at once. Pour simultaneously.</p>
               </div>
             </div>
           </CardContent>
@@ -94,44 +94,44 @@ export default function BehindBarPage() {
 
       {/* Critical Mistakes */}
       <section className="space-y-6">
-        <h2 className="font-display text-4xl font-black">Don't Do This.</h2>
+        <h2 className="font-display text-4xl font-black text-foreground">Don't Do This.</h2>
         <div className="grid gap-4 md:grid-cols-3">
           <div className="neo-card p-6 bg-[#ff5400]/10 border-red-500">
             <ShieldAlert className="w-8 h-8 text-[#ff5400] mb-3" />
-            <h4 className="font-black text-xl mb-2">The Dilution Trap</h4>
-            <p className="font-bold text-sm text-gray-600">Letting ice sit in a shaker while you take an order. Your drink is dying. Dump it.</p>
+            <h4 className="font-black text-xl mb-2 text-foreground">The Dilution Trap</h4>
+            <p className="font-bold text-sm text-muted-foreground">Letting ice sit in a shaker while you take an order. Your drink is dying. Dump it.</p>
           </div>
           <div className="neo-card p-6 bg-[#ff5400]/10 border-red-500">
             <ShieldAlert className="w-8 h-8 text-[#ff5400] mb-3" />
-            <h4 className="font-black text-xl mb-2">The 'Guess' Pour</h4>
-            <p className="font-bold text-sm text-gray-600">Free pouring without training. You're losing money and consistency. Use a jigger.</p>
+            <h4 className="font-black text-xl mb-2 text-foreground">The 'Guess' Pour</h4>
+            <p className="font-bold text-sm text-muted-foreground">Free pouring without training. You're losing money and consistency. Use a jigger.</p>
           </div>
           <div className="neo-card p-6 bg-[#ff5400]/10 border-red-500">
             <ShieldAlert className="w-8 h-8 text-[#ff5400] mb-3" />
-            <h4 className="font-black text-xl mb-2">The Dirty Bar</h4>
-            <p className="font-bold text-sm text-gray-600">Wet labels, sticky bar top. It signals you don't care. Wipe constantly.</p>
+            <h4 className="font-black text-xl mb-2 text-foreground">The Dirty Bar</h4>
+            <p className="font-bold text-sm text-muted-foreground">Wet labels, sticky bar top. It signals you don't care. Wipe constantly.</p>
           </div>
         </div>
       </section>
 
       {/* Closing Duties */}
-      <Card className="neo-card bg-white">
-        <CardHeader className="border-b-4 border-black">
-          <CardTitle className="text-3xl font-black">Closing Time</CardTitle>
+      <Card className="neo-card bg-card">
+        <CardHeader className="border-b-4 border-border">
+          <CardTitle className="text-3xl font-black text-foreground">Closing Time</CardTitle>
         </CardHeader>
         <CardContent className="pt-8">
           <div className="grid md:grid-cols-2 gap-8">
-            <ul className="list-decimal list-inside space-y-3 font-bold text-lg text-gray-700 marker:text-black marker:font-black">
+            <ul className="list-decimal list-inside space-y-3 font-bold text-lg text-muted-foreground marker:text-foreground marker:font-black">
               <li>Stop orders immediately at last call.</li>
               <li>Burn the ice (melt it with hot water).</li>
               <li>Wipe every bottle.</li>
               <li>Cap liquors. Store in lockup.</li>
               <li>Run glassware.</li>
             </ul>
-            <div className="bg-[#f0f0f0] p-6 border-2 border-black rotate-1">
-              <p className="font-display font-black text-2xl mb-2">RULE #1</p>
-              <p className="text-xl font-bold">"Leave the bar better than you found it."</p>
-              <p className="text-sm font-bold text-gray-500 mt-2">The opener will thank you.</p>
+            <div className="bg-secondary p-6 border-2 border-border rotate-1">
+              <p className="font-display font-black text-2xl mb-2 text-foreground">RULE #1</p>
+              <p className="text-xl font-bold text-foreground">"Leave the bar better than you found it."</p>
+              <p className="text-sm font-bold text-muted-foreground mt-2">The opener will thank you.</p>
             </div>
           </div>
         </CardContent>

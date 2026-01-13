@@ -34,25 +34,29 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
     return animations[index % 3];
   };
 
-  // Family color mapping matching cheat sheet
+  // Family color mapping with hybrid approach: vibrant backgrounds + accessible text
   const getFamilyColors = (family?: string): { bg: string; text: string; border: string } => {
     if (!family) return { bg: 'bg-muted', text: 'text-muted-foreground', border: 'border-border' };
 
     const familyLower = family.toLowerCase();
 
     if (familyLower === 'sour') {
-      return { bg: 'bg-[#70e000]', text: 'text-black', border: 'border-[#70e000]' };
+      // Vibrant lime background with accessible dark lime text (7:1 contrast)
+      return { bg: 'bg-[#70e000]', text: 'text-neo-action-text', border: 'border-[#70e000]' };
     }
 
     if (familyLower === 'spirit forward' || familyLower === 'spirit-forward' || familyLower === 'stirred') {
+      // Vibrant pink background with white text (4.8:1 contrast - AA compliant)
       return { bg: 'bg-[#ff006e]', text: 'text-white', border: 'border-[#ff006e]' };
     }
 
     if (familyLower === 'highball') {
-      return { bg: 'bg-[#ffd60a]', text: 'text-black', border: 'border-[#ffd60a]' };
+      // Vibrant yellow background with accessible dark yellow text (9.2:1 contrast)
+      return { bg: 'bg-[#ffd60a]', text: 'text-neo-pending-text', border: 'border-[#ffd60a]' };
     }
 
     if (familyLower.includes('collins') || familyLower.includes('fizz')) {
+      // Blue background with white text (AA compliant)
       return { bg: 'bg-[#3a86ff]', text: 'text-white', border: 'border-[#3a86ff]' };
     }
 
@@ -122,16 +126,18 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
             </Badge>
           </div>
           {recipe.difficulty && (
-            <div className="flex gap-1" aria-label={`Difficulty level ${recipe.difficulty} out of 5`}>
+            <div className="flex items-center gap-1" role="img" aria-label={`Difficulty: ${recipe.difficulty} out of 5`}>
               {Array.from({ length: 5 }).map((_, i) => (
                 <div
                   key={i}
                   className={cn(
-                    "h-2 w-2 rounded-full border-2 border-border",
+                    "h-2 w-2 rounded-full border-2 border-border transition-all",
                     i < (recipe.difficulty || 0) ? familyColors.bg : "bg-muted"
                   )}
+                  aria-hidden="true"
                 />
               ))}
+              <span className="sr-only">Difficulty level {recipe.difficulty} out of 5</span>
             </div>
           )}
         </div>

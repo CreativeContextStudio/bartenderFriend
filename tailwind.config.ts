@@ -52,6 +52,21 @@ const config = {
           DEFAULT: "var(--color-neo-card)",
           foreground: "var(--color-neo-text)",
         },
+        // Neobrutalist design colors with accessible text variants
+        "neo-pending": {
+          DEFAULT: "var(--color-neo-pending)",     // Vibrant yellow background
+          text: "var(--color-neo-pending-text)",    // Accessible dark yellow text
+        },
+        "neo-accent": {
+          DEFAULT: "var(--color-neo-accent)",       // Vibrant pink background
+          text: "var(--color-neo-accent-text)",     // Accessible dark pink text
+        },
+        "neo-action": {
+          DEFAULT: "var(--color-neo-done)",         // Vibrant lime background
+          text: "var(--color-neo-action-text)",     // Accessible dark lime text
+        },
+        "neo-interactive": "var(--color-neo-interactive)", // Accessible blue for links/buttons
+        "neo-focus": "var(--color-neo-focus)",             // Focus ring color
       },
       fontFamily: {
         display: ["var(--font-neo-display)"],

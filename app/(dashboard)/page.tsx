@@ -43,8 +43,8 @@ export default function DashboardPage() {
         </div>
 
         {/* Decorative Background Elements */}
-        <div className="absolute right-0 top-0 w-64 h-64 bg-[#ffd60a] rounded-full blur-3xl opacity-20 -mr-16 -mt-16 pointer-events-none" />
-        <div className="absolute bottom-0 right-20 w-80 h-80 bg-[#ff006e] rounded-full blur-3xl opacity-10 -mb-20 pointer-events-none" />
+        <div className="absolute right-0 top-0 w-64 h-64 bg-neo-pending rounded-full blur-3xl opacity-20 -mr-16 -mt-16 pointer-events-none" />
+        <div className="absolute bottom-0 right-20 w-80 h-80 bg-neo-accent rounded-full blur-3xl opacity-10 -mb-20 pointer-events-none" />
       </section>
 
       {/* Feature Grid */}
@@ -78,7 +78,7 @@ export default function DashboardPage() {
         <Link href="/training" className="group">
           <Card className="h-full neo-card hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200">
             <CardHeader>
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center border-2 border-border bg-done text-black shadow-neo-sm">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center border-2 border-border bg-done text-neo-action-text shadow-neo-sm">
                 <Zap className="h-6 w-6" />
               </div>
               <CardTitle className="text-2xl font-black text-foreground">Speed & Efficiency</CardTitle>
