@@ -1,4 +1,4 @@
-import { getRecipeBySlug } from '@/lib/static-data';
+import { getAllRecipes, getRecipeBySlug } from '@/lib/static-data';
 import { DrinkPlaceholder } from '@/components/ui/placeholders/drink-placeholder';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -7,6 +7,32 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Clock, GlassWater, ListChecks, Shapes } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import type { Metadata } from 'next';
+
+export function generateStaticParams() {
+  return getAllRecipes().map((recipe) => ({
+    slug: recipe.slug,
+  }));
+}
+
+export function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Metadata {
+  const recipe = getRecipeBySlug(params.slug);
+  if (!recipe) {
+    return { title: 'Recipe Not Found' };
+  }
+
+  const description = recipe.description
+    || `How to make a ${recipe.name} — ${recipe.method}, served in a ${recipe.glassware}.`;
+
+  return {
+    title: `${recipe.name} — bartenderFriend`,
+    description,
+  };
+}
 
 export default function RecipeDetailPage({
   params,
@@ -54,7 +80,7 @@ export default function RecipeDetailPage({
         </Button>
       </Link>
 
-      <div className="grid lg:grid-cols-2 gap-12 items-start">
+      <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
         <div className="space-y-6">
           <div className="aspect-square neo-card overflow-hidden bg-card p-4">
             <div className="w-full h-full border-2 border-border overflow-hidden bg-muted/30">
@@ -91,7 +117,7 @@ export default function RecipeDetailPage({
         <div className="space-y-8">
           <div className="space-y-4">
             <div className="flex flex-wrap items-center gap-3">
-              <h1 className="font-display text-5xl md:text-7xl font-black tracking-tight text-foreground uppercase leading-none">
+              <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-black tracking-tight text-foreground uppercase leading-none">
                 {recipe.name}
               </h1>
               {recipe.family && (
@@ -101,7 +127,7 @@ export default function RecipeDetailPage({
               )}
             </div>
             {recipe.description && (
-              <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-border pl-6">
+              <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-border pl-4 sm:pl-6">
                 {recipe.description}
               </p>
             )}
@@ -117,7 +143,7 @@ export default function RecipeDetailPage({
             <CardContent className="p-0">
               <div className="divide-y-2 divide-border">
                 {spec && Object.entries(spec).map(([key, value]: [string, any]) => (
-                  <div key={key} className="flex justify-between items-center p-5 hover:bg-muted/30 transition-colors text-foreground">
+                  <div key={key} className="flex justify-between items-center p-3 sm:p-5 hover:bg-muted/30 transition-colors text-foreground">
                     <span className="text-lg font-black uppercase tracking-tight opacity-70">{key.replace('_', ' ')}:</span>
                     <span className="text-2xl font-black">{value}</span>
                   </div>
@@ -143,8 +169,8 @@ export default function RecipeDetailPage({
 
       <div className="grid md:grid-cols-2 gap-8 mt-12">
         {steps.length > 0 && (
-          <div className="neo-card bg-card p-8 text-foreground border-border">
-            <h3 className="text-3xl font-black font-display uppercase tracking-tight mb-6 flex items-center gap-3">
+          <div className="neo-card bg-card p-4 sm:p-6 md:p-8 text-foreground border-border">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight mb-6 flex items-center gap-3">
               <ListChecks className="h-8 w-8 text-primary" />
               Build Steps
             </h3>
@@ -165,8 +191,8 @@ export default function RecipeDetailPage({
 
         <div className="space-y-8">
           {makeItFasterTips.length > 0 && (
-            <div className="neo-card bg-done p-8 border-border">
-              <h3 className="text-2xl font-black uppercase tracking-tight text-black mb-4 flex items-center gap-2">
+            <div className="neo-card bg-done p-4 sm:p-6 md:p-8 border-border">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-black uppercase tracking-tight text-black mb-4 flex items-center gap-2">
                 <Clock className="h-6 w-6 dark:text-white" />
                 Bar Speed Hacks
               </h3>
@@ -184,8 +210,8 @@ export default function RecipeDetailPage({
           )}
 
           {commonMistakes.length > 0 && (
-            <div className="neo-card bg-[#ff006e] p-8 text-white">
-              <h3 className="text-2xl font-black uppercase tracking-tight mb-4 flex items-center gap-2">
+            <div className="neo-card bg-[#ff006e] p-4 sm:p-6 md:p-8 text-white">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-black uppercase tracking-tight mb-4 flex items-center gap-2">
                 <ArrowLeft className="h-6 w-6 rotate-180" />
                 Watch Out For
               </h3>

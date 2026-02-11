@@ -8,17 +8,17 @@ export default function BehindBarPage() {
   return (
     <div className="space-y-12 pb-16">
       <div className="space-y-4 max-w-4xl">
-        <h1 className="font-display text-5xl md:text-7xl font-black tracking-tight text-foreground">
+        <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-black tracking-tight text-foreground">
           Back Behind the Bar
         </h1>
-        <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-[#ffd60a] pl-6">
+        <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-[#ffd60a] pl-4 sm:pl-6">
           The bar is a stage. <br />
           Your setup determines your performance.
         </p>
       </div>
 
       {/* Hero Tip */}
-      <div className="neo-card bg-black text-white p-8 border-4 border-black shadow-neo-xl relative overflow-hidden">
+      <div className="neo-card bg-black text-white p-4 sm:p-6 md:p-8 border-4 border-black shadow-neo-xl relative overflow-hidden">
         <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 space-y-4">
             <h2 className="font-display text-4xl font-black text-[#ffd60a]">Mise en Place</h2>

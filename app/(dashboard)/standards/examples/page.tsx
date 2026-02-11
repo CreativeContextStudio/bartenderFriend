@@ -29,7 +29,7 @@ export default function ExamplesPage() {
   return (
     <div className="space-y-8">
       <div className="space-y-3">
-        <h1 className="text-5xl md:text-6xl font-black tracking-tight">Examples</h1>
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight">Examples</h1>
         <p className="text-lg md:text-xl font-medium text-muted-foreground leading-relaxed">
           Handful of examples per family. Click any card to see full recipe details.
         </p>
@@ -51,7 +51,7 @@ export default function ExamplesPage() {
                     {familyRecipes.length} example{familyRecipes.length !== 1 ? 's' : ''}
                   </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                   {familyRecipes.map((recipe) => (
                     <RecipeCard 
                       key={recipe.id} 

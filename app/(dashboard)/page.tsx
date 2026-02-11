@@ -19,7 +19,7 @@ export default function DashboardPage() {
           <Badge variant="outline" className="neo-badge bg-card text-foreground text-base border-border">
             a bar companion
           </Badge>
-          <h1 className="font-display text-6xl sm:text-8xl font-black tracking-tighter leading-[0.9] text-foreground">
+          <h1 className="font-display text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] text-foreground">
             bartenderFriend
           </h1>
           <p className="font-sans text-xl sm:text-2xl font-bold text-muted-foreground max-w-2xl leading-relaxed">
@@ -48,7 +48,7 @@ export default function DashboardPage() {
       </section>
 
       {/* Feature Grid */}
-      <section className="grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-3">
+      <section className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         <Link href="/recipes" className="group">
           <Card className="h-full neo-card hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all duration-200">
             <CardHeader>
@@ -94,7 +94,7 @@ export default function DashboardPage() {
       <section className="space-y-6">
         <div className="flex items-center justify-between">
           <div className="space-y-1">
-            <h2 className="font-display text-4xl font-black tracking-tight text-foreground">Trending Now</h2>
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-foreground">Trending Now</h2>
             <p className="text-lg font-bold text-muted-foreground">Most popular drinks this month.</p>
           </div>
           <Link href="/recipes">

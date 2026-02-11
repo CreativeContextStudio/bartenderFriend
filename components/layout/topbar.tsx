@@ -47,7 +47,7 @@ export function Topbar() {
         <div className="flex flex-1 items-center gap-3 sm:gap-4 min-w-0">
           <Button
             variant="outline"
-            className="relative h-10 sm:h-12 w-full justify-start text-sm sm:text-base font-bold text-muted-foreground sm:w-80 sm:pr-14 bg-card border-2 border-border shadow-neo-sm hover:shadow-neo-md hover:translate-x-[-1px] hover:translate-y-[-1px] transition-all"
+            className="relative h-11 sm:h-12 w-full justify-start text-sm sm:text-base font-bold text-muted-foreground sm:w-80 sm:pr-14 bg-card border-2 border-border shadow-neo-sm hover:shadow-neo-md hover:translate-x-[-1px] hover:translate-y-[-1px] transition-all"
             onClick={() => setOpen(true)}
             aria-label="Open search dialog"
           >
@@ -64,7 +64,7 @@ export function Topbar() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="View source on GitHub"
-          className="inline-flex items-center justify-center h-10 w-10 rounded-md border-2 border-border bg-card text-foreground shadow-neo-sm hover:shadow-neo-md hover:translate-x-[-1px] hover:translate-y-[-1px] transition-all"
+          className="inline-flex items-center justify-center h-11 w-11 rounded-md border-2 border-border bg-card text-foreground shadow-neo-sm hover:shadow-neo-md hover:translate-x-[-1px] hover:translate-y-[-1px] transition-all"
         >
           <Github className="h-5 w-5" />
         </a>

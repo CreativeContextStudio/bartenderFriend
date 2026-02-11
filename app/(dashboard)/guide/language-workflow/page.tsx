@@ -6,10 +6,10 @@ export default function LanguageWorkflowPage() {
   return (
     <div className="space-y-12 pb-16">
       <div className="space-y-4 max-w-4xl">
-        <h1 className="font-display text-5xl md:text-7xl font-black tracking-tight text-foreground">
+        <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-black tracking-tight text-foreground">
           Language & Workflow
         </h1>
-        <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-[#70e000] pl-6">
+        <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-[#70e000] pl-4 sm:pl-6">
           If you can't speak the language, you can't work the line. <br />
           Key terms. Core rules.
         </p>
@@ -18,17 +18,17 @@ export default function LanguageWorkflowPage() {
       {/* Shake vs Stir - Visual AB Test */}
       <section className="grid md:grid-cols-2 gap-8">
         <div className="neo-card bg-secondary border-4 border-border relative overflow-hidden group hover:bg-[#70e000] transition-colors duration-300">
-          <div className="p-8 relative z-10">
-            <h2 className="font-display text-6xl font-black uppercase mb-4 opacity-20 group-hover:opacity-100 transition-opacity text-foreground">Shake</h2>
-            <p className="text-2xl font-bold mb-4 text-foreground">Citrus. Juice. Cream. Egg.</p>
+          <div className="p-4 sm:p-6 md:p-8 relative z-10">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-black uppercase mb-4 opacity-20 group-hover:opacity-100 transition-opacity text-foreground">Shake</h2>
+            <p className="text-xl sm:text-2xl font-bold mb-4 text-foreground">Citrus. Juice. Cream. Egg.</p>
             <p className="font-mono text-sm uppercase tracking-widest font-bold text-foreground">Goal: Aeration & Texture</p>
           </div>
           <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-[#70e000] rounded-full blur-3xl opacity-50 group-hover:opacity-0"></div>
         </div>
         <div className="neo-card bg-secondary border-4 border-border relative overflow-hidden group hover:bg-[#00b4d8] transition-colors duration-300">
-          <div className="p-8 relative z-10">
-            <h2 className="font-display text-6xl font-black uppercase mb-4 opacity-20 group-hover:opacity-100 transition-opacity text-foreground">Stir</h2>
-            <p className="text-2xl font-bold mb-4 text-foreground">Spirits only. Clear. Boozy.</p>
+          <div className="p-4 sm:p-6 md:p-8 relative z-10">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-black uppercase mb-4 opacity-20 group-hover:opacity-100 transition-opacity text-foreground">Stir</h2>
+            <p className="text-xl sm:text-2xl font-bold mb-4 text-foreground">Spirits only. Clear. Boozy.</p>
             <p className="font-mono text-sm uppercase tracking-widest font-bold text-foreground">Goal: Dilution & Clarity</p>
           </div>
           <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-[#00b4d8] rounded-full blur-3xl opacity-50 group-hover:opacity-0"></div>
@@ -58,8 +58,8 @@ export default function LanguageWorkflowPage() {
       </section>
 
       {/* Modifiers */}
-      <section className="neo-card bg-black text-white p-8 border-4 border-black">
-        <h2 className="font-display text-3xl font-black mb-6 text-[#ffd60a]">Know Your Modifiers</h2>
+      <section className="neo-card bg-black text-white p-4 sm:p-6 md:p-8 border-4 border-black">
+        <h2 className="font-display text-2xl sm:text-3xl font-black mb-6 text-[#ffd60a]">Know Your Modifiers</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-4">
             <div className="border-b border-white/20 pb-2">

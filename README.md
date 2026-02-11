@@ -1,68 +1,75 @@
 # bartenderFriend
 
-A learning mini-guide/app to help new and returning bartenders ramp fast with basic recipe knowledge, bar language + workflow refreshers, and behind-the-bar fundamentals.
+Hey, welcome behind the bar! Whether you're brand new or shaking off some rust after time away, this app is like having a buddy on the other side of the counter walking you through the basics — recipes, workflow, lingo, all of it. Think of it as your pocket mentor for getting up to speed fast.
 
-## Features
+## What's Inside
 
-- **Guide Pages**: Comprehensive guides on basic recipe knowledge, behind-the-bar fundamentals, bar language, and workflow
-- **Recipe Cards**: Browse and learn from 17+ core cocktail recipes with detailed specs, steps, and tips
-- **Family Explorer**: Understand drink families and patterns—what changes vs stays constant
-- **Training Mode**: Interactive daily tasks, quizzes, and practical checklists
-- **Progress Tracking**: Track your learning progress, identify weak areas, and see what to study next
-- **Cheat Sheet**: Printable memorization list of core drinks
-- **Standards**: Canonical builds and template patterns
-- **Documents Library**: Upload and manage reference documents
+- **Guide Pages** — Real talk on recipe knowledge, behind-the-bar fundamentals, bar language, and how to move with purpose during a rush
+- **Recipe Cards** — 17+ core cocktails broken down with full specs, step-by-step builds, and the kind of tips you'd normally only get from a patient barback
+- **Family Explorer** — Learn to see the *patterns* in drinks — what stays the same, what changes — so you stop memorizing and start understanding
+- **Training Mode** — Daily tasks, quizzes, and practical checklists to drill it in. Repetition is your friend here
+- **Progress Tracking** — See where you're solid and where you need more reps. No judgment, just data
+- **Cheat Sheet** — A printable one-pager of core drinks for your back pocket (or taped inside a speed rail, we won't tell)
+- **Standards** — Canonical builds and template patterns, because consistency is what separates good bartenders from great ones
+- **Documents Library** — Upload and stash your own reference docs
 
 ## Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
-- **UI**: shadcn/ui components with Tailwind CSS
-- **Database**: Neon Postgres (PostgreSQL)
-- **Storage**: Blob storage (S3-compatible: R2/Vercel Blob/Neon Storage)
-- **Language**: TypeScript
+Under the hood, this thing is built with:
 
-## Setup
+- **Next.js 14** (App Router) — the framework
+- **shadcn/ui + Tailwind CSS** — clean UI without the fuss
+- **Neon Postgres** — database (optional for now, see phases below)
+- **TypeScript** — keeping things typed and honest
+
+## Getting Started
+
+Getting set up is quick — no database required to start learning.
 
 1. **Install dependencies**:
    ```bash
    npm install
    ```
 
-2. **Set up environment variables**:
+2. **Set up environment variables** (optional for Phase 1):
    Copy `.env.local.example` to `.env.local` and fill in:
    - `DATABASE_URL`: Your Neon Postgres connection string
    - `BLOB_ENDPOINT`, `BLOB_ACCESS_KEY_ID`, `BLOB_SECRET_ACCESS_KEY`, `BLOB_BUCKET_NAME`: Blob storage credentials
    - `LOCAL_USER_ID`: Local user ID for progress tracking (e.g., `local-user-1`)
 
-3. **Run database migrations**:
+   > No `.env.local`? No problem. The app runs fully on static data and localStorage out of the box.
+
+3. **Run database migrations** (only if using a database):
    ```bash
    npm run db:migrate
    ```
 
-4. **Seed the database**:
+4. **Seed the database** (only if using a database):
    ```bash
    npm run db:seed
    ```
 
-5. **Start the development server**:
+5. **Fire it up**:
    ```bash
    npm run dev
    ```
 
-6. **Open [http://localhost:3000](http://localhost:3000)** in your browser.
+6. **Open [http://localhost:3000](http://localhost:3000)** and start learning.
 
 ## Database Migrations
 
-Migrations are located in `supabase/migrations/`:
-- `001_initial_schema.sql`: Creates all tables and indexes
-- `002_seed_data.sql`: Seeds initial data (families, recipes, glossary terms, learning plan, checklists, etc.)
+If you're going the database route, migrations live in `supabase/migrations/`:
+- `001_initial_schema.sql` — Creates all tables and indexes
+- `002_seed_data.sql` — Seeds the initial data (families, recipes, glossary terms, learning plan, checklists, the works)
 
 ## Project Structure
+
+Here's how the bar is laid out:
 
 ```
 bartenderFriend/
 ├── app/
-│   ├── (dashboard)/          # Dashboard layout pages
+│   ├── (dashboard)/          # Where all the action happens
 │   │   ├── page.tsx          # Dashboard home
 │   │   ├── guide/            # Guide pages
 │   │   ├── recipes/          # Recipe pages
@@ -88,22 +95,24 @@ bartenderFriend/
 
 ## Phase 1 vs Phase 2
 
-**Phase 1 (Current)**:
-- CSS placeholder animations for drink images
-- Local-only user tracking
-- Full guide content and recipe database
+**Phase 1 (Current)** — You're here. Everything works:
+- CSS placeholder animations stand in for drink images
+- Progress tracked locally in your browser
+- Full guide content, recipe database, and training tools ready to go
 
-**Phase 2 (Future)**:
-- AI-generated 1960s realistic drink photography
-- Replace CSS placeholders with actual photos
-- See plan document for full Phase 2 spec
+**Phase 2 (Down the road)**:
+- AI-generated 1960s-style realistic drink photography
+- CSS placeholders get swapped for actual photos
+- See the plan doc for the full Phase 2 spec
 
 ## Development
 
-- Run linting: `npm run lint`
-- Build for production: `npm run build`
-- Start production server: `npm start`
+```bash
+npm run lint          # Check your work
+npm run build         # Build for production
+npm start             # Run the production server
+```
 
 ## License
 
-MIT
+MIT — do what you want with it. Just make good drinks.

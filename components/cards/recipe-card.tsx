@@ -92,7 +92,7 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
           className="h-full transform group-hover:scale-105 transition-transform duration-500"
         />
       </div>
-      <CardHeader className="p-5 text-foreground">
+      <CardHeader className="p-3 sm:p-5 text-foreground">
         <div className="flex items-start justify-between gap-3 mb-2">
           <CardTitle className="text-xl md:text-2xl font-black font-display uppercase tracking-tight text-foreground">
             {recipe.name}
@@ -115,7 +115,7 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
           </p>
         )}
       </CardHeader>
-      <CardContent className="p-5 pt-0">
+      <CardContent className="p-3 sm:p-5 pt-0 sm:pt-0">
         <div className="flex items-center justify-between pt-4 border-t-2 border-dashed border-border mt-2">
           <div className="flex items-center gap-2">
             <Badge variant="outline" className="text-xs font-bold uppercase tracking-wider border-2 border-border bg-card">

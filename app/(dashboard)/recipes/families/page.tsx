@@ -31,7 +31,7 @@ export default function FamiliesPage() {
   return (
     <div className="space-y-8">
       <div className="space-y-3">
-        <h1 className="text-5xl md:text-6xl font-black tracking-tight">Core Families of Drinks</h1>
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight">Core Families of Drinks</h1>
         <p className="text-lg md:text-xl font-medium text-muted-foreground leading-relaxed">
           Learn the patterns. What changes vs stays constant in each family.
         </p>
@@ -101,7 +101,7 @@ export default function FamiliesPage() {
                   {familyRecipes.length > 0 && (
                     <div>
                       <h4 className="text-xl font-black mb-4">Example Recipes</h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {familyRecipes.slice(0, 6).map((recipe) => (
                           <RecipeCard 
                             key={recipe.id} 

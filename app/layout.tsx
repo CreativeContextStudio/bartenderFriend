@@ -17,6 +17,18 @@ export const metadata: Metadata = {
     ],
     shortcut: "/favicon.png",
   },
+  openGraph: {
+    title: "bartenderFriend - Bartending QuickGuide",
+    description: "Quick recall and confident execution for new and returning bartenders",
+    type: "website",
+    locale: "en_US",
+    siteName: "bartenderFriend",
+  },
+  twitter: {
+    card: "summary",
+    title: "bartenderFriend - Bartending QuickGuide",
+    description: "Quick recall and confident execution for new and returning bartenders",
+  },
   other: {
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",

@@ -2,6 +2,7 @@
 // This replaces database progress tracking for Phase 1
 
 const STORAGE_KEY = 'bartender-friend-progress';
+const STORAGE_VERSION = 1;
 const USER_ID = 'local-user-1';
 
 export interface ProgressEvent {
@@ -15,13 +16,64 @@ export interface ProgressEvent {
   createdAt: string;
 }
 
+interface StorageEnvelope {
+  version: number;
+  events: ProgressEvent[];
+}
+
+function migrateStorage(raw: string): ProgressEvent[] {
+  try {
+    const parsed = JSON.parse(raw);
+
+    // Already versioned envelope
+    if (parsed && typeof parsed === 'object' && 'version' in parsed) {
+      const envelope = parsed as StorageEnvelope;
+      // Future: add version-specific migrations here
+      // if (envelope.version < 2) { ... }
+      return envelope.events;
+    }
+
+    // Legacy format: bare array of events
+    if (Array.isArray(parsed)) {
+      // Re-save in envelope format
+      writeEvents(parsed);
+      return parsed;
+    }
+
+    return [];
+  } catch {
+    return [];
+  }
+}
+
+function writeEvents(events: ProgressEvent[]): void {
+  const envelope: StorageEnvelope = {
+    version: STORAGE_VERSION,
+    events,
+  };
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(envelope));
+  } catch (e) {
+    if (e instanceof DOMException && e.name === 'QuotaExceededError') {
+      // Drop oldest 25% of events to free space, then retry
+      const trimmed = events.slice(Math.floor(events.length * 0.25));
+      const fallback: StorageEnvelope = { version: STORAGE_VERSION, events: trimmed };
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(fallback));
+      } catch {
+        // Storage completely full — silently fail rather than crash
+      }
+    }
+  }
+}
+
 export function getProgressEvents(): ProgressEvent[] {
   if (typeof window === 'undefined') return [];
-  
+
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (!stored) return [];
-    return JSON.parse(stored);
+    return migrateStorage(stored);
   } catch {
     return [];
   }
@@ -47,8 +99,8 @@ export function saveProgressEvent(
 
   const events = getProgressEvents();
   events.push(event);
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(events));
-  
+  writeEvents(events);
+
   return event;
 }
 
@@ -70,7 +122,7 @@ export function getRecipesPracticedLast7Days(): string[] {
   sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
 
   return events
-    .filter(e => 
+    .filter(e =>
       e.eventType === 'recipe_completed' &&
       new Date(e.createdAt) > sevenDaysAgo
     )
@@ -79,7 +131,7 @@ export function getRecipesPracticedLast7Days(): string[] {
 
 export function getQuizScores(): Array<{ quizType: string; score: number; date: string }> {
   const events = getProgressEvents();
-  
+
   return events
     .filter(e => e.eventType === 'quiz_attempt' && e.score !== undefined)
     .map(e => ({

@@ -137,12 +137,12 @@ export function QuizForm({ quiz }: QuizFormProps) {
     return (
       <Card className="border-brutal">
         <CardHeader className="border-b-4 border-brutal">
-          <CardTitle className="text-3xl font-black">Quiz Results</CardTitle>
+          <CardTitle className="text-2xl sm:text-3xl font-black">Quiz Results</CardTitle>
           <CardDescription className="text-lg font-medium">Your performance summary</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6 pt-6">
           <div className="text-center space-y-3">
-            <div className="text-6xl font-black">{score}%</div>
+            <div className="text-4xl sm:text-6xl font-black">{score}%</div>
             <Progress value={score} className="w-full h-3 border-brutal-sm" />
             <p className="text-lg font-bold text-muted-foreground">
               {score >= 90 ? 'Excellent!' : score >= 70 ? 'Good job!' : 'Keep practicing!'}
@@ -173,7 +173,7 @@ export function QuizForm({ quiz }: QuizFormProps) {
       </CardHeader>
       <CardContent className="space-y-6 pt-6">
         <div>
-          <h3 className="text-2xl font-black mb-6 leading-tight">{question.question}</h3>
+          <h3 className="text-lg sm:text-2xl font-black mb-4 sm:mb-6 leading-tight">{question.question}</h3>
           <RadioGroup
             value={answers[question.id]?.toString()}
             onValueChange={handleAnswer}
@@ -244,7 +244,7 @@ export function QuizForm({ quiz }: QuizFormProps) {
           </div>
         )}
 
-        <div className="flex justify-end gap-3">
+        <div className="flex flex-col sm:flex-row justify-end gap-3">
           {currentQuestion > 0 && (
             <Button
               variant="outline"

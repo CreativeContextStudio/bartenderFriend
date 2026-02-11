@@ -41,10 +41,10 @@ export default function CheatSheetPage() {
     <div className="space-y-12 pb-16">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <div className="space-y-4 max-w-4xl flex-1">
-          <h1 className="font-display text-5xl md:text-7xl font-black tracking-tight text-foreground">
+          <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-black tracking-tight text-foreground">
             Cheat Sheet
           </h1>
-          <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-primary pl-6">
+          <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-primary pl-4 sm:pl-6">
             Memorize these core drinks cold. <br />
             Print this and keep in your pocket for the first week.
           </p>
@@ -93,7 +93,7 @@ export default function CheatSheetPage() {
                       <div className="flex-1 h-1 bg-muted border-2 border-border"></div>
                     </div>
 
-                    <div className="grid gap-4 md:grid-cols-2">
+                    <div className="grid gap-4 sm:grid-cols-2">
                       {drinks.map((item, index) => (
                         <Sheet key={index}>
                           <SheetTrigger asChild>

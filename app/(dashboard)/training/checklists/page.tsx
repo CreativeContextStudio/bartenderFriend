@@ -105,10 +105,10 @@ export default function ChecklistsPage({
   return (
     <div className="space-y-12 pb-16">
       <div className="space-y-4 max-w-4xl">
-        <h1 className="font-display text-5xl md:text-7xl font-black tracking-tight text-black">
+        <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-black tracking-tight text-foreground">
           Practical Checklists
         </h1>
-        <p className="font-sans text-xl md:text-2xl font-bold text-gray-700 leading-relaxed border-l-4 border-[#ff006e] pl-6">
+        <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-[#ff006e] pl-4 sm:pl-6">
           Interactive checklists for real-world scenarios. <br />
           Check off items as you complete them.
         </p>
@@ -116,7 +116,7 @@ export default function ChecklistsPage({
 
       <div className="space-y-8">
         <Tabs defaultValue={checklistType} value={checklistType} className="w-full space-y-8">
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 h-auto p-2 bg-gray-100 border-2 border-black gap-2">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 h-auto p-2 bg-muted border-2 border-border gap-2">
             <TabsTrigger value="day-one" className="text-lg font-black data-[state=active]:bg-[#ff006e] data-[state=active]:text-white data-[state=active]:border-2 data-[state=active]:border-black h-12" asChild>
               <Link href="/training/checklists?type=day-one">Day One</Link>
             </TabsTrigger>
@@ -137,7 +137,7 @@ export default function ChecklistsPage({
             ) : (
               <Card className="neo-card p-12 text-center">
                 <CardContent>
-                  <p className="text-xl font-bold text-gray-500">Checklist not found.</p>
+                  <p className="text-xl font-bold text-muted-foreground">Checklist not found.</p>
                 </CardContent>
               </Card>
             )}

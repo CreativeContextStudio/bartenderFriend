@@ -104,11 +104,11 @@ export function RecipeSlidePanel({ recipe, open, onOpenChange }: RecipeSlidePane
           <Maximize2 className="h-7 w-7 md:h-6 md:w-6" />
         </Link>
 
-        <div className="p-8 space-y-8">
+        <div className="p-4 sm:p-6 lg:p-8 space-y-8">
           <SheetHeader className="space-y-4 border-brutal-sm pb-6">
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1">
-                <SheetTitle className="text-4xl font-black leading-tight mb-2">
+                <SheetTitle className="text-2xl sm:text-3xl lg:text-4xl font-black leading-tight mb-2">
                   {recipe.name}
                 </SheetTitle>
                 {recipe.family && (
@@ -139,7 +139,7 @@ export function RecipeSlidePanel({ recipe, open, onOpenChange }: RecipeSlidePane
 
           {/* Spec Section */}
           <div className="space-y-4 border-brutal p-6 bg-muted/30">
-            <h3 className="text-2xl font-black mb-4">Spec</h3>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-black mb-4">Spec</h3>
             <div className="space-y-3 font-mono">
               {Object.entries(spec).map(([key, value]) => (
                 <div
@@ -156,7 +156,7 @@ export function RecipeSlidePanel({ recipe, open, onOpenChange }: RecipeSlidePane
           </div>
 
           {/* Method & Glassware */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="border-brutal-sm p-4 bg-background">
               <h4 className="text-sm font-bold mb-2 text-muted-foreground">Method</h4>
               <Badge
@@ -188,7 +188,7 @@ export function RecipeSlidePanel({ recipe, open, onOpenChange }: RecipeSlidePane
           {/* Steps */}
           {steps.length > 0 && (
             <div className="space-y-4 border-brutal-sm p-6 bg-background">
-              <h3 className="text-2xl font-black mb-4">Steps</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-black mb-4">Steps</h3>
               <ol className="space-y-3 list-decimal list-inside">
                 {steps.map((step, index) => (
                   <li
@@ -205,7 +205,7 @@ export function RecipeSlidePanel({ recipe, open, onOpenChange }: RecipeSlidePane
           {/* Make It Faster Tips */}
           {makeItFasterTips.length > 0 && (
             <div className="space-y-4 border-brutal-sm p-6 bg-secondary/20">
-              <h3 className="text-2xl font-black mb-4">Make It Faster</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-black mb-4">Make It Faster</h3>
               <ul className="space-y-2 list-disc list-inside">
                 {makeItFasterTips.map((tip, index) => (
                   <li
@@ -222,7 +222,7 @@ export function RecipeSlidePanel({ recipe, open, onOpenChange }: RecipeSlidePane
           {/* Common Mistakes */}
           {commonMistakes.length > 0 && (
             <div className="space-y-4 border-brutal-sm p-6 bg-destructive/10">
-              <h3 className="text-2xl font-black mb-4 text-destructive">Common Mistakes</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-black mb-4 text-destructive">Common Mistakes</h3>
               <ul className="space-y-2 list-disc list-inside">
                 {commonMistakes.map((mistake, index) => (
                   <li

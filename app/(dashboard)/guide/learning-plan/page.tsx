@@ -80,10 +80,10 @@ export default function LearningPlanPage() {
   return (
     <div className="space-y-12 pb-16">
       <div className="space-y-4 max-w-4xl">
-        <h1 className="font-display text-5xl md:text-7xl font-black tracking-tight text-foreground">
+        <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-black tracking-tight text-foreground">
           7-Day Learning Plan
         </h1>
-        <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-[#00b4d8] pl-6">
+        <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-[#00b4d8] pl-4 sm:pl-6">
           Minimal time. Maximum confidence. <br />
           45-60 minutes per day.
         </p>
@@ -132,13 +132,13 @@ export default function LearningPlanPage() {
         ))}
       </div>
 
-      <section className="neo-card bg-[#ffd60a] p-12 border-4 border-black text-center space-y-6">
-        <h2 className="font-display text-5xl font-black">Ready to Start?</h2>
+      <section className="neo-card bg-[#ffd60a] p-6 sm:p-8 md:p-12 border-4 border-black text-center space-y-6">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black">Ready to Start?</h2>
         <p className="text-xl font-bold max-w-2xl mx-auto">
           Reading is one thing. Doing is another. Launch Training Mode now to track your daily progress.
         </p>
         <Link href="/training" className="inline-block">
-          <Button size="lg" className="neo-btn bg-black text-white hover:scale-105 transition-transform text-xl px-12 py-8 border-white">
+          <Button size="lg" className="neo-btn bg-black text-white hover:scale-105 transition-transform text-xl px-6 py-4 sm:px-8 sm:py-6 md:px-12 md:py-8 border-white">
             Start Day 1
           </Button>
         </Link>

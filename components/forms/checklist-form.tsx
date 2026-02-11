@@ -62,15 +62,15 @@ export function ChecklistForm({ checklist }: ChecklistFormProps) {
   return (
     <Card className="neo-card bg-card border-2 border-border shadow-neo transition-all">
       <CardHeader className="border-b-4 border-border bg-muted/50">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <CardTitle className="text-3xl font-black font-display uppercase tracking-tight text-foreground">{checklist.name}</CardTitle>
+            <CardTitle className="text-xl sm:text-2xl md:text-3xl font-black font-display uppercase tracking-tight text-foreground">{checklist.name}</CardTitle>
             <CardDescription className="mt-2 text-lg font-medium text-muted-foreground">
               {completedCount} of {totalCount} completed
             </CardDescription>
           </div>
           <div className="text-right">
-            <div className="text-4xl font-black text-foreground">{Math.round(progressPercent)}%</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground">{Math.round(progressPercent)}%</div>
             <div className="text-base font-bold text-muted-foreground">Complete</div>
           </div>
         </div>
@@ -98,13 +98,13 @@ export function ChecklistForm({ checklist }: ChecklistFormProps) {
             aria-label={`${item.completed ? 'Completed' : 'Incomplete'}: ${item.task}`}
           >
             {item.completed ? (
-              <CheckCircle2 className="h-8 w-8 text-neo-action shrink-0 mt-0" aria-hidden="true" />
+              <CheckCircle2 className="h-6 w-6 sm:h-8 sm:w-8 text-neo-action shrink-0 mt-0" aria-hidden="true" />
             ) : (
-              <Circle className="h-8 w-8 text-muted-foreground shrink-0 mt-0" aria-hidden="true" />
+              <Circle className="h-6 w-6 sm:h-8 sm:w-8 text-muted-foreground shrink-0 mt-0" aria-hidden="true" />
             )}
             <div className="flex-1 pt-1">
               <div
-                className={`text-lg font-bold leading-relaxed ${
+                className={`text-base sm:text-lg font-bold leading-relaxed ${
                   item.completed ? 'text-muted-foreground' : 'text-foreground'
                 }`}
               >

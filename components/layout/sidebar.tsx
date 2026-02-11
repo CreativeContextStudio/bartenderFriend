@@ -175,7 +175,7 @@ export function Sidebar() {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4 left-4 z-50 p-2 rounded-md border-2 border-border bg-card shadow-neo-md md:hidden transition-transform active:translate-y-1 active:shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border"
+        className="fixed top-4 left-4 z-50 p-3 rounded-md border-2 border-border bg-card shadow-neo-md md:hidden transition-transform active:translate-y-1 active:shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border"
         aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
         aria-expanded={isOpen}
         aria-controls="sidebar-navigation"

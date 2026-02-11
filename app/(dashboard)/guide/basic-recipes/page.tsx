@@ -16,16 +16,16 @@ export default function BasicRecipesPage() {
   return (
     <div className="space-y-12 pb-16">
       <div className="space-y-4 max-w-4xl">
-        <h1 className="font-display text-5xl md:text-7xl font-black tracking-tight text-foreground">
+        <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-black tracking-tight text-foreground">
           Basic Recipe Knowledge
         </h1>
-        <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-primary pl-6">
+        <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-primary pl-4 sm:pl-6">
           Stop memorizing 100 recipes. <br />
           Memorize the <span className="text-primary underline decoration-4 underline-offset-4">templates</span>.
         </p>
       </div>
 
-      <section className="grid gap-x-12 gap-y-48 md:grid-cols-2 lg:grid-cols-2">
+      <section className="grid gap-x-12 gap-y-16 sm:gap-y-24 md:gap-y-48 md:grid-cols-2 lg:grid-cols-2">
         {/* The Sour */}
         <div className="space-y-6">
           <div className="flex items-center gap-4">

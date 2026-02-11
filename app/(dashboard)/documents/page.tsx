@@ -15,7 +15,7 @@ export default function DocumentsPage() {
     <div className="space-y-8">
       <div className="flex items-center justify-between">
         <div className="space-y-3">
-          <h1 className="text-5xl md:text-6xl font-black tracking-tight">Documents Library</h1>
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight">Documents Library</h1>
           <p className="text-lg md:text-xl font-medium text-muted-foreground leading-relaxed">
             Reference documents, guides, and resources.
           </p>

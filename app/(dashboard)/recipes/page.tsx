@@ -56,18 +56,18 @@ export default function RecipesPage() {
     <>
       <div className="space-y-12 pb-16">
         <div className="space-y-4 max-w-4xl">
-          <h1 className="font-display text-5xl md:text-7xl font-black tracking-tight text-foreground">Recipe Cards</h1>
-          <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-primary pl-6">
+          <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-black tracking-tight text-foreground">Recipe Cards</h1>
+          <p className="font-sans text-xl md:text-2xl font-bold text-muted-foreground leading-relaxed border-l-4 border-primary pl-4 sm:pl-6">
             Browse all cocktail recipes. <br />
             Click any card to see full details.
           </p>
         </div>
 
         <Tabs defaultValue="grid" className="w-full space-y-8">
-          <TabsList className="grid w-full grid-cols-3 h-auto p-2 bg-muted border-2 border-border gap-2">
-            <TabsTrigger value="grid" className="text-lg font-black data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-2 data-[state=active]:border-border h-12">Grid View</TabsTrigger>
-            <TabsTrigger value="list" className="text-lg font-black data-[state=active]:bg-accent data-[state=active]:text-accent-foreground data-[state=active]:border-2 data-[state=active]:border-border h-12">List View</TabsTrigger>
-            <TabsTrigger value="family" className="text-lg font-black data-[state=active]:bg-done data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-border h-12">By Family</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 h-auto p-2 bg-muted border-2 border-border gap-2">
+            <TabsTrigger value="grid" className="text-base sm:text-lg font-black data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-2 data-[state=active]:border-border h-10 sm:h-12">Grid View</TabsTrigger>
+            <TabsTrigger value="list" className="text-base sm:text-lg font-black data-[state=active]:bg-accent data-[state=active]:text-accent-foreground data-[state=active]:border-2 data-[state=active]:border-border h-10 sm:h-12">List View</TabsTrigger>
+            <TabsTrigger value="family" className="text-base sm:text-lg font-black data-[state=active]:bg-done data-[state=active]:text-black data-[state=active]:border-2 data-[state=active]:border-border h-10 sm:h-12">By Family</TabsTrigger>
           </TabsList>
 
           <TabsContent value="grid" className="space-y-4">
@@ -182,7 +182,7 @@ export default function RecipesPage() {
                           </p>
                         )}
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {familyRecipes.map((recipe) => (
                           <RecipeCard
                             key={recipe.id}
@@ -215,7 +215,7 @@ export default function RecipesPage() {
                             Specialty drinks and unique cocktails that don't fit into the main families.
                           </p>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                           {otherRecipes.map((recipe) => (
                             <RecipeCard
                               key={recipe.id}

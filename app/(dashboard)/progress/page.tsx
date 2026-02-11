@@ -18,13 +18,13 @@ export default function ProgressPage() {
   return (
     <div className="space-y-8">
       <div className="space-y-3">
-        <h1 className="text-5xl md:text-6xl font-black tracking-tight">Progress Dashboard</h1>
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight">Progress Dashboard</h1>
         <p className="text-lg md:text-xl font-medium text-muted-foreground leading-relaxed">
           Track your learning progress and identify areas for improvement.
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-4">
+      <div className="grid gap-6 grid-cols-2 md:grid-cols-4">
         <Card className="border-brutal bg-secondary/20 shadow-brutal-lg">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4 border-b-4 border-brutal">
             <CardTitle className="text-base font-black">Streak</CardTitle>

@@ -9,7 +9,7 @@ export default function CoreSpecsPage() {
   return (
     <div className="space-y-8">
       <div className="space-y-3">
-        <h1 className="text-5xl md:text-6xl font-black tracking-tight">Standard & Core Specs</h1>
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight">Standard & Core Specs</h1>
         <p className="text-lg md:text-xl font-medium text-muted-foreground leading-relaxed">
           Canonical builds and templates. These are the foundations.
         </p>
