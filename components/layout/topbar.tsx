@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Search } from 'lucide-react';
+import { Search, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   CommandDialog,
@@ -59,6 +59,15 @@ export function Topbar() {
             </kbd>
           </Button>
         </div>
+        <a
+          href="https://github.com/CreativeContextStudio/bartenderFriend"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View source on GitHub"
+          className="inline-flex items-center justify-center h-10 w-10 rounded-md border-2 border-border bg-card text-foreground shadow-neo-sm hover:shadow-neo-md hover:translate-x-[-1px] hover:translate-y-[-1px] transition-all"
+        >
+          <Github className="h-5 w-5" />
+        </a>
         <ThemeToggle />
       </div>
       <CommandDialog open={open} onOpenChange={setOpen}>

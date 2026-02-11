@@ -1589,5 +1589,233 @@
         "muddled",
         "refreshing"
     ]
+},
+{
+    "id": "espresso-tonic",
+    "name": "Espresso Tonic",
+    "family": "Highball",
+    "slug": "espresso-tonic",
+    "description": "A modern caffeine hit with sparkling bitterness. Cold espresso meets tonic for a refreshing zero-proof sipper.",
+    "spec": {
+        "espresso": "2 oz (chilled)",
+        "tonic_water": "4 oz",
+        "simple": "¼ oz"
+    },
+    "method": "build",
+    "glassware": "highball",
+    "garnish": "Orange peel",
+    "steps": [
+        "Fill highball glass with ice",
+        "Pour chilled tonic water over ice",
+        "Slowly pour cold espresso over the back of a spoon to layer",
+        "Add simple syrup and stir gently",
+        "Express orange peel and garnish"
+    ],
+    "make_it_faster_tips": [
+        "Pre-chill espresso in batches",
+        "Pour espresso directly if layering isn't needed"
+    ],
+    "common_mistakes": [
+        "Using hot espresso (melts ice and kills carbonation)",
+        "Stirring too aggressively (flattens tonic)"
+    ],
+    "difficulty": 1,
+    "tags": [
+        "zero-proof",
+        "0%",
+        "coffee",
+        "refreshing"
+    ]
+},
+{
+    "id": "cucumber-spritz",
+    "name": "Cucumber Spritz",
+    "family": "Sparkling",
+    "slug": "cucumber-spritz",
+    "description": "Light, floral, and effervescent. A spa-day spritz that looks as elegant as any Aperol version.",
+    "spec": {
+        "cucumber": "3 slices",
+        "elderflower_syrup": "1 oz",
+        "lime": "½ oz",
+        "soda_water": "top"
+    },
+    "method": "build",
+    "glassware": "wine glass",
+    "garnish": "Cucumber ribbon, mint sprig",
+    "steps": [
+        "Add cucumber slices to wine glass",
+        "Pour elderflower syrup and lime juice over cucumber",
+        "Fill glass with ice",
+        "Top with soda water",
+        "Stir gently and garnish with cucumber ribbon and mint"
+    ],
+    "make_it_faster_tips": [
+        "Pre-slice cucumber ribbons during prep",
+        "Use chilled soda for maximum fizz"
+    ],
+    "common_mistakes": [
+        "Too much elderflower syrup (overly sweet)",
+        "Forgetting the lime (needs acidity for balance)"
+    ],
+    "difficulty": 1,
+    "tags": [
+        "zero-proof",
+        "0%",
+        "refreshing",
+        "floral",
+        "sparkling"
+    ]
+},
+{
+    "id": "nojito",
+    "name": "Nojito",
+    "family": "Highball",
+    "slug": "nojito",
+    "description": "All the minty, citrusy refreshment of a Mojito — none of the rum. A crowd-pleaser for non-drinkers.",
+    "spec": {
+        "lime": "1 oz",
+        "simple": "¾ oz",
+        "mint": "8-10 leaves",
+        "soda_water": "top"
+    },
+    "method": "muddle",
+    "glassware": "highball",
+    "garnish": "Mint sprig, lime wheel",
+    "steps": [
+        "Muddle mint gently with simple syrup in glass",
+        "Add lime juice",
+        "Fill with crushed ice",
+        "Top with soda water",
+        "Garnish with generous mint sprig and lime wheel"
+    ],
+    "make_it_faster_tips": [
+        "Clap mint instead of muddling for speed",
+        "Use crushed ice from machine"
+    ],
+    "common_mistakes": [
+        "Over-muddling mint (releases bitter compounds)",
+        "Not enough lime (tastes flat without acidity)"
+    ],
+    "difficulty": 1,
+    "tags": [
+        "zero-proof",
+        "0%",
+        "refreshing",
+        "minty"
+    ]
+},
+{
+    "id": "passionfruit-fizz",
+    "name": "Passionfruit Fizz",
+    "family": "Collins/Fizz",
+    "slug": "passionfruit-fizz",
+    "description": "Tropical and tangy with a vanilla backbone. Shaken for a frothy top, this looks and drinks like a cocktail.",
+    "spec": {
+        "passionfruit_puree": "1½ oz",
+        "lime": "¾ oz",
+        "vanilla_syrup": "½ oz",
+        "soda_water": "top"
+    },
+    "method": "shake",
+    "glassware": "collins",
+    "garnish": "Half passionfruit, mint sprig",
+    "steps": [
+        "Combine passionfruit puree, lime, and vanilla syrup in shaker",
+        "Add ice and shake hard",
+        "Strain into Collins glass with fresh ice",
+        "Top with soda water",
+        "Garnish with half a passionfruit and mint"
+    ],
+    "make_it_faster_tips": [
+        "Keep passionfruit puree portioned in squeeze bottles",
+        "Shake without the soda — add it last"
+    ],
+    "common_mistakes": [
+        "Adding soda to the shaker (explosive mess)",
+        "Too much vanilla syrup (masks the passionfruit)"
+    ],
+    "difficulty": 2,
+    "tags": [
+        "zero-proof",
+        "0%",
+        "tropical",
+        "fruity"
+    ]
+},
+{
+    "id": "virgin-paloma",
+    "name": "Virgin Paloma",
+    "family": "Highball",
+    "slug": "virgin-paloma",
+    "description": "Bright grapefruit and lime with a hint of agave. Just as crushable as the original, no tequila required.",
+    "spec": {
+        "grapefruit_juice": "3 oz",
+        "lime": "½ oz",
+        "agave_syrup": "½ oz",
+        "grapefruit_soda": "top"
+    },
+    "method": "build",
+    "glassware": "highball",
+    "garnish": "Salt rim (optional), grapefruit wedge",
+    "steps": [
+        "Rim glass with salt (optional)",
+        "Fill highball glass with ice",
+        "Add grapefruit juice, lime juice, and agave syrup",
+        "Top with grapefruit soda",
+        "Stir gently and garnish with grapefruit wedge"
+    ],
+    "make_it_faster_tips": [
+        "Use Jarritos Toronja or Squirt for the soda",
+        "Pre-mix juice and agave in a bottle for volume service"
+    ],
+    "common_mistakes": [
+        "Skipping the fresh lime (needs acidity beyond grapefruit)",
+        "Over-sweetening with agave"
+    ],
+    "difficulty": 1,
+    "tags": [
+        "zero-proof",
+        "0%",
+        "refreshing",
+        "citrus"
+    ]
+},
+{
+    "id": "ginger-mule",
+    "name": "Ginger Mule",
+    "family": "Highball",
+    "slug": "ginger-mule",
+    "description": "Spicy ginger beer with a double ginger hit. The bitters add complexity — still zero-proof at dash quantities.",
+    "spec": {
+        "lime": "¾ oz",
+        "ginger_syrup": "½ oz",
+        "ginger_beer": "top",
+        "angostura_bitters": "2 dashes"
+    },
+    "method": "build",
+    "glassware": "rocks",
+    "garnish": "Lime wheel, candied ginger",
+    "steps": [
+        "Fill rocks glass or copper mug with ice",
+        "Add lime juice and ginger syrup",
+        "Top with ginger beer",
+        "Add bitters on top",
+        "Garnish with lime wheel and candied ginger"
+    ],
+    "make_it_faster_tips": [
+        "Use quality ginger beer with real ginger",
+        "Skip the ginger syrup if the beer is spicy enough"
+    ],
+    "common_mistakes": [
+        "Using ginger ale instead of ginger beer (too mild)",
+        "Stirring too much (flattens the ginger beer)"
+    ],
+    "difficulty": 1,
+    "tags": [
+        "zero-proof",
+        "0%",
+        "spicy",
+        "refreshing"
+    ]
 }
 ]
